@@ -75,3 +75,48 @@ header a:hover {
 header a:nth-child(1) {
   margin-left: 0;
 }
+
+.whatWeDo-Container {
+  max-width: 1400px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.whatWeDo-Container .whatWeDo-Card {
+  width: 350px;
+}
+
+.whatWeDo-Container .whatWeDo-Card .circle {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.whatWeDo-Container .whatWeDo-Card h3 {
+  margin-top: 2rem;
+  color: #fff;
+  font-size: 25px;
+}
+
+.whatWeDo-Container .whatWeDo-Card p {
+  line-height: 1.5rem;
+  text-align: justify;
+}
+/*# sourceMappingURL=index.css.map */
