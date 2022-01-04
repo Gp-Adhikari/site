@@ -6,3 +6,46 @@
           box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+
+body {
+  background: #090a13;
+}
+
+header {
+  max-width: 1400px;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header img {
+  width: 80px;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 2rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+header a.active {
+  border-bottom: 2px solid #f6a01f;
+}
+
+header a:hover {
+  border-bottom: 2px solid rgba(246, 160, 31, 0.5);
+}
+
+header a:nth-child(1) {
+  margin-left: 0;
+}
