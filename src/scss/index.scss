@@ -11,6 +11,21 @@ $max-width: 1400px;
   font-family: "Nunito", sans-serif;
 }
 
+.Title {
+  font-size: 35px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Title .line {
+  height: 2px;
+  width: 82px;
+  border-radius: 2px;
+  background-color: #fff;
+
+
 body {
   background: $background-color;
   color: #fff;
