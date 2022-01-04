@@ -10,14 +10,6 @@
 .Title {
   font-size: 35px;
   font-weight: bold;
-body {
-  background: #090a13;
-  color: #fff;
-}
-
-header {
-  max-width: 1400px;
-  margin: 1rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,6 +32,20 @@ header {
   background-color: #fff;
 }
 
+body {
+  background: #090a13;
+  color: #fff;
+}
+
+header {
+  max-width: 1400px;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

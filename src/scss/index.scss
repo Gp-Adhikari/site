@@ -18,20 +18,19 @@ $max-width: 1400px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-.Title .line {
-  height: 2px;
-  width: 82px;
-  border-radius: 2px;
-  background-color: #fff;
 
+  .line {
+    height: 2px;
+    width: 82px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+}
 
 body {
   background: $background-color;
   color: #fff;
 }
-
-//defaults
 
 //header
 header {
