@@ -1,7 +1,6 @@
 import React from "react";
 import lightBulb from "../img/light-bulb.svg";
 import lightLine from "../img/bulb-line.svg";
-import poweredby from "../img/poweredby.svg";
 import smallLogo from "../img/small-logo.svg";
 const Introduction = () => {
   return (
