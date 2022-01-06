@@ -12,14 +12,15 @@ $max-width: 1400px;
 }
 
 .Title {
-  font-size: 35px;
+  padding: 4rem 0;
+  font-size: 2.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   .line {
+    margin-top: 0.4rem;
     height: 2px;
     width: 82px;
     border-radius: 2px;
@@ -64,38 +65,270 @@ header {
     }
   }
 }
-.whatWeDo-Container {
+.whatWeDoContainer {
+  padding: 5rem 0;
+  position: relative;
+  .whatWeDoBackground {
+    position: absolute;
+    // overflow-y: hidden;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    max-height: 100%;
+    height: 100%;
+  }
+  img.WhatWeDoBg {
+    width: 100%;
+    height: 100%;
+  }
+  .whatWeDoCardContainer {
+    max-width: $max-width;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    column-gap: 3rem;
+    row-gap: 2.5rem;
+
+    .whatWeDo-Card {
+      .circle {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      h3 {
+        margin-top: 2rem;
+        color: #fff;
+        font-size: 25px;
+      }
+      p {
+        line-height: 1.5rem;
+
+        text-align: justify;
+      }
+    }
+  }
+}
+
+//Introduction
+.introductionContainer {
   max-width: $max-width;
   margin: auto;
-  display: grid;
-  justify-items: center;
-
-  grid-template-columns: auto auto auto;
-  column-gap: 1rem;
-  row-gap: 1rem;
-  .whatWeDo-Card {
-    // margin: auto;
-    width: 350px;
-    // height: 100%;
-    // height: 400px;
-    .circle {
-      width: 100px;
-      height: 100px;
-      background-color: #fff;
-      border-radius: 50%;
+  background-color: #111325;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  .introductionPart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    .introductionContent {
+      margin-top: 3rem;
+      h1 {
+        font-size: 35px;
+      }
+      p {
+        width: 522px;
+        margin-top: 1.5rem;
+      }
+      input {
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 49px;
+        margin-top: 1.5rem;
+        background-color: $main-color;
+        font-weight: bold;
+      }
+    }
+    .light-Bulb {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+
+      img {
+        &:last-child {
+          margin-top: -1rem;
+        }
+        &:first-child {
+          margin-top: -5.5rem;
+        }
+      }
     }
-    h3 {
-      margin-top: 2rem;
-      color: #fff;
+  }
+  .poweredByDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -4rem;
+    .poweredByPart {
+      background: url("../img/poweredby.svg") no-repeat;
+      width: 374px;
+      height: 185px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 0 1rem 1rem 0;
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+//Recent Projects
+.RecentProject-Section {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: $max-width;
+  margin: auto;
+
+  .Synical-botText {
+    width: 50%;
+
+    h1 {
       font-size: 25px;
     }
     p {
       line-height: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    input {
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px 0px;
+      margin-top: 1.5rem;
+      background-color: #266fff;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+//portfolio
+.portfolio {
+  max-width: $max-width;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d2144;
+  border-radius: 50px 50px 0 0;
 
-      text-align: justify;
+  .navBar {
+    margin-top: 7rem;
+    ul {
+      display: flex;
+
+      a {
+        color: white;
+        margin-right: 6rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  .topFooter {
+    background-color: #111325;
+    .footerContainer {
+      max-width: $max-width;
+      margin: auto;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      column-gap: 3rem;
+      padding: 4rem 0;
+      .footerLogo {
+        width: 80px;
+      }
+      .firstRow {
+        line-height: 2.5rem;
+        .firstRowItem {
+          display: flex;
+          p {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+      .secondRow,
+      .thirdRow {
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+        li {
+          line-height: 2.5rem;
+          list-style: none;
+        }
+      }
+      .fourthRow {
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+        button {
+          width: 100%;
+          padding: 0.7rem 0;
+          border: none;
+          background-color: $main-color;
+          border-radius: 44px;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  .bottomFooter {
+    position: relative;
+    max-width: $max-width;
+    margin: auto;
+    display: flex;
+    padding: 1.2rem 0;
+    align-items: center;
+    justify-content: space-between;
+    p.copyRightText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .socialMediaIcons {
+      display: flex;
+      .circle {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .whatWeDoBackground {
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      z-index: -5;
+      top: 0;
+      content: "";
+      height: 100%;
+      width: 1000%;
+      transform: translate(-100%, 0);
+      background-color: #111325;
     }
   }
 }
