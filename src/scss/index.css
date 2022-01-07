@@ -273,23 +273,22 @@ header a:nth-child(1) {
 }
 
 .portfolio {
-  max-width: 1400px;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   background-color: #1d2144;
   border-radius: 50px 50px 0 0;
 }
 
 .portfolio .navBar {
-  margin-top: 7rem;
+  max-width: 1400px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .portfolio .navBar ul {
@@ -298,10 +297,25 @@ header a:nth-child(1) {
   display: flex;
 }
 
-.portfolio .navBar ul a {
+.portfolio .navBar ul li {
   color: white;
   margin-right: 6rem;
   text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.portfolio .navBar ul li.active {
+  color: #f6a01f;
+  border-bottom: 2px solid #f6a01f;
+}
+
+.portfolio .portfolioContainer {
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: auto;
 }
 
 footer .topFooter {

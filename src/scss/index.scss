@@ -212,25 +212,34 @@ header {
 }
 //portfolio
 .portfolio {
-  max-width: $max-width;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #1d2144;
   border-radius: 50px 50px 0 0;
-
   .navBar {
-    margin-top: 7rem;
+    max-width: $max-width;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ul {
       display: flex;
-
-      a {
+      li {
         color: white;
         margin-right: 6rem;
         text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-bottom: 2px solid transparent;
+        &.active {
+          color: $main-color;
+          border-bottom: 2px solid $main-color;
+        }
       }
     }
+  }
+  .portfolioContainer {
+    padding: 2rem 0;
+    max-width: $max-width;
+    margin: auto;
   }
 }
 

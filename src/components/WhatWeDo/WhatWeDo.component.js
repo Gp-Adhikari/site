@@ -1,12 +1,12 @@
 import React from "react";
-import websiteDevelopmentIcon from "../img/website-development-icon.svg";
+import websiteDevelopmentIcon from "../../img/website-development-icon.svg";
 import WhatWeDoCard from "./WhatWeDo-Card.component";
-import domainAndHostingIcon from "../img/hosting-icon.svg";
-import seoIcon from "../img/seo-icon.svg";
-import contentWritingIcon from "../img/content-writing-icon.svg";
-import websiteRedesignIcon from "../img/redesign-icon.svg";
-import logoDesignIcon from "../img/logo-icon.svg";
-import WhatWeDoBg from "../img/WhatWeDobackground.svg";
+import domainAndHostingIcon from "../../img/hosting-icon.svg";
+import seoIcon from "../../img/seo-icon.svg";
+import contentWritingIcon from "../../img/content-writing-icon.svg";
+import websiteRedesignIcon from "../../img/redesign-icon.svg";
+import logoDesignIcon from "../../img/logo-icon.svg";
+import WhatWeDoBg from "../../img/WhatWeDobackground.svg";
 const WhatWeDo = () => {
   return (
     <>
