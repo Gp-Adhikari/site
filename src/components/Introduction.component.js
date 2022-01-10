@@ -25,8 +25,9 @@ const Introduction = () => {
             <input type="button" value="View more" />
           </div>
           <div className="light-Bulb">
-            <img src={lightLine} alt="" />
-            <img src={lightBulb} alt="" />
+            <img src={lightLine} alt="line" />
+            <img src={lightBulb} alt="bulb" />
+            {/* <div className="light-effect"></div> */}
           </div>
         </div>
         <div className="poweredByDiv">
