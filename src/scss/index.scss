@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
 @import "./colors";
-
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 //variables
 $max-width: 1400px;
 
@@ -10,7 +14,26 @@ $max-width: 1400px;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+//banner
 
+.banner-container {
+  .banner-text {
+    padding: 2rem;
+    p {
+      position: relative;
+      font-size: 3.5rem;
+      &:first-child:after {
+        content: "";
+        position: absolute;
+        background: rgba($main-color, 0.15);
+        width: 12rem;
+        margin-left: -6rem;
+        height: 100%;
+        z-index: -2;
+      }
+    }
+  }
+}
 .Title {
   font-size: 35px;
   font-weight: bold;
@@ -61,6 +84,33 @@ header {
 
     &:nth-child(1) {
       margin-left: 0;
+    }
+  }
+}
+
+//careeer
+
+.CareerItem-wrapper {
+  max-width: $max-width;
+  margin: 0 4rem;
+
+  .CareerItem-box {
+    border-radius: 0.7rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #10142e;
+
+    p {
+      margin-left: 1.6rem;
+    }
+    button {
+      background-color: #f6a11f;
+      padding: 0.7rem;
+      border-bottom: none;
+      border-radius: 0.7rem;
+      cursor: pointer;
     }
   }
 }

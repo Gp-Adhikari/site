@@ -7,6 +7,25 @@
   font-family: "Nunito", sans-serif;
 }
 
+.banner-container .banner-text {
+  padding: 2rem;
+}
+
+.banner-container .banner-text p {
+  position: relative;
+  font-size: 3.5rem;
+}
+
+.banner-container .banner-text p:first-child:after {
+  content: "";
+  position: absolute;
+  background: rgba(246, 160, 31, 0.15);
+  width: 12rem;
+  margin-left: -6rem;
+  height: 100%;
+  z-index: -2;
+}
+
 .Title {
   font-size: 35px;
   font-weight: bold;
@@ -75,3 +94,36 @@ header a:hover {
 header a:nth-child(1) {
   margin-left: 0;
 }
+
+.CareerItem-wrapper {
+  max-width: 1400px;
+  margin: 0 4rem;
+}
+
+.CareerItem-wrapper .CareerItem-box {
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #10142e;
+}
+
+.CareerItem-wrapper .CareerItem-box p {
+  margin-left: 1.6rem;
+}
+
+.CareerItem-wrapper .CareerItem-box button {
+  background-color: #f6a11f;
+  padding: 0.7rem;
+  border-bottom: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */
