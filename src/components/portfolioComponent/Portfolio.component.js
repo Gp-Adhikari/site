@@ -5,6 +5,9 @@ import PortfolioImage from "./portfolioimage.component";
 const Portfolio = () => {
   const [route, setRoute] = useState("");
   useEffect(() => {}, [route]);
+  useEffect(() => {
+    document.title = "Portfolio - Zpro";
+  }, []);
   return (
     <>
       <div className="portfolio">

@@ -11,6 +11,7 @@ $max-width: 1400px;
   font-family: "Nunito", sans-serif;
 }
 
+// Title
 .Title {
   padding: 4rem 0;
   font-size: 2.2rem;
@@ -35,6 +36,15 @@ body {
 
 //header
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $background-color;
+  transition: 0.3s ease;
+  padding: 1rem 0;
+}
+
+.header-wrapper {
   max-width: $max-width;
   margin: 1rem auto;
   display: flex;
@@ -65,12 +75,166 @@ header {
     }
   }
 }
+
+// Hero Section
+.heroContainer {
+  max-width: $max-width;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .heroText {
+    width: 30%;
+    .Text {
+      p {
+        font-size: 4rem;
+        font-weight: bold;
+        line-height: 5rem;
+      }
+      div {
+        display: flex;
+        p {
+          margin-right: 1rem;
+        }
+      }
+      .HighlightedText {
+        color: $main-color;
+      }
+    }
+    p.motto {
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 2rem;
+      margin-top: 2rem;
+    }
+    input {
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+      border: 0;
+      background-color: $main-color;
+      border-radius: 48px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+  .heroDiv {
+    position: relative;
+    .content-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -58%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // margin-top: 4rem;
+        margin-bottom: 2rem;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        box-shadow: -2px -2px 15px rgba(255, 255, 255, 0.08),
+          2px 2px 15px #000000;
+      }
+      .weekDay {
+        display: flex;
+        align-items: flex-end;
+        .days {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-right: 2rem;
+          .day {
+            width: 12px;
+            height: 161px;
+            box-shadow: inset 2px 2px 4px #000000,
+              inset -2px -2px 4px rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+          }
+          h3 {
+            margin-top: 0.5rem;
+          }
+          &:nth-child(4) {
+            .day {
+              height: 250px;
+              background-color: $main-color;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// Stats Section
+.statsContainer {
+  max-width: $max-width;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 2px 2px 15px #000000, -2px -2px 15px rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 1.5rem 0;
+  .stats {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 5rem;
+    &:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+    &:nth-child(3) {
+      p {
+        color: $main-color;
+      }
+    }
+  }
+}
+.sectionBreaker {
+  max-width: $max-width;
+  margin: 6rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .line {
+    width: 65px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+  }
+  .circle {
+    position: absolute;
+    width: 8px;
+    z-index: 1;
+    height: 8px;
+    border-radius: 50%;
+    border: 0.5px solid #fff;
+    background-color: $background-color;
+    .innerCircle {
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// what we do
 .whatWeDoContainer {
   padding: 5rem 0;
   position: relative;
   .whatWeDoBackground {
     position: absolute;
-    // overflow-y: hidden;
     z-index: -1;
     right: 0;
     top: 0;
@@ -146,6 +310,7 @@ header {
       }
     }
     .light-Bulb {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -159,6 +324,16 @@ header {
           margin-top: -5.5rem;
         }
       }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background: #f5a01f;
+        border-radius: 50%;
+        filter: blur(100px);
+      }
     }
   }
   .poweredByDiv {
@@ -166,6 +341,7 @@ header {
     justify-content: flex-end;
     margin-top: -4rem;
     .poweredByPart {
+      z-index: 5;
       background: url("../img/poweredby.svg") no-repeat;
       width: 374px;
       height: 185px;
@@ -210,7 +386,7 @@ header {
     }
   }
 }
-//portfolio
+//Portfolio
 .portfolio {
   background-color: #1d2144;
   border-radius: 50px 50px 0 0;
@@ -236,11 +412,38 @@ header {
       }
     }
   }
+
+  .portfolio-image-imgCard {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10%;
+    }
+  }
+
   .portfolioContainer {
     padding: 2rem 0;
     max-width: $max-width;
     margin: auto;
   }
+
+  // .portfolio-image-imgCard-skeleton {
+  //   width: 100px;
+  //   height: 100px;
+  //   animation: skeleton-loading 1s linear infinite alternate;
+  // }
+
+  // @keyframes skeleton-loading {
+  //   0% {
+  //     background-color: hsl(200, 20%, 70%);
+  //   }
+  //   100% {
+  //     background-color: hsl(200, 20%, 95%);
+  //   }
+  // }
 }
 
 // Footer
