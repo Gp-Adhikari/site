@@ -243,6 +243,93 @@ header {
   }
 }
 
+//applynow
+
+.applyNowSection {
+  background: black;
+  border-radius: 100px 100px 0 0;
+  .applyNowContainer {
+    max-width: $max-width;
+    margin: auto;
+    padding: 5rem 0;
+
+    .applyNow-ReactJsDev {
+      line-height: 3rem;
+    }
+    .applyNow-Requirement {
+      line-height: 3rem;
+      h1 {
+        margin-top: 2rem;
+      }
+      ul {
+        margin-left: 2rem;
+      }
+    }
+    .applyNow-Salary {
+      display: flex;
+      padding: 4rem 0;
+      p {
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+    }
+    .applyForJob-Table {
+      form {
+        table {
+          tr {
+            td {
+              padding: 0.5rem 0;
+              input {
+                padding: 0.5rem 2rem;
+              }
+              textarea {
+                resize: none;
+                overflow-y: auto;
+                width: 100%;
+              }
+              .file-drag {
+                .drop-area {
+                  position: relative;
+                  width: 150px;
+                  height: 150px;
+                  background-color: white;
+                  // input {
+                  //   width: 150px;
+
+                  //   height: 150px;
+                  // }
+                  .upload-image {
+                    width: 150px;
+                    height: 150px;
+                    z-index: -1;
+                  }
+                  p {
+                    color: black;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: fit-content;
+                    font-size: 12px;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                  }
+                }
+              }
+              button {
+                padding: 0.5rem 3rem;
+                background-color: $main-color;
+                font-weight: bold;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // Footer
 footer {
   .topFooter {
