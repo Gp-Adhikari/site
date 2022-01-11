@@ -1,21 +1,29 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header.component";
-import Title from "./components/Title.component"; 
-import Banner from "./components/Banner.component";
-import CareerItem from "./components/CareerItem.component";
+const ContactUs = lazy(() => import("./components/ContactUs.component"));
+const Portfolio = lazy(() =>
+  import("./components/portfolioComponent/Portfolio.component")
+);
+const Services = lazy(() => import("./pages/Services.page"));
+const Footer = lazy(() => import("./components/Footer.component"));
+const Header = lazy(() => import("./components/Header.component"));
+const Home = lazy(() => import("./pages/Home.page"));
 
 const App = () => {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" exact element={<Header />} />
-          <Route path ="/banner" exact element={<Banner/>}/>
-          <Route path="/Title" exact element={<Title />} />
-          <Route path="/careeritem/:id" exact element={<CareerItem/>}/>
-        </Routes>
-      </Router>
+      <Suspense fallback={<p>Loading</p>}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </Suspense>
     </>
   );
 };
