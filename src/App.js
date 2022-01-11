@@ -1,7 +1,11 @@
 import React, { Suspense, lazy } from "react";
 import "./scss/loader.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ApplyNow from "./components/ApplyNow.component";
+
+const ApplyNow = lazy(() => import("./components/ApplyNow.component"));
+
+const ContactUs = lazy(() => import("./components/ContactUs.component"));
+
 const Portfolio = lazy(() =>
   import("./components/portfolioComponent/Portfolio.component")
 );
@@ -26,7 +30,10 @@ const App = () => {
             <Route path="/" exact element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/services" element={<Services />} />
+
             <Route path="/applynow" element={<ApplyNow />} />
+
+            <Route path="/ContactUs" element={<ContactUs />} />
           </Routes>
           <Footer />
         </Router>

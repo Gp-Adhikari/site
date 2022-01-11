@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
 @import "./colors";
-
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 //variables
 $max-width: 1400px;
 
@@ -10,8 +14,29 @@ $max-width: 1400px;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+//banner
 
 // Title
+
+.banner-container {
+  .banner-text {
+    padding: 2rem;
+    p {
+      position: relative;
+      font-size: 3.5rem;
+      &:first-child:after {
+        content: "";
+        position: absolute;
+        background: rgba($main-color, 0.15);
+        width: 12rem;
+        margin-left: -6rem;
+        height: 100%;
+        z-index: -2;
+      }
+    }
+  }
+}
+
 .Title {
   padding: 4rem 0;
   font-size: 2.2rem;
@@ -234,6 +259,34 @@ header {
 }
 
 // what we do
+
+//careeer
+
+.CareerItem-wrapper {
+  max-width: $max-width;
+  margin: 0 4rem;
+
+  .CareerItem-box {
+    border-radius: 0.7rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #10142e;
+
+    p {
+      margin-left: 1.6rem;
+    }
+    button {
+      background-color: #f6a11f;
+      padding: 0.7rem;
+      border-bottom: none;
+      border-radius: 0.7rem;
+      cursor: pointer;
+    }
+  }
+}
+
 .whatWeDoContainer {
   padding: 5rem 0;
   position: relative;
@@ -632,6 +685,56 @@ footer {
       width: 1000%;
       transform: translate(-100%, 0);
       background-color: #111325;
+    }
+  }
+}
+.contact-container {
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  .Contact {
+    margin-right: 3rem;
+    background: #111325;
+    height: 350px;
+    width: 250px;
+    .Contact-box {
+      background: #10132a;
+      padding: 0 1rem;
+      .Contact-text {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        .line {
+          width: 2rem;
+          height: 3px;
+          border: 1px solid #ffffff;
+        }
+      }
+    }
+  }
+  .contact-wrapper {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1.5rem 1rem;
+    .contact-1 {
+      display: flex;
+      line-height: 2rem;
+    }
+  }
+  .Contact-right {
+    display: flex;
+    flex-direction: column;
+    input {
+      width: 500px;
+    }
+    button {
+      background: #f6a11f;
+      border-radius: 20px;
+      border: none;
+      width: 50px;
+      height: 20px;
     }
   }
 }
