@@ -258,6 +258,29 @@ header {
   }
 }
 
+//aboutus
+.aboutUs-Zpro {
+  max-width: $max-width;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  .Zpro-intro {
+    width: 45%;
+    padding: 3rem 1.5rem;
+    background-color: #1d2144;
+    box-shadow: 2px 2px 15px #000000;
+    p {
+      margin-top: 1.5rem;
+    }
+    code {
+      font-weight: bold;
+    }
+    .contact-color {
+      color: $main-color;
+    }
+  }
+}
+
 // what we do
 
 //careeer
@@ -539,30 +562,26 @@ header {
         table {
           tr {
             td {
-              padding: 0.5rem 0;
+              padding: 0.5rem 0rem;
               input {
-                padding: 0.5rem 2rem;
+                padding: 0.3rem 0.7rem;
               }
               textarea {
                 resize: none;
                 overflow-y: auto;
                 width: 100%;
+                padding: 0.3rem 0.7rem;
               }
               .file-drag {
                 .drop-area {
                   position: relative;
-                  width: 150px;
-                  height: 150px;
+                  width: 200px;
+                  height: 200px;
                   background-color: white;
-                  // input {
-                  //   width: 150px;
-
-                  //   height: 150px;
-                  // }
+                  z-index: 1;
                   .upload-image {
-                    width: 150px;
-                    height: 150px;
-                    z-index: -1;
+                    width: 200px;
+                    height: 200px;
                   }
                   p {
                     color: black;
@@ -572,15 +591,24 @@ header {
                     width: fit-content;
                     font-size: 12px;
                     transform: translate(-50%, -50%);
-                    z-index: 1;
+                    z-index: -1;
                   }
                 }
               }
+              .or {
+                width: 64%;
+                padding: 1.5rem 0;
+                text-align: center;
+              }
+              .choose-file {
+                padding: 0.5rem 4rem;
+              }
               button {
-                padding: 0.5rem 3rem;
+                padding: 0.5rem 5rem;
                 background-color: $main-color;
                 font-weight: bold;
                 border: none;
+                margin-top: 1.5rem;
               }
             }
           }
