@@ -302,6 +302,37 @@ header {
           transform: translate(-50%, -50%);
 }
 
+.aboutUs-Zpro {
+  max-width: 1400px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.aboutUs-Zpro .Zpro-intro {
+  width: 45%;
+  padding: 3rem 1.5rem;
+  background-color: #1d2144;
+  -webkit-box-shadow: 2px 2px 15px #000000;
+          box-shadow: 2px 2px 15px #000000;
+}
+
+.aboutUs-Zpro .Zpro-intro p {
+  margin-top: 1.5rem;
+}
+
+.aboutUs-Zpro .Zpro-intro code {
+  font-weight: bold;
+}
+
+.aboutUs-Zpro .Zpro-intro .contact-color {
+  color: #f6a01f;
+}
+
 .whatWeDoContainer {
   padding: 5rem 0;
   position: relative;
@@ -606,30 +637,31 @@ header {
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td {
-  padding: 0.5rem 0;
+  padding: 0.5rem 0rem;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td input {
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 0.7rem;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td textarea {
   resize: none;
   overflow-y: auto;
   width: 100%;
+  padding: 0.3rem 0.7rem;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-color: white;
+  z-index: 1;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area .upload-image {
-  width: 150px;
-  height: 150px;
-  z-index: -1;
+  width: 200px;
+  height: 200px;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area p {
@@ -643,14 +675,25 @@ header {
   font-size: 12px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: -1;
+}
+
+.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .or {
+  width: 64%;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .choose-file {
+  padding: 0.5rem 4rem;
 }
 
 .applyNowSection .applyNowContainer .applyForJob-Table form table tr td button {
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 5rem;
   background-color: #f6a01f;
   font-weight: bold;
   border: none;
+  margin-top: 1.5rem;
 }
 
 footer .topFooter {

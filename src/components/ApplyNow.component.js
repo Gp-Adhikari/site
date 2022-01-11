@@ -94,7 +94,7 @@ const ApplyNow = () => {
                   </tr>
                   <tr>
                     <td>
-                      <button>Submit</button>
+                      <button type="button">Submit</button>
                     </td>
                   </tr>
                 </tbody>

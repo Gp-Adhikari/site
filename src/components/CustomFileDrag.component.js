@@ -5,7 +5,7 @@ const CustomFileDrag = ({ getData, data }) => {
   const [files, setFiles] = useState([]);
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
+    accept: "application/pdf",
     onDrop: (acceptedFiles) => {
       setFiles(
         acceptedFiles.map((file) =>
@@ -45,13 +45,13 @@ const CustomFileDrag = ({ getData, data }) => {
         </div>
       </div>
 
-      <p>OR</p>
+      <p className="or">OR</p>
 
       <input
         type="file"
         id="selectedFile"
         style={{ display: "none" }}
-        accept="image/*"
+        accept="application/pdf"
         onChange={(e) => {
           // getData(e.target.files[0]);
           setFiles([
@@ -63,6 +63,7 @@ const CustomFileDrag = ({ getData, data }) => {
       />
 
       <input
+        className="choose-file"
         type="button"
         value="Choose File"
         onClick={() => document.getElementById("selectedFile").click()}
