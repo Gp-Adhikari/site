@@ -36,13 +36,38 @@ const CustomFileDrag = ({ getData, data }) => {
     ) : null;
 
   return (
-    <div className="file-drag">
-      <div className="drop-area" {...getRootProps()}>
-        <input {...getInputProps()} />
-        <p>Drag and Drop</p>
-        <div className="img">{images}</div>
+    <>
+      <div className="file-drag">
+        <div className="drop-area" {...getRootProps()}>
+          <input {...getInputProps()} />
+          <div className="img">{images}</div>
+          <p>Drag and Drop</p>
+        </div>
       </div>
-    </div>
+
+      <p>OR</p>
+
+      <input
+        type="file"
+        id="selectedFile"
+        style={{ display: "none" }}
+        accept="image/*"
+        onChange={(e) => {
+          // getData(e.target.files[0]);
+          setFiles([
+            Object.assign(e.target.files[0], {
+              preview: URL.createObjectURL(e.target.files[0]),
+            }),
+          ]);
+        }}
+      />
+
+      <input
+        type="button"
+        value="Choose File"
+        onClick={() => document.getElementById("selectedFile").click()}
+      />
+    </>
   );
 };
 

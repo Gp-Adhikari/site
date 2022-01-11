@@ -94,20 +94,6 @@ const ApplyNow = () => {
                   </tr>
                   <tr>
                     <td>
-                      <p>OR</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <CustomFileDrag
-                        handleChange={(e) => setPdf(e.target.value)}
-                        getData={getPdf}
-                        data={pdf}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
                       <button>Submit</button>
                     </td>
                   </tr>
