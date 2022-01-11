@@ -142,6 +142,14 @@ header {
   border-radius: 48px;
   font-weight: bold;
   font-size: 1.1rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.heroContainer .heroText input:hover {
+  -webkit-box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
+          box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
 }
 
 .heroContainer .heroDiv {
@@ -209,19 +217,19 @@ header {
 
 .heroContainer .heroDiv .content-wrapper .weekDay .days .day {
   width: 12px;
-  height: 161px;
+  height: 160px;
   -webkit-box-shadow: inset 2px 2px 4px #000000, inset -2px -2px 4px rgba(255, 255, 255, 0.08);
           box-shadow: inset 2px 2px 4px #000000, inset -2px -2px 4px rgba(255, 255, 255, 0.08);
   border-radius: 40px;
 }
 
-.heroContainer .heroDiv .content-wrapper .weekDay .days h3 {
-  margin-top: 0.5rem;
-}
-
-.heroContainer .heroDiv .content-wrapper .weekDay .days:nth-child(4) .day {
+.heroContainer .heroDiv .content-wrapper .weekDay .days .day.hero-active {
   height: 250px;
   background-color: #f6a01f;
+}
+
+.heroContainer .heroDiv .content-wrapper .weekDay .days h3 {
+  margin-top: 0.5rem;
 }
 
 .heroContainer .heroDiv .content-wrapper .weekDay .days:last-child {
@@ -689,7 +697,7 @@ footer .topFooter .footerContainer .firstRow .firstRowItem p {
 
 footer .topFooter .footerContainer .secondRow h2,
 footer .topFooter .footerContainer .thirdRow h2 {
-  margin: 0 0 4rem 0;
+  margin: 2rem 0;
 }
 
 footer .topFooter .footerContainer .secondRow li,
@@ -699,7 +707,7 @@ footer .topFooter .footerContainer .thirdRow li {
 }
 
 footer .topFooter .footerContainer .fourthRow h2 {
-  margin: 0 0 4rem 0;
+  margin: 2rem 0;
 }
 
 footer .topFooter .footerContainer .fourthRow button {

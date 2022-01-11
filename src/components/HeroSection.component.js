@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import WeekBox from "../img/weekBox.svg";
 const HeroSection = () => {
+  const monday = useRef();
+  const tuesday = useRef();
+  const wednesday = useRef();
+  const thursday = useRef();
+  const friday = useRef();
+  const saturday = useRef();
+  const sunday = useRef();
+
+  const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  const today = new Date().getDay();
+  const todaysDay = days[today];
+
+  useEffect(() => {
+    const daysElement = [
+      sunday,
+      monday,
+      tuesday,
+      wednesday,
+      thursday,
+      friday,
+      saturday,
+    ];
+
+    const selectTodayElement = daysElement[today];
+
+    if (selectTodayElement) {
+      selectTodayElement.current.classList.add("hero-active");
+    }
+  }, [today, sunday, monday, tuesday, wednesday, thursday, friday, saturday]);
+
   return (
     <>
       <div className="heroContainer">
@@ -17,41 +49,43 @@ const HeroSection = () => {
             </div>
           </div>
           <p className="motto">Go Worldwide and Online</p>
-          <input type="button" value="Get In Touch" />
+          <Link to="/contact">
+            <input type="button" value="Get In Touch" />
+          </Link>
         </div>
         <div className="heroDiv">
           <img src={WeekBox} alt="" />
           <div className="content-wrapper">
             <div className="circle">
-              <h3>THU</h3>
+              <h3>{todaysDay}</h3>
             </div>
             <div className="weekDay">
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={monday}></div>
                 <h3>M</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={tuesday}></div>
                 <h3>T</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={wednesday}></div>
                 <h3>W</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={thursday}></div>
                 <h3>T</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={friday}></div>
                 <h3>F</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={saturday}></div>
                 <h3>S</h3>
               </div>
               <div className="days">
-                <div className="day"></div>
+                <div className="day" ref={sunday}></div>
                 <h3>S</h3>
               </div>
             </div>

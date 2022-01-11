@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import "./scss/loader.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ApplyNow from "./components/ApplyNow.component";
 const Portfolio = lazy(() =>
@@ -12,7 +13,13 @@ const Home = lazy(() => import("./pages/Home.page"));
 const App = () => {
   return (
     <>
-      <Suspense fallback={<p>Loading</p>}>
+      <Suspense
+        fallback={
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        }
+      >
         <Router>
           <Header />
           <Routes>

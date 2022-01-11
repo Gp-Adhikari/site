@@ -77,6 +77,7 @@ header {
 }
 
 // Hero Section
+
 .heroContainer {
   max-width: $max-width;
   margin: auto;
@@ -115,6 +116,11 @@ header {
       border-radius: 48px;
       font-weight: bold;
       font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        box-shadow: $main-color-hover;
+      }
     }
   }
   .heroDiv {
@@ -131,7 +137,6 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        // margin-top: 4rem;
         margin-bottom: 2rem;
         width: 90px;
         height: 90px;
@@ -149,20 +154,19 @@ header {
           margin-right: 2rem;
           .day {
             width: 12px;
-            height: 161px;
+            height: 160px;
             box-shadow: inset 2px 2px 4px #000000,
               inset -2px -2px 4px rgba(255, 255, 255, 0.08);
             border-radius: 40px;
-          }
-          h3 {
-            margin-top: 0.5rem;
-          }
-          &:nth-child(4) {
-            .day {
+            &.hero-active {
               height: 250px;
               background-color: $main-color;
             }
           }
+          h3 {
+            margin-top: 0.5rem;
+          }
+
           &:last-child {
             margin-right: 0;
           }
@@ -559,7 +563,7 @@ footer {
       .secondRow,
       .thirdRow {
         h2 {
-          margin: 0 0 4rem 0;
+          margin: 2rem 0;
         }
         li {
           line-height: 2.5rem;
@@ -568,7 +572,7 @@ footer {
       }
       .fourthRow {
         h2 {
-          margin: 0 0 4rem 0;
+          margin: 2rem 0;
         }
         button {
           width: 100%;
