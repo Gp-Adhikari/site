@@ -15,7 +15,7 @@ const CarrersItem = () => {
               <p>{carrer.Title}</p>
               <button
                 type="button"
-                onClick={() => navigate("/carreritem/" + carrer.id)}
+                onClick={() => navigate("/carrers/" + carrer.id)}
               >
                 Apply Now
               </button>

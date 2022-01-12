@@ -27,11 +27,12 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/carrers" element={<Carrers />} />
-            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/about" exact element={<About />} />
+            <Route path="/portfolio" exact element={<Portfolio />} />
+            <Route path="/services" exact element={<Services />} />
+            <Route path="/carrers" exact element={<Carrers />} />
+            <Route path="/carrers/:id" element={<ApplyNow />} />
+            <Route path="/contact" exact element={<ContactUs />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
           <Footer />
