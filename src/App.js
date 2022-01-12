@@ -12,7 +12,7 @@ const Portfolio = lazy(() =>
   import("./components/portfolioComponent/Portfolio.component")
 );
 const Services = lazy(() => import("./pages/Services.page"));
-
+const Page404 = lazy(() => import("./pages/Page404.page"));
 const App = () => {
   return (
     <>
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/carrers" element={<Carrers />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
           <Footer />
         </Router>

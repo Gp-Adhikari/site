@@ -845,3 +845,23 @@ footer {
     }
   }
 }
+//404 Page
+.container-404 {
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+  button {
+    padding: 1rem 1.5rem;
+    background-color: $secondary-color;
+    font-weight: bold;
+    margin-top: 2rem;
+    border: none;
+    color: #ffffff;
+    border-radius: 40px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      box-shadow: $secondary-color-hover;
+    }
+  }
+}

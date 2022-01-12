@@ -1103,4 +1103,28 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
   -webkit-box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
           box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
 }
+
+.container-404 {
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.container-404 button {
+  padding: 1rem 1.5rem;
+  background-color: #266fff;
+  font-weight: bold;
+  margin-top: 2rem;
+  border: none;
+  color: #ffffff;
+  border-radius: 40px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.container-404 button:hover {
+  -webkit-box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
+          box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
+}
 /*# sourceMappingURL=index.css.map */
