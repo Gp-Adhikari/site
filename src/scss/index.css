@@ -7,9 +7,13 @@
   font-family: "Nunito", sans-serif;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .banner-container {
   background-color: #111325;
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 
 .banner-container .banner-text {
@@ -351,7 +355,7 @@ header {
   background-color: #090a13;
   -webkit-box-shadow: 2px 2px 15px #000000;
           box-shadow: 2px 2px 15px #000000;
-  margin-top: -10rem;
+  margin-top: -13rem;
 }
 
 .aboutUs-Zpro .Zpro-intro p {
@@ -992,6 +996,9 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 .contact-container .Contact {
   background: #111325;
   width: 45%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 5rem 0;
   border-radius: 3rem 0px;
 }
@@ -1079,8 +1086,15 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
   font-size: 1.6rem;
 }
 
+.contact-container .Contact-right textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 12rem;
+}
+
 .contact-container .Contact-right input,
 .contact-container .Contact-right textarea {
+  border-radius: 5px;
   padding: 0.4rem;
   margin: 1.5rem 0;
 }

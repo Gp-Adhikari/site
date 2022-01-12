@@ -14,13 +14,17 @@ $max-width: 1400px;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+
+body {
+  scroll-behavior: smooth;
+}
 //banner
 
 // Title
 
 .banner-container {
   background-color: #111325;
-  padding: 5rem 0;
+  padding: 8rem 0;
   .banner-text {
     max-width: $max-width;
     margin: auto;
@@ -271,7 +275,7 @@ header {
     padding: 3rem 2rem;
     background-color: $background-color;
     box-shadow: 2px 2px 15px #000000;
-    margin-top: -10rem;
+    margin-top: -13rem;
     p {
       margin-top: 1.5rem;
     }
@@ -770,6 +774,7 @@ footer {
   .Contact {
     background: #111325;
     width: 45%;
+    height: fit-content;
     padding: 5rem 0;
     border-radius: 3rem 0px;
     .Contact-box {
@@ -824,8 +829,14 @@ footer {
       margin-bottom: 2rem;
       font-size: 1.6rem;
     }
+    textarea {
+      resize: none;
+      overflow-y: auto;
+      height: 12rem;
+    }
     input,
     textarea {
+      border-radius: 5px;
       padding: 0.4rem;
       margin: 1.5rem 0;
     }

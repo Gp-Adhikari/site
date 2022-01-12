@@ -49,7 +49,7 @@ const ContactUs = () => {
             <p>Subject</p>
             <input type="text" />
             <p>Message</p>
-            <textarea type="textarea" id="#" cols="20" rows="4"></textarea>
+            <textarea type="textarea" cols="40" rows="5"></textarea>
             <button type="button">Submit</button>
           </div>
         </div>
