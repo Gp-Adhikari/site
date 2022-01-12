@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import recentProjectImg from ".././img/SynicalBot-projectimg.svg";
 const RecentProjects = () => {
   return (
@@ -13,7 +14,9 @@ const RecentProjects = () => {
             do. Synical bot has funny jokes that you can read all day if you
             wanted to, hope you enjoy my model and thank the creators.
           </p>
-          <input type="button" value="Explore Our Portfolio" />
+          <Link to="/portfolio">
+            <input type="button" value="Explore Our Portfolio" />
+          </Link>
         </div>
       </div>
     </>
