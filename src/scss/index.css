@@ -30,7 +30,8 @@ body {
   content: "";
   position: absolute;
   background: rgba(246, 160, 31, 0.15);
-  width: 12rem;
+  max-width: 12rem;
+  width: 100%;
   margin-left: -6rem;
   height: 100%;
 }
@@ -68,6 +69,7 @@ body {
 }
 
 header {
+  display: none;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -122,11 +124,9 @@ header .header-wrapper a:nth-child(1) {
 }
 
 .heroContainer {
+  display: none;
   max-width: 1400px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -299,11 +299,9 @@ header .header-wrapper a:nth-child(1) {
 }
 
 .sectionBreaker {
+  display: none;
   max-width: 1400px;
   margin: 6rem auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -343,6 +341,7 @@ header .header-wrapper a:nth-child(1) {
 }
 
 .aboutUs-Zpro {
+  display: none;
   max-width: 1400px;
   margin: auto;
   display: -webkit-box;
@@ -622,6 +621,11 @@ header .header-wrapper a:nth-child(1) {
   margin: auto;
 }
 
+.RecentProject-Section img {
+  width: 45%;
+  height: 100%;
+}
+
 .RecentProject-Section .Synical-botText {
   width: 50%;
 }
@@ -844,6 +848,10 @@ header .header-wrapper a:nth-child(1) {
   font-weight: bold;
   border: none;
   margin-top: 1.5rem;
+}
+
+footer {
+  display: none;
 }
 
 footer .topFooter {

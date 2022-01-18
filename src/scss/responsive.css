@@ -9,6 +9,12 @@
     padding: 1rem 0;
     margin: 0 1.5rem;
   }
+  .aboutUs-Zpro {
+    margin: 0 1.5rem;
+  }
+  .RecentProject-Section {
+    margin: 0 1.5rem;
+  }
   footer .topFooter .footerContainer {
     margin: 0 1.5rem;
   }
@@ -17,7 +23,26 @@
   }
 }
 
+@media screen and (max-width: 1335px) {
+  .aboutUs-Zpro {
+    margin: 0 1.5rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
+  .banner-container .banner-text p {
+    font-size: 40px;
+  }
+  .aboutUs-Zpro .Zpro-intro {
+    padding: 2rem 1rem;
+  }
+  .aboutUs-Zpro .Zpro-intro h2 {
+    font-size: 18px;
+  }
+  .aboutUs-Zpro .Zpro-intro p {
+    font-size: 14px;
+    margin-top: 1rem;
+  }
   footer .topFooter .footerContainer .firstRow .firstRowItem p {
     font-size: 1rem;
   }
@@ -52,9 +77,47 @@
   }
   .banner-container {
     padding: 4rem 0;
+    text-align: center;
   }
   .banner-container .banner-text p {
     font-size: 2.5rem;
+  }
+  .banner-container .banner-text p:first-child:after {
+    width: 50%;
+  }
+  .RecentProject-Section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 3rem;
+  }
+  .RecentProject-Section img {
+    width: 100%;
+  }
+  .RecentProject-Section .Synical-botText {
+    width: 100%;
+  }
+  .RecentProject-Section .Synical-botText h1 {
+    margin-top: 2rem;
+  }
+  .aboutUs-Zpro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .aboutUs-Zpro .Zpro-intro {
+    width: 100%;
+    margin-top: 1rem;
   }
   .whatWeDoContainer .whatWeDoCardContainer {
     display: -ms-grid;
@@ -130,6 +193,12 @@
   .banner-container .banner-text p {
     font-size: 2rem;
   }
+  .RecentProject-Section .Synical-botText {
+    width: 100%;
+  }
+  .RecentProject-Section .Synical-botText h1 {
+    font-size: 20px;
+  }
   .whatWeDoContainer .whatWeDoCardContainer {
     display: -ms-grid;
     display: grid;
@@ -153,6 +222,7 @@
   }
   .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card h3 {
     font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
   .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card p {
     text-align: center;

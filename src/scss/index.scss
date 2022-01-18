@@ -35,7 +35,8 @@ body {
         content: "";
         position: absolute;
         background: rgba($main-color, 0.15);
-        width: 12rem;
+        max-width: 12rem;
+        width: 100%;
         margin-left: -6rem;
         height: 100%;
       }
@@ -67,6 +68,7 @@ body {
 
 //header
 header {
+  display: none;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -110,9 +112,10 @@ header {
 // Hero Section
 
 .heroContainer {
+  display: none;
   max-width: $max-width;
   margin: auto;
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-between;
   .heroText {
@@ -231,9 +234,10 @@ header {
   }
 }
 .sectionBreaker {
+  display: none;
   max-width: $max-width;
   margin: 6rem auto;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -266,6 +270,7 @@ header {
 
 //aboutus
 .aboutUs-Zpro {
+  display: none;
   max-width: $max-width;
   margin: auto;
   display: flex;
@@ -470,7 +475,10 @@ header {
   justify-content: space-between;
   max-width: $max-width;
   margin: auto;
-
+  img {
+    width: 45%;
+    height: 100%;
+  }
   .Synical-botText {
     width: 50%;
     h1 {
@@ -662,6 +670,7 @@ header {
 
 // Footer
 footer {
+  display: none;
   .topFooter {
     background-color: #111325;
     .footerContainer {

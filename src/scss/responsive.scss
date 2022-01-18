@@ -15,6 +15,14 @@
     .whatWeDoBackground {
     }
   }
+  .aboutUs-Zpro {
+    margin: 0 1.5rem;
+    .Zpro-intro {
+    }
+  }
+  .RecentProject-Section {
+    margin: 0 1.5rem;
+  }
   footer {
     .topFooter {
       .footerContainer {
@@ -26,8 +34,34 @@
     }
   }
 }
+@media screen and (max-width: 1335px) {
+  .aboutUs-Zpro {
+    margin: 0 1.5rem;
+  }
+  .RecentProject-Section {
+  }
+}
 
 @media screen and (max-width: 900px) {
+  .banner-container {
+    .banner-text {
+      p {
+        font-size: 40px;
+      }
+    }
+  }
+  .aboutUs-Zpro {
+    .Zpro-intro {
+      padding: 2rem 1rem;
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        margin-top: 1rem;
+      }
+    }
+  }
   footer {
     .topFooter {
       .footerContainer {
@@ -81,10 +115,39 @@
   }
   .banner-container {
     padding: 4rem 0;
+    text-align: center;
     .banner-text {
       p {
         font-size: 2.5rem;
+        &:first-child:after {
+          width: 50%;
+        }
       }
+    }
+  }
+  .RecentProject-Section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+    img {
+      width: 100%;
+    }
+    .Synical-botText {
+      width: 100%;
+
+      h1 {
+        margin-top: 2rem;
+      }
+    }
+  }
+  .aboutUs-Zpro {
+    display: flex;
+    justify-content: center;
+
+    .Zpro-intro {
+      width: 100%;
+      margin-top: 1rem;
     }
   }
   .whatWeDoContainer {
@@ -178,6 +241,14 @@
       }
     }
   }
+  .RecentProject-Section {
+    .Synical-botText {
+      width: 100%;
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
   .whatWeDoContainer {
     .whatWeDoCardContainer {
       display: grid;
@@ -191,6 +262,7 @@
 
         h3 {
           font-size: 1.5rem;
+          margin-bottom: 2rem;
         }
         p {
           text-align: center;
@@ -221,6 +293,15 @@
 }
 
 @media screen and (max-width: 415px) {
+  .banner-container {
+    .banner-text {
+      p {
+        &:first-child:after {
+          // width: 1rem;
+        }
+      }
+    }
+  }
   .whatWeDoContainer {
     margin: 0 1.5rem;
   }
