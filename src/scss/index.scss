@@ -23,6 +23,7 @@ body {
 // Title
 
 .banner-container {
+  display: none;
   background-color: #111325;
   padding: 8rem 0;
   .banner-text {
@@ -67,6 +68,7 @@ body {
 
 //header
 header {
+  display: none;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -662,6 +664,7 @@ header {
 
 // Footer
 footer {
+  display: none;
   .topFooter {
     background-color: #111325;
     .footerContainer {
@@ -774,10 +777,12 @@ footer {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  // padding: 3rem;
   .Contact {
+    margin-right: 3rem;
     background: #111325;
-    width: 45%;
-    height: fit-content;
+    // width: 45%;
+    // height: fit-content;
     padding: 5rem 0;
     border-radius: 3rem 0px;
     .Contact-box {

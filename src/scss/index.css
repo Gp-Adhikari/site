@@ -12,6 +12,7 @@ body {
 }
 
 .banner-container {
+  display: none;
   background-color: #111325;
   padding: 8rem 0;
 }
@@ -68,6 +69,7 @@ body {
 }
 
 header {
+  display: none;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -846,6 +848,10 @@ header .header-wrapper a:nth-child(1) {
   margin-top: 1.5rem;
 }
 
+footer {
+  display: none;
+}
+
 footer .topFooter {
   background-color: #111325;
 }
@@ -1001,11 +1007,8 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 }
 
 .contact-container .Contact {
+  margin-right: 3rem;
   background: #111325;
-  width: 45%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   padding: 5rem 0;
   border-radius: 3rem 0px;
 }
