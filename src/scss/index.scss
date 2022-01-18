@@ -73,36 +73,36 @@ header {
   background: $background-color;
   transition: 0.3s ease;
   padding: 1rem 0;
-}
-
-.header-wrapper {
-  max-width: $max-width;
-  margin: 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  img {
-    width: 80px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: 2rem;
-    transition: 0.3s ease;
-    border-bottom: 2px solid transparent;
-
-    &.active {
-      border-bottom: 2px solid $main-color;
+  .header-wrapper {
+    max-width: $max-width;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img.logo {
+      width: 80px;
     }
-
-    &:hover {
-      border-bottom: 2px solid rgba($main-color, 0.5);
+    img.burger {
+      display: none;
     }
+    a {
+      text-decoration: none;
+      color: #fff;
+      margin-left: 2rem;
+      transition: 0.3s ease;
+      border-bottom: 2px solid transparent;
 
-    &:nth-child(1) {
-      margin-left: 0;
+      &.active {
+        border-bottom: 2px solid $main-color;
+      }
+
+      &:hover {
+        border-bottom: 2px solid rgba($main-color, 0.5);
+      }
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -309,12 +309,14 @@ header {
       margin-top: 0;
     }
     p {
-      padding: 1rem 0;
+      padding: 1.3rem 0;
       margin-left: 1.6rem;
+      font-size: 1.2rem;
     }
     button {
+      font-size: 1.2rem;
       background-color: #f6a11f;
-      padding: 1rem 1.4rem;
+      padding: 1.3rem 1.8rem;
       border: none;
       border-radius: 0.7rem;
       cursor: pointer;
@@ -378,6 +380,7 @@ header {
 
 //Introduction
 .introductionContainer {
+  display: none;
   max-width: $max-width;
   margin: auto;
   background-color: #111325;

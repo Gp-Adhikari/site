@@ -78,7 +78,7 @@ header {
   padding: 1rem 0;
 }
 
-.header-wrapper {
+header .header-wrapper {
   max-width: 1400px;
   margin: 1rem auto;
   display: -webkit-box;
@@ -92,11 +92,15 @@ header {
           justify-content: space-between;
 }
 
-.header-wrapper img {
+header .header-wrapper img.logo {
   width: 80px;
 }
 
-.header-wrapper a {
+header .header-wrapper img.burger {
+  display: none;
+}
+
+header .header-wrapper a {
   text-decoration: none;
   color: #fff;
   margin-left: 2rem;
@@ -105,15 +109,15 @@ header {
   border-bottom: 2px solid transparent;
 }
 
-.header-wrapper a.active {
+header .header-wrapper a.active {
   border-bottom: 2px solid #f6a01f;
 }
 
-.header-wrapper a:hover {
+header .header-wrapper a:hover {
   border-bottom: 2px solid rgba(246, 160, 31, 0.5);
 }
 
-.header-wrapper a:nth-child(1) {
+header .header-wrapper a:nth-child(1) {
   margin-left: 0;
 }
 
@@ -402,13 +406,15 @@ header {
 }
 
 .CarrersItem-wrapper .CarrersItem-box p {
-  padding: 1rem 0;
+  padding: 1.3rem 0;
   margin-left: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .CarrersItem-wrapper .CarrersItem-box button {
+  font-size: 1.2rem;
   background-color: #f6a11f;
-  padding: 1rem 1.4rem;
+  padding: 1.3rem 1.8rem;
   border: none;
   border-radius: 0.7rem;
   cursor: pointer;
@@ -482,6 +488,7 @@ header {
 }
 
 .introductionContainer {
+  display: none;
   max-width: 1400px;
   margin: auto;
   background-color: #111325;

@@ -1,9 +1,15 @@
 import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../img/logo.svg";
+import burgerIcon from "../img/menu.svg";
 
 const Header = () => {
   const headerRef = useRef();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   window.onscroll = () => handleNavigation();
 
   const handleNavigation = () => {
@@ -22,15 +28,28 @@ const Header = () => {
     <>
       <header ref={headerRef}>
         <div className="header-wrapper">
-          <img src={logo} alt="logo" />
+          <img src={logo} className="logo" alt="logo" />
           <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/portfolio">Portfolio</NavLink>
-            <NavLink to="/carrers">Carrers</NavLink>
-            <NavLink to="/contact">Contact Us</NavLink>
+            <NavLink to="/" onClick={() => scrollToTop()}>
+              Home
+            </NavLink>
+            <NavLink to="/about" onClick={() => scrollToTop()}>
+              About
+            </NavLink>
+            <NavLink to="/services" onClick={() => scrollToTop()}>
+              Services
+            </NavLink>
+            <NavLink to="/portfolio" onClick={() => scrollToTop()}>
+              Portfolio
+            </NavLink>
+            <NavLink to="/carrers" onClick={() => scrollToTop()}>
+              Carrers
+            </NavLink>
+            <NavLink to="/contact" onClick={() => scrollToTop()}>
+              Contact Us
+            </NavLink>
           </nav>
+          <img className="burger" src={burgerIcon} alt="" />
         </div>
       </header>
     </>
