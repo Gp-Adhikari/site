@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../img/logo.svg";
 import locationIcon from "../img/location-icon.svg";
 import mailIcon from "../img/mail-icon.svg";
@@ -41,7 +42,9 @@ const Footer = () => {
             </div>
             <div className="fourthRow">
               <h2>Get in Touch</h2>
-              <button>Contact Us</button>
+              <Link to="/contact">
+                <input type="button" value="Contact Us" />
+              </Link>
             </div>
           </div>
         </div>

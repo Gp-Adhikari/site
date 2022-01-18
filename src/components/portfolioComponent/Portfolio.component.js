@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import p1 from "../../img/p2.svg";
+import Banner from "../Banner.component";
 import Title from "../Title.component";
 import PortfolioImage from "./portfolioimage.component";
 const Portfolio = () => {
@@ -10,6 +11,7 @@ const Portfolio = () => {
   }, []);
   return (
     <>
+      <Banner text1="Our Recent" text2="Project" />
       <div className="portfolio">
         <Title TitleText="Portfolio" />
         <div className="navBar">

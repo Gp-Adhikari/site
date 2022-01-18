@@ -1,0 +1,238 @@
+@media screen and (max-width: 1450px) {
+  header {
+    padding: 0 2rem;
+    // display: none;
+  }
+
+  .banner-container {
+    .banner-text {
+      margin: 0 1rem;
+    }
+  }
+  .whatWeDoContainer {
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+    .whatWeDoBackground {
+    }
+  }
+  footer {
+    .topFooter {
+      .footerContainer {
+        margin: 0 1.5rem;
+      }
+    }
+    .bottomFooter {
+      margin: 0 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    .topFooter {
+      .footerContainer {
+        .firstRow {
+          .firstRowItem {
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+        .secondRow,
+        .thirdRow {
+          h2 {
+            font-size: 1.2rem;
+          }
+          li {
+            font-size: 1rem;
+          }
+        }
+        .fourthRow {
+          h2 {
+            font-size: 1.2rem;
+          }
+          input {
+            padding: 0.4rem 0;
+          }
+        }
+      }
+    }
+    .bottomFooter {
+      p.copyRightText {
+        font-size: 1rem;
+      }
+      .socialMediaIcons {
+        margin-left: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  header {
+    nav {
+      display: none;
+    }
+    .header-wrapper {
+      img.burger {
+        display: block;
+      }
+    }
+  }
+  .banner-container {
+    padding: 4rem 0;
+    .banner-text {
+      p {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .whatWeDoContainer {
+    .whatWeDoCardContainer {
+      display: grid;
+      grid-template-columns: auto auto;
+
+      .whatWeDo-Card {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  footer {
+    .topFooter {
+      .footerContainer {
+        padding: 2rem 0;
+        .firstRow {
+          line-height: 2rem;
+          .firstRowItem {
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .secondRow,
+        .thirdRow {
+          h2 {
+            font-size: 1rem;
+          }
+          li {
+            font-size: 0.8rem;
+            line-height: 1.5rem;
+          }
+        }
+        .fourthRow {
+          h2 {
+            font-size: 1rem;
+          }
+          input {
+            padding: 0.2rem 0;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .whatWeDoContainer {
+    margin: 0 1.5rem;
+  }
+  footer {
+    .topFooter {
+      .footerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .firstRow {
+          .firstRowItem {
+            p {
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .secondRow,
+        .thirdRow {
+          display: none;
+        }
+        .fourthRow {
+          h2 {
+            font-size: 1.5rem;
+          }
+          input {
+            padding: 0.8rem 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner-container {
+    padding: 2.5rem 0;
+    .banner-text {
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+  .whatWeDoContainer {
+    .whatWeDoCardContainer {
+      display: grid;
+      grid-template-columns: auto;
+
+      .whatWeDo-Card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  footer {
+    .topFooter {
+      .footerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .firstRow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          line-height: 2.5rem;
+        }
+        .fourthRow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .whatWeDoContainer {
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .whatWeDoCardContainer {
+    .whatWeDo-Card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}

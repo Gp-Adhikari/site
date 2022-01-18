@@ -14,13 +14,20 @@ $max-width: 1400px;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+
+body {
+  scroll-behavior: smooth;
+}
 //banner
 
 // Title
 
 .banner-container {
+  background-color: #111325;
+  padding: 8rem 0;
   .banner-text {
-    padding: 2rem;
+    max-width: $max-width;
+    margin: auto;
     p {
       position: relative;
       font-size: 3.5rem;
@@ -31,7 +38,6 @@ $max-width: 1400px;
         width: 12rem;
         margin-left: -6rem;
         height: 100%;
-        z-index: -2;
       }
     }
   }
@@ -67,36 +73,36 @@ header {
   background: $background-color;
   transition: 0.3s ease;
   padding: 1rem 0;
-}
-
-.header-wrapper {
-  max-width: $max-width;
-  margin: 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  img {
-    width: 80px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: 2rem;
-    transition: 0.3s ease;
-    border-bottom: 2px solid transparent;
-
-    &.active {
-      border-bottom: 2px solid $main-color;
+  .header-wrapper {
+    max-width: $max-width;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img.logo {
+      width: 80px;
     }
-
-    &:hover {
-      border-bottom: 2px solid rgba($main-color, 0.5);
+    img.burger {
+      display: none;
     }
+    a {
+      text-decoration: none;
+      color: #fff;
+      margin-left: 2rem;
+      transition: 0.3s ease;
+      border-bottom: 2px solid transparent;
 
-    &:nth-child(1) {
-      margin-left: 0;
+      &.active {
+        border-bottom: 2px solid $main-color;
+      }
+
+      &:hover {
+        border-bottom: 2px solid rgba($main-color, 0.5);
+      }
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -265,10 +271,11 @@ header {
   display: flex;
   justify-content: flex-end;
   .Zpro-intro {
-    width: 45%;
-    padding: 3rem 1.5rem;
-    background-color: #1d2144;
+    width: 60%;
+    padding: 3rem 2rem;
+    background-color: $background-color;
     box-shadow: 2px 2px 15px #000000;
+    margin-top: -13rem;
     p {
       margin-top: 1.5rem;
     }
@@ -281,35 +288,48 @@ header {
   }
 }
 
-// what we do
-
-//careeer
-
-.CareerItem-wrapper {
+//carrers
+.CarrersContainer {
+  margin-top: -2rem;
+  background-color: $background-color;
+  border-radius: 50px 50px 0 0;
+}
+.CarrersItem-wrapper {
   max-width: $max-width;
-  margin: 0 4rem;
-
-  .CareerItem-box {
+  margin: auto;
+  padding: 5rem 0;
+  .CarrersItem-box {
     border-radius: 0.7rem;
     margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #10142e;
-
+    &:first-child {
+      margin-top: 0;
+    }
     p {
+      padding: 1.3rem 0;
       margin-left: 1.6rem;
+      font-size: 1.2rem;
     }
     button {
+      font-size: 1.2rem;
       background-color: #f6a11f;
-      padding: 0.7rem;
-      border-bottom: none;
+      padding: 1.3rem 1.8rem;
+      border: none;
       border-radius: 0.7rem;
       cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      &:hover {
+        box-shadow: $main-color-hover;
+      }
     }
   }
 }
 
+// what we do
 .whatWeDoContainer {
   padding: 5rem 0;
   position: relative;
@@ -360,6 +380,7 @@ header {
 
 //Introduction
 .introductionContainer {
+  display: none;
   max-width: $max-width;
   margin: auto;
   background-color: #111325;
@@ -387,6 +408,11 @@ header {
         margin-top: 1.5rem;
         background-color: $main-color;
         font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+          box-shadow: $main-color-hover;
+        }
       }
     }
     .light-Bulb {
@@ -447,7 +473,6 @@ header {
 
   .Synical-botText {
     width: 50%;
-
     h1 {
       font-size: 25px;
     }
@@ -460,15 +485,47 @@ header {
       padding: 0.8rem 1.5rem;
       border-radius: 10px 0px;
       margin-top: 1.5rem;
-      background-color: #266fff;
+      background-color: $secondary-color;
       font-weight: bold;
       color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        box-shadow: $secondary-color-hover;
+      }
     }
   }
 }
+// ourTeamContainer
+.ourTeamContainer {
+  max-width: $max-width;
+  margin: auto;
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5rem;
+  .ourTeamCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      z-index: 11;
+      width: 270px;
+      height: 320px;
+    }
+    .ourTeamCardDesc {
+      background-color: #111325;
+      border-radius: 20px;
+      padding: 4rem 1rem 1rem 1rem;
+      margin-top: -3rem;
+    }
+  }
+}
+
 //Portfolio
 .portfolio {
-  background-color: #1d2144;
+  margin-top: -2rem;
+  background-color: $background-color;
   border-radius: 50px 50px 0 0;
   .navBar {
     max-width: $max-width;
@@ -509,21 +566,6 @@ header {
     max-width: $max-width;
     margin: auto;
   }
-
-  // .portfolio-image-imgCard-skeleton {
-  //   width: 100px;
-  //   height: 100px;
-  //   animation: skeleton-loading 1s linear infinite alternate;
-  // }
-
-  // @keyframes skeleton-loading {
-  //   0% {
-  //     background-color: hsl(200, 20%, 70%);
-  //   }
-  //   100% {
-  //     background-color: hsl(200, 20%, 95%);
-  //   }
-  // }
 }
 
 //applynow
@@ -655,7 +697,7 @@ footer {
         h2 {
           margin: 2rem 0;
         }
-        button {
+        input {
           width: 100%;
           padding: 0.7rem 0;
           border: none;
@@ -663,6 +705,11 @@ footer {
           border-radius: 44px;
           font-weight: 700;
           font-size: 1.1rem;
+          cursor: pointer;
+          transition: 0.3s ease;
+          &:hover {
+            box-shadow: $main-color-hover;
+          }
         }
       }
     }
@@ -716,53 +763,119 @@ footer {
     }
   }
 }
+.contactContent {
+  background-color: $background-color;
+  padding: 5rem 0;
+  margin-top: -2rem;
+  border-radius: 50px 50px 0 0;
+}
 .contact-container {
-  padding: 2rem;
-  align-items: center;
-  justify-content: space-between;
+  max-width: $max-width;
+  margin: auto;
   display: flex;
+  justify-content: space-between;
   .Contact {
-    margin-right: 3rem;
     background: #111325;
-    height: 350px;
-    width: 250px;
+    width: 45%;
+    height: fit-content;
+    padding: 5rem 0;
+    border-radius: 3rem 0px;
     .Contact-box {
-      background: #10132a;
-      padding: 0 1rem;
+      padding: 0 3rem;
       .Contact-text {
         display: flex;
         align-items: center;
-        margin-right: 2rem;
-        .line {
-          width: 2rem;
-          height: 3px;
-          border: 1px solid #ffffff;
+        margin-bottom: 2rem;
+        p {
+          margin-right: 2rem;
         }
+        .line {
+          width: 3rem;
+          height: 2px;
+          background-color: #ffffff;
+        }
+      }
+      h1 {
+        font-size: 5rem;
       }
     }
   }
   .contact-wrapper {
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+    padding: 0 3rem;
     .contact-1 {
       display: flex;
-      line-height: 2rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .contact-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 2rem;
+        padding: 0.7rem;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+      p {
+        font-size: 1.2rem;
+      }
     }
   }
   .Contact-right {
+    width: 45%;
     display: flex;
     flex-direction: column;
-    input {
-      width: 500px;
+    h3 {
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+    }
+    textarea {
+      resize: none;
+      overflow-y: auto;
+      height: 12rem;
+    }
+    input,
+    textarea {
+      border-radius: 5px;
+      padding: 0.4rem;
+      margin: 1.5rem 0;
     }
     button {
       background: #f6a11f;
-      border-radius: 20px;
       border: none;
-      width: 50px;
-      height: 20px;
+      font-weight: bold;
+      padding: 0.5rem 1.8rem;
+      align-self: flex-start;
+      border-radius: 10px 0px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 2rem;
+      &:hover {
+        box-shadow: $main-color-hover;
+      }
+    }
+  }
+}
+//404 Page
+.container-404 {
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+  button {
+    padding: 1rem 1.5rem;
+    background-color: $secondary-color;
+    font-weight: bold;
+    margin-top: 2rem;
+    border: none;
+    color: #ffffff;
+    border-radius: 40px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      box-shadow: $secondary-color-hover;
     }
   }
 }

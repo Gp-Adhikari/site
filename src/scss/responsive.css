@@ -1,0 +1,216 @@
+@media screen and (max-width: 1450px) {
+  header {
+    padding: 0 2rem;
+  }
+  .banner-container .banner-text {
+    margin: 0 1rem;
+  }
+  .whatWeDoContainer {
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+  }
+  footer .topFooter .footerContainer {
+    margin: 0 1.5rem;
+  }
+  footer .bottomFooter {
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  footer .topFooter .footerContainer .firstRow .firstRowItem p {
+    font-size: 1rem;
+  }
+  footer .topFooter .footerContainer .secondRow h2,
+  footer .topFooter .footerContainer .thirdRow h2 {
+    font-size: 1.2rem;
+  }
+  footer .topFooter .footerContainer .secondRow li,
+  footer .topFooter .footerContainer .thirdRow li {
+    font-size: 1rem;
+  }
+  footer .topFooter .footerContainer .fourthRow h2 {
+    font-size: 1.2rem;
+  }
+  footer .topFooter .footerContainer .fourthRow input {
+    padding: 0.4rem 0;
+  }
+  footer .bottomFooter p.copyRightText {
+    font-size: 1rem;
+  }
+  footer .bottomFooter .socialMediaIcons {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  header nav {
+    display: none;
+  }
+  header .header-wrapper img.burger {
+    display: block;
+  }
+  .banner-container {
+    padding: 4rem 0;
+  }
+  .banner-container .banner-text p {
+    font-size: 2.5rem;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card h3 {
+    font-size: 20px;
+  }
+  footer .topFooter .footerContainer {
+    padding: 2rem 0;
+  }
+  footer .topFooter .footerContainer .firstRow {
+    line-height: 2rem;
+  }
+  footer .topFooter .footerContainer .firstRow .firstRowItem p {
+    font-size: 0.8rem;
+  }
+  footer .topFooter .footerContainer .secondRow h2,
+  footer .topFooter .footerContainer .thirdRow h2 {
+    font-size: 1rem;
+  }
+  footer .topFooter .footerContainer .secondRow li,
+  footer .topFooter .footerContainer .thirdRow li {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  footer .topFooter .footerContainer .fourthRow h2 {
+    font-size: 1rem;
+  }
+  footer .topFooter .footerContainer .fourthRow input {
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .whatWeDoContainer {
+    margin: 0 1.5rem;
+  }
+  footer .topFooter .footerContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .topFooter .footerContainer .firstRow .firstRowItem p {
+    font-size: 1.2rem;
+  }
+  footer .topFooter .footerContainer .secondRow,
+  footer .topFooter .footerContainer .thirdRow {
+    display: none;
+  }
+  footer .topFooter .footerContainer .fourthRow h2 {
+    font-size: 1.5rem;
+  }
+  footer .topFooter .footerContainer .fourthRow input {
+    padding: 0.8rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .banner-container {
+    padding: 2.5rem 0;
+  }
+  .banner-container .banner-text p {
+    font-size: 2rem;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card h3 {
+    font-size: 1.5rem;
+  }
+  .whatWeDoContainer .whatWeDoCardContainer .whatWeDo-Card p {
+    text-align: center;
+    font-size: 1rem;
+  }
+  footer .topFooter .footerContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .topFooter .footerContainer .firstRow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    line-height: 2.5rem;
+  }
+  footer .topFooter .footerContainer .fourthRow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .whatWeDoContainer {
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .whatWeDoCardContainer .whatWeDo-Card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

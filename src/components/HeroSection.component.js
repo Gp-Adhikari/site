@@ -1,6 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import WeekBox from "../img/weekBox.svg";
+
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const HeroSection = () => {
   const monday = useRef();
   const tuesday = useRef();
@@ -15,6 +21,49 @@ const HeroSection = () => {
   const today = new Date().getDay();
   const todaysDay = days[today];
 
+  //gsap timeline
+  const tl = gsap.timeline({});
+
+  useEffect(() => {
+    tl.from(".Text p", 1.5, { opacity: 0, y: 10, stagger: { amount: 1 } });
+    tl.from(
+      ".heroText .motto",
+      0.5,
+      {
+        opacity: 0,
+        y: 10,
+        ease: Power1.inOut,
+        stagger: { amount: 1 },
+      },
+      "-=0.8"
+    );
+    tl.from(".heroText input", 0.5, {
+      opacity: 0,
+      y: 10,
+      ease: Power1.inOut,
+    });
+
+    //days bar animation
+    gsap.from(".days", 1.5, {
+      opacity: 0,
+      ease: Power1.inOut,
+      scale: 0,
+      stagger: { amount: 0.5 },
+    });
+
+    //statsContainer animation
+    new gsap.timeline({
+      scrollTrigger: {
+        trigger: ".statsContainer",
+        scrub: false,
+        start: "top 90%",
+      },
+    }).from(".statsContainer", 0.5, {
+      opacity: 0,
+    });
+  }, [tl]);
+
+  //useeffect for days
   useEffect(() => {
     const daysElement = [
       sunday,
