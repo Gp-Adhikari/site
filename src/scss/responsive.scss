@@ -8,11 +8,11 @@
   }
   .banner-container {
     .banner-text {
-      margin: 0 1rem;
+      margin: 0 2rem;
     }
   }
   .whatWeDoContainer {
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
     background-color: #111325;
     .whatWeDoBackground {
       display: none;
@@ -20,26 +20,37 @@
   }
   .whatWeUseContainer {
     background-color: $background-color;
+    padding: 0 2rem 3rem 0;
+  }
+  .introductionContainer {
+    margin: 0 2rem;
+    .introductionPart {
+      margin: 0 2rem;
+    }
   }
   .CarrersContainer {
     .CarrersItem-wrapper {
-      padding: 0 2rem;
+      padding: 0 2rem 2rem 2rem;
     }
-  }
-  .RecentProject-Section {
-    display: none;
   }
   .statsContainer {
     display: none;
   }
-
   .portfolio {
     padding: 0 2rem;
+
+    .aboutUs-Zpro {
+      margin: 0 1.5rem;
+    }
+  }
+  .RecentProject-Section {
+    margin: 0 1.5rem;
   }
   footer {
     .topFooter {
+      padding: 0 2rem;
       .footerContainer {
-        margin: 0 1.5rem;
+        padding: 1rem 0;
       }
     }
     .bottomFooter {
@@ -80,12 +91,36 @@
     }
   }
 }
+@media screen and (max-width: 1335px) {
+  .aboutUs-Zpro {
+    margin: 0 1.5rem;
+  }
+}
 
 @media screen and (max-width: 900px) {
   .portfolio {
     .portfolioContainer {
       grid-template-columns: 1fr 1fr;
       grid-gap: 1rem;
+    }
+  }
+  .banner-container {
+    .banner-text {
+      p {
+        font-size: 40px;
+      }
+    }
+  }
+  .aboutUs-Zpro {
+    .Zpro-intro {
+      padding: 2rem 1rem;
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        margin-top: 1rem;
+      }
     }
   }
   footer {
@@ -119,7 +154,34 @@
     }
   }
 }
-
+@media screen and (max-width: 800px) {
+  .introductionContainer {
+    .introductionPart {
+      position: relative;
+      .introductionContent {
+        z-index: 1;
+        p {
+          width: 100%;
+        }
+      }
+      .light-Bulb {
+        position: absolute;
+        background-color: #1113251c;
+        left: 50%;
+        transform: translateX(-50%);
+        // top: 50%;
+        img {
+          &:last-child {
+            margin-top: -1rem;
+          }
+          &:first-child {
+            margin-top: -4rem;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 750px) {
   header {
     nav {
@@ -156,12 +218,54 @@
       }
     }
   }
+  .CarrersContainer {
+    .CarrersItem-wrapper {
+      .CarrersItem-box {
+        p {
+          font-size: 1rem;
+        }
+        input {
+          font-size: 1rem;
+          padding: 1rem 1.5rem;
+        }
+      }
+    }
+  }
   .banner-container {
     padding: 4rem 0;
+    text-align: center;
     .banner-text {
       p {
         font-size: 2.5rem;
+        &:first-child:after {
+          width: 50%;
+        }
       }
+    }
+  }
+  .RecentProject-Section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem;
+    img {
+      width: 100%;
+    }
+    .Synical-botText {
+      width: 100%;
+
+      h1 {
+        margin-top: 2rem;
+      }
+    }
+  }
+  .aboutUs-Zpro {
+    display: flex;
+    justify-content: center;
+
+    .Zpro-intro {
+      width: 100%;
+      margin-top: 1rem;
     }
   }
   .whatWeDoContainer {
@@ -211,6 +315,7 @@
     }
   }
 }
+
 @media screen and (max-width: 650px) {
   .whatWeDoContainer {
   }
@@ -255,6 +360,19 @@
       }
     }
   }
+  .portfolio {
+    .portfolioContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  .RecentProject-Section {
+    .Synical-botText {
+      width: 100%;
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
   .whatWeDoContainer {
     .whatWeDoCardContainer {
       display: grid;
@@ -268,10 +386,24 @@
 
         h3 {
           font-size: 1.5rem;
+          margin-bottom: 2rem;
         }
         p {
           text-align: center;
           font-size: 1rem;
+        }
+      }
+    }
+  }
+  .CarrersContainer {
+    .CarrersItem-wrapper {
+      .CarrersItem-box {
+        p {
+          font-size: 0.8rem;
+        }
+        input {
+          font-size: 0.8rem;
+          padding: 0.7rem 1rem;
         }
       }
     }
@@ -298,7 +430,14 @@
 }
 
 @media screen and (max-width: 415px) {
-  .whatWeDoContainer {
+  .banner-container {
+    .banner-text {
+      p {
+        &:first-child:after {
+          // width: 1rem;
+        }
+      }
+    }
   }
 }
 

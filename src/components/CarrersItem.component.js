@@ -13,12 +13,11 @@ const CarrersItem = () => {
           {carrerTitle.map((carrer) => (
             <div className="CarrersItem-box" key={carrer.id}>
               <p>{carrer.Title}</p>
-              <button
+              <input
                 type="button"
+                value="Apply Now"
                 onClick={() => navigate("/carrers/" + carrer.id)}
-              >
-                Apply Now
-              </button>
+              />
             </div>
           ))}
         </div>
