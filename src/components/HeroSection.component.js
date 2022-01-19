@@ -37,11 +37,16 @@ const HeroSection = () => {
       },
       "-=0.8"
     );
-    tl.from(".heroText input", 0.5, {
-      opacity: 0,
-      y: 10,
-      ease: Power1.inOut,
-    });
+    tl.from(
+      ".heroText input",
+      0.5,
+      {
+        opacity: 0,
+        y: 10,
+        ease: Power1.inOut,
+      },
+      "-=0.5"
+    );
 
     //days bar animation
     gsap.from(".days", 1.5, {

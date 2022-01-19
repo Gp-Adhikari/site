@@ -1063,6 +1063,10 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
   font-size: 5rem;
 }
 
+.contact-container .Contact .Contact-box h1 code {
+  color: #f6a01f;
+}
+
 .contact-container .contact-wrapper {
   margin: 2rem 0;
   padding: 0 3rem;
@@ -1173,4 +1177,3 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
   -webkit-box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
           box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
 }
-/*# sourceMappingURL=index.css.map */

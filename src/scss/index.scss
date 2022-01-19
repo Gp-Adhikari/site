@@ -809,6 +809,10 @@ footer {
       }
       h1 {
         font-size: 5rem;
+
+        code {
+          color: $main-color;
+        }
       }
     }
   }

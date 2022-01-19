@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import locationIcon from "../img/location-black.svg";
 import mailIcon from "../img/mail-black.svg";
 import phoneIcon from "../img/phone-black.svg";
 import Banner from "./Banner.component";
+
+import confetti from "canvas-confetti";
+
 const ContactUs = () => {
+  //confetti for this page
+  useEffect(() => {
+    var end = Date.now() + 1 * 1000;
+
+    // go Buckeyes!
+    var colors = ["#f6a01f", "#ffffff"];
+
+    (function frame() {
+      confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 50,
+        origin: { x: 0, y: 1 },
+        colors: colors,
+      });
+      confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 50,
+        origin: { x: 1, y: 1 },
+        colors: colors,
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <Banner text1="Contact Us" />
@@ -15,7 +47,9 @@ const ContactUs = () => {
                 <p>Let’s Talk</p>
                 <div className="line"></div>
               </div>
-              <h1>Speak With Expert Engineers.</h1>
+              <h1>
+                Speak With <code>Expert</code> Engineers.
+              </h1>
             </div>
             <div className="contact-wrapper">
               <div className="contact-1">
