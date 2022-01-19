@@ -1,7 +1,7 @@
 @import "./colors";
 @media screen and (max-width: 1450px) {
   header {
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
   }
   .heroContainer {
     padding: 0 2rem;
@@ -10,6 +10,9 @@
     .banner-text {
       margin: 0 2rem;
     }
+  }
+  .ourTeamContainer {
+    display: none;
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;
@@ -169,13 +172,14 @@
         background-color: #1113251c;
         left: 50%;
         transform: translateX(-50%);
-        // top: 50%;
+        opacity: 0.2;
+        top: 0;
         img {
           &:last-child {
             margin-top: -1rem;
           }
           &:first-child {
-            margin-top: -4rem;
+            margin-top: 0;
           }
         }
       }
@@ -196,8 +200,8 @@
   .heroContainer {
     .heroDiv {
       img {
-        width: 100vw;
-        height: 100vh;
+        max-width: 500px;
+        width: 100%;
       }
       .content-wrapper {
         .circle {

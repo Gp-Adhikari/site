@@ -1,12 +1,15 @@
 @media screen and (max-width: 1450px) {
   header {
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
   }
   .heroContainer {
     padding: 0 2rem;
   }
   .banner-container .banner-text {
     margin: 0 2rem;
+  }
+  .ourTeamContainer {
+    display: none;
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;
@@ -165,12 +168,14 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    opacity: 0.2;
+    top: 0;
   }
   .introductionContainer .introductionPart .light-Bulb img:last-child {
     margin-top: -1rem;
   }
   .introductionContainer .introductionPart .light-Bulb img:first-child {
-    margin-top: -4rem;
+    margin-top: 0;
   }
 }
 
@@ -182,8 +187,8 @@
     display: block;
   }
   .heroContainer .heroDiv img {
-    width: 100vw;
-    height: 100vh;
+    max-width: 500px;
+    width: 100%;
   }
   .heroContainer .heroDiv .content-wrapper .circle {
     width: 50px;
@@ -416,3 +421,4 @@
             flex-direction: column;
   }
 }
+/*# sourceMappingURL=responsive.css.map */
