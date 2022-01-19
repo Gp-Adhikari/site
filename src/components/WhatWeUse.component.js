@@ -12,7 +12,7 @@ import LibraryIcon from "../img/library-solid-icon.svg";
 const WhatWeUse = () => {
   return (
     <>
-      <div className="whatWeDoContainer">
+      <div className="whatWeDoContainer whatWeUseContainer">
         <div className="whatWeDoCardContainer">
           <WhatWeDoCard
             img={ReactJsIcon}

@@ -1,19 +1,40 @@
+@import "./colors";
 @media screen and (max-width: 1450px) {
   header {
     padding: 0 2rem;
-    // display: none;
   }
-
+  .heroContainer {
+    padding: 0 2rem;
+  }
   .banner-container {
     .banner-text {
       margin: 0 1rem;
     }
   }
   .whatWeDoContainer {
-    padding: 1rem 0;
-    margin: 0 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #111325;
     .whatWeDoBackground {
+      display: none;
     }
+  }
+  .whatWeUseContainer {
+    background-color: $background-color;
+  }
+  .CarrersContainer {
+    .CarrersItem-wrapper {
+      padding: 0 2rem;
+    }
+  }
+  .RecentProject-Section {
+    display: none;
+  }
+  .statsContainer {
+    display: none;
+  }
+
+  .portfolio {
+    padding: 0 2rem;
   }
   footer {
     .topFooter {
@@ -23,11 +44,50 @@
     }
     .bottomFooter {
       margin: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      p.copyRightText {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+      }
+      .socialMediaIcons {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+    .heroText {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .Text {
+        font-size: 3rem;
+        p {
+          text-align: center;
+          line-height: 4rem;
+        }
+        div {
+          justify-content: center;
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 900px) {
+  .portfolio {
+    .portfolioContainer {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+  }
   footer {
     .topFooter {
       .footerContainer {
@@ -57,14 +117,6 @@
         }
       }
     }
-    .bottomFooter {
-      p.copyRightText {
-        font-size: 1rem;
-      }
-      .socialMediaIcons {
-        margin-left: 3rem;
-      }
-    }
   }
 }
 
@@ -76,6 +128,31 @@
     .header-wrapper {
       img.burger {
         display: block;
+      }
+    }
+  }
+  .heroContainer {
+    .heroDiv {
+      img {
+        width: 100vw;
+        height: 100vh;
+      }
+      .content-wrapper {
+        .circle {
+          width: 50px;
+          height: 50px;
+        }
+        .weekDay {
+          .days {
+            margin-right: 1.2rem;
+            .day {
+              height: 120px;
+              &.hero-active {
+                height: 150px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -136,7 +213,6 @@
 }
 @media screen and (max-width: 650px) {
   .whatWeDoContainer {
-    margin: 0 1.5rem;
   }
   footer {
     .topFooter {
@@ -148,7 +224,8 @@
         .firstRow {
           .firstRowItem {
             p {
-              font-size: 1.2rem;
+              font-size: 1rem;
+              line-height: 2rem;
             }
           }
         }
@@ -222,7 +299,6 @@
 
 @media screen and (max-width: 415px) {
   .whatWeDoContainer {
-    margin: 0 1.5rem;
   }
 }
 

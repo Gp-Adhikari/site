@@ -4,24 +4,23 @@ import logo from "../img/logo.svg";
 import burgerIcon from "../img/menu.svg";
 
 const Header = () => {
-  const headerRef = useRef();
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const headerRef = useRef();
 
-  window.onscroll = () => handleNavigation();
+  // window.onscroll = () => handleNavigation();
 
   const handleNavigation = () => {
-    if (headerRef.current !== undefined) {
-      if (window.scrollY > 50 || headerRef.current.scrollTop > 50) {
-        return (headerRef.current.style = `
-              padding: 0.4rem 0;
-                `);
-      } else {
-        return headerRef.current.setAttribute("style", "");
-      }
-    }
+    //   if (headerRef.current !== undefined) {
+    //     if (window.scrollY > 50 || headerRef.current.scrollTop > 50) {
+    //       return (headerRef.current.style = `
+    //             padding: 0.4rem 0;
+    //               `);
+    // } else {
+    //       return headerRef.current.setAttribute("style", "");
+    //     }
+    //   }
   };
 
   return (

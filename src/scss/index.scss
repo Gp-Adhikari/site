@@ -7,7 +7,6 @@
 }
 //variables
 $max-width: 1400px;
-
 * {
   margin: 0;
   padding: 0;
@@ -19,8 +18,6 @@ body {
   scroll-behavior: smooth;
 }
 //banner
-
-// Title
 
 .banner-container {
   background-color: #111325;
@@ -43,6 +40,7 @@ body {
   }
 }
 
+// Title
 .Title {
   padding: 4rem 0;
   font-size: 2.2rem;
@@ -118,8 +116,8 @@ header {
   .heroText {
     width: 30%;
     .Text {
+      font-size: 4rem;
       p {
-        font-size: 4rem;
         font-weight: bold;
         line-height: 5rem;
       }
@@ -232,7 +230,7 @@ header {
 }
 .sectionBreaker {
   max-width: $max-width;
-  margin: 6rem auto;
+  margin: 6rem auto 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,7 +295,7 @@ header {
 .CarrersItem-wrapper {
   max-width: $max-width;
   margin: auto;
-  padding: 5rem 0;
+  padding: 1rem 0 5rem 0;
   .CarrersItem-box {
     border-radius: 0.7rem;
     margin-top: 2rem;
@@ -376,6 +374,9 @@ header {
       }
     }
   }
+}
+.whatWeUseContainer {
+  padding: 1rem 0;
 }
 
 //Introduction
@@ -465,7 +466,7 @@ header {
 
 //Recent Projects
 .RecentProject-Section {
-  padding: 5rem 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   max-width: $max-width;
@@ -531,13 +532,16 @@ header {
     max-width: $max-width;
     margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     ul {
+      width: 550px;
+      margin: auto;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       li {
         color: white;
-        margin-right: 6rem;
         text-decoration: none;
         cursor: pointer;
         transition: 0.3s ease;
@@ -565,6 +569,9 @@ header {
     padding: 2rem 0;
     max-width: $max-width;
     margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3rem;
   }
 }
 
@@ -721,12 +728,14 @@ footer {
     display: flex;
     padding: 1.2rem 0;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+
     p.copyRightText {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-size: 0.8rem;
     }
     .socialMediaIcons {
       display: flex;

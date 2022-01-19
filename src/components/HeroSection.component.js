@@ -56,7 +56,7 @@ const HeroSection = () => {
       scrollTrigger: {
         trigger: ".statsContainer",
         scrub: false,
-        start: "top 90%",
+        start: "top 80%",
       },
     }).from(".statsContainer", 0.5, {
       opacity: 0,

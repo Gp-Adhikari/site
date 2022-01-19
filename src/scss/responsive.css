@@ -2,22 +2,102 @@
   header {
     padding: 0 2rem;
   }
+  .heroContainer {
+    padding: 0 2rem;
+  }
   .banner-container .banner-text {
     margin: 0 1rem;
   }
   .whatWeDoContainer {
-    padding: 1rem 0;
-    margin: 0 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #111325;
+  }
+  .whatWeDoContainer .whatWeDoBackground {
+    display: none;
+  }
+  .whatWeUseContainer {
+    background-color: #090a13;
+  }
+  .CarrersContainer .CarrersItem-wrapper {
+    padding: 0 2rem;
+  }
+  .RecentProject-Section {
+    display: none;
+  }
+  .statsContainer {
+    display: none;
+  }
+  .portfolio {
+    padding: 0 2rem;
   }
   footer .topFooter .footerContainer {
     margin: 0 1.5rem;
   }
   footer .bottomFooter {
     margin: 0 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .bottomFooter p.copyRightText {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  footer .bottomFooter .socialMediaIcons {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .heroContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .heroContainer .heroText {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .heroContainer .heroText .Text {
+    font-size: 3rem;
+  }
+  .heroContainer .heroText .Text p {
+    text-align: center;
+    line-height: 4rem;
+  }
+  .heroContainer .heroText .Text div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media screen and (max-width: 900px) {
+  .portfolio .portfolioContainer {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
   footer .topFooter .footerContainer .firstRow .firstRowItem p {
     font-size: 1rem;
   }
@@ -35,12 +115,6 @@
   footer .topFooter .footerContainer .fourthRow input {
     padding: 0.4rem 0;
   }
-  footer .bottomFooter p.copyRightText {
-    font-size: 1rem;
-  }
-  footer .bottomFooter .socialMediaIcons {
-    margin-left: 3rem;
-  }
 }
 
 @media screen and (max-width: 750px) {
@@ -49,6 +123,23 @@
   }
   header .header-wrapper img.burger {
     display: block;
+  }
+  .heroContainer .heroDiv img {
+    width: 100vw;
+    height: 100vh;
+  }
+  .heroContainer .heroDiv .content-wrapper .circle {
+    width: 50px;
+    height: 50px;
+  }
+  .heroContainer .heroDiv .content-wrapper .weekDay .days {
+    margin-right: 1.2rem;
+  }
+  .heroContainer .heroDiv .content-wrapper .weekDay .days .day {
+    height: 120px;
+  }
+  .heroContainer .heroDiv .content-wrapper .weekDay .days .day.hero-active {
+    height: 150px;
   }
   .banner-container {
     padding: 4rem 0;
@@ -93,9 +184,6 @@
 }
 
 @media screen and (max-width: 650px) {
-  .whatWeDoContainer {
-    margin: 0 1.5rem;
-  }
   footer .topFooter .footerContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -108,7 +196,8 @@
             justify-content: space-between;
   }
   footer .topFooter .footerContainer .firstRow .firstRowItem p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 2rem;
   }
   footer .topFooter .footerContainer .secondRow,
   footer .topFooter .footerContainer .thirdRow {
@@ -187,12 +276,6 @@
   }
   footer .topFooter .footerContainer .fourthRow {
     display: none;
-  }
-}
-
-@media screen and (max-width: 415px) {
-  .whatWeDoContainer {
-    margin: 0 1.5rem;
   }
 }
 

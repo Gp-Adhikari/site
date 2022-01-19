@@ -49,7 +49,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="bottomFooter">
-          <p></p>
           <p className="copyRightText">
             Copyright &copy; 2021 Zpro . All Rights Reserved.
           </p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import websiteDevelopmentIcon from "../../img/website-development-icon.svg";
 import WhatWeDoCard from "./WhatWeDo-Card.component";
 import domainAndHostingIcon from "../../img/hosting-icon.svg";
@@ -7,7 +7,28 @@ import contentWritingIcon from "../../img/content-writing-icon.svg";
 import websiteRedesignIcon from "../../img/redesign-icon.svg";
 import logoDesignIcon from "../../img/logo-icon.svg";
 import WhatWeDoBg from "../../img/WhatWeDobackground.svg";
+
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const WhatWeDo = () => {
+  useEffect(() => {
+    //WhatWeDo animation
+
+    new gsap.timeline({
+      scrollTrigger: {
+        trigger: ".whatWeDoContainer",
+        scrub: false,
+        start: "top 50%",
+      },
+    }).from(".whatWeDo-Card", 2, {
+      opacity: 0,
+      ease: Power1.inOut,
+      stagger: { amount: 1 },
+    });
+  }, []);
   return (
     <>
       <div className="whatWeDoContainer">
