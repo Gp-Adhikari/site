@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import p1 from "../../img/p2.svg";
-import p2 from "../../img/p3.svg";
-import p3 from "../../img/p4.svg";
-import p4 from "../../img/p5.svg";
-import p5 from "../../img/p6.svg";
+import p1 from "../../img/p2.png";
+import p2 from "../../img/p3.png";
+import p3 from "../../img/p4.png";
+import p4 from "../../img/p5.png";
+import p5 from "../../img/p6.png";
 import Banner from "../Banner.component";
 import Title from "../Title.component";
 import PortfolioImage from "./portfolioimage.component";

@@ -12,7 +12,8 @@
     }
   }
   .ourTeamContainer {
-    display: none;
+    padding: 0 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;

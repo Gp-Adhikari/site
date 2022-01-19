@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import recentProjectImg from ".././img/SynicalBot-projectimg.svg";
+import recentProjectImg from ".././img/SynicalBot-projectimg.png";
 const RecentProjects = () => {
   return (
     <>

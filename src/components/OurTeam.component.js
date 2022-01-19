@@ -1,5 +1,5 @@
 import React from "react";
-import subarnPhoto from "../img/subarn.svg";
+import subarnPhoto from "../img/subarn.png";
 
 const OurTeam = () => {
   return (

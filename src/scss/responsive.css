@@ -9,7 +9,9 @@
     margin: 0 2rem;
   }
   .ourTeamContainer {
-    display: none;
+    padding: 0 2rem;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;
