@@ -777,14 +777,14 @@ footer {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  // padding: 3rem;
+  // padding: 5rem 3rem;
   .Contact {
-    margin-right: 3rem;
+    margin-right: 8rem;
     background: #111325;
     // width: 45%;
     // height: fit-content;
     padding: 5rem 0;
-    border-radius: 3rem 0px;
+    border-radius: 3rem 1px;
     .Contact-box {
       padding: 0 3rem;
       .Contact-text {
@@ -830,7 +830,8 @@ footer {
     }
   }
   .Contact-right {
-    width: 45%;
+    // width: 45%;
+    padding: 0 10rem;
     display: flex;
     flex-direction: column;
     h3 {

@@ -1007,10 +1007,10 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 }
 
 .contact-container .Contact {
-  margin-right: 3rem;
+  margin-right: 8rem;
   background: #111325;
   padding: 5rem 0;
-  border-radius: 3rem 0px;
+  border-radius: 3rem 1px;
 }
 
 .contact-container .Contact .Contact-box {
@@ -1081,7 +1081,7 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 }
 
 .contact-container .Contact-right {
-  width: 45%;
+  padding: 0 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
