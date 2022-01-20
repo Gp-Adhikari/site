@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import "./scss/loader.css";
 import "./scss/responsive.css";
+import "./scss/contact.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const Footer = lazy(() => import("./components/Footer.component"));
 const Header = lazy(() => import("./components/Header.component"));

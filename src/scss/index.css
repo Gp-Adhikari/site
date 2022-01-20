@@ -1009,7 +1009,7 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 
 .contactContent {
   background-color: #090a13;
-  padding: 5rem 0;
+  padding: 4rem 0;
   margin-top: -2rem;
   border-radius: 50px 50px 0 0;
 }
@@ -1017,40 +1017,38 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 .contact-container {
   max-width: 1400px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 2rem 0;
 }
 
 .contact-container .Contact {
   background: #111325;
-  width: 45%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 5rem 0;
-  border-radius: 3rem 0px;
+  padding: 3rem 0rem;
+  border-radius: 3rem 1px;
 }
 
 .contact-container .Contact .Contact-box {
-  padding: 0 3rem;
+  padding: 0rem 3rem;
+  margin-bottom: 4rem;
 }
 
 .contact-container .Contact .Contact-box .Contact-text {
+  margin-bottom: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 2rem;
+  padding: 0rem 2rem;
 }
 
 .contact-container .Contact .Contact-box .Contact-text p {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 .contact-container .Contact .Contact-box .Contact-text .line {
@@ -1068,7 +1066,7 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 }
 
 .contact-container .contact-wrapper {
-  margin: 2rem 0;
+  margin: 3rem 0;
   padding: 0 3rem;
 }
 
@@ -1079,7 +1077,7 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.5rem;
+  line-height: 4rem;
 }
 
 .contact-container .contact-wrapper .contact-1:last-child {
@@ -1097,7 +1095,7 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
       -ms-flex-pack: center;
           justify-content: center;
   margin-right: 2rem;
-  padding: 0.7rem;
+  padding: 0.6rem;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -1107,7 +1105,6 @@ footer .bottomFooter .socialMediaIcons .circle:first-child {
 }
 
 .contact-container .Contact-right {
-  width: 45%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,0 +1,357 @@
+@media screen and (max-width: 1450px) {
+  .contactContent {
+    padding: 2rem 0;
+    margin: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .contactContent {
+    padding: 2rem 0;
+    margin: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contactContent .contact-container .Contact .Contact-box {
+    padding: 0 2rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    margin-bottom: 2rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 3rem;
+  }
+  .contactContent .contact-container .contact-wrapper {
+    padding: 0 1rem;
+  }
+  .contactContent .contact-container .contact-wrapper img {
+    width: 15px;
+  }
+  .contactContent .contact-container .contact-wrapper .contact-1 {
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+    line-height: 2rem;
+  }
+  .contactContent .contact-container .contact-wrapper .contact-1 p {
+    font-size: 0.8rem;
+  }
+  .contactContent .Contact-right {
+    margin: 1rem;
+  }
+  .contactContent .Contact-right h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .contactContent .Contact-right textarea {
+    height: 5rem;
+  }
+  .contactContent .Contact-right input,
+  .contactContent .Contact-right textarea {
+    padding: 0.2rem;
+    margin: 1rem 0;
+  }
+  .contactContent .Contact-right button {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .contactContent .contact-container .Contact .Contact-box {
+    padding: 0 2rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    margin-bottom: 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 3rem;
+  }
+  .contactContent .contact-container .contact-wrapper {
+    padding: 1rem 0;
+  }
+  .contactContent .contact-container .contact-wrapper img {
+    width: 15px;
+  }
+  .contactContent .contact-container .contact-wrapper .contact-1 {
+    padding: 1rem 0;
+    margin: 0 1.5rem;
+    line-height: 1rem;
+  }
+  .contactContent .contact-container .contact-wrapper .contact-1 p {
+    font-size: 0.8rem;
+  }
+  .contactContent .Contact-right {
+    padding: 0 5rem;
+  }
+  .contactContent .Contact-right h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contactContent .Contact-right textarea {
+    height: 5rem;
+  }
+  .contactContent .Contact-right input,
+  .contactContent .Contact-right textarea {
+    padding: 0 0.5rem;
+    margin: 1rem 0;
+  }
+  .contactContent .Contact-right button {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .contactContent {
+    padding: 3rem 0;
+    margin: 0 3rem;
+  }
+  .contactContent .contact-container {
+    padding: 0 2rem;
+    margin: 2rem 0;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    padding: 0.2rem 0;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text p {
+    margin-right: 1rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 2rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .contact-wrapper {
+    padding: 2rem 0;
+    line-height: 0.9rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .contact-wrapper img {
+    width: 10px;
+  }
+  .contactContent .contact-container .Contact .Contact-box .contact-wrapper .contact-1 {
+    padding: 2rem 0;
+    margin: 0 1.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .contact-wrapper .contact-1 p {
+    font-size: 0.8rem;
+  }
+  .contactContent .Contact-right {
+    padding: 3rem 2rem;
+  }
+  .contactContent .Contact-right h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .contactContent .Contact-right textarea {
+    height: 5rem;
+  }
+  .contactContent .Contact-right input,
+  .contactContent .Contact-right textarea {
+    padding: 0 2rem;
+    margin: 0.8rem 0;
+  }
+  .contactContent .Contact-right button {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactContent {
+    padding: 0.8rem 0;
+    margin: 0 0.8rem;
+  }
+  .contactContent .contact-container .Contact {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .contactContent .contact-container .Contact .Contact-box {
+    padding: 0 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    padding: 0.1rem 0;
+    margin-bottom: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text p {
+    font-size: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text .line {
+    height: 1px;
+    width: 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 1.5rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper {
+    padding: 0.5rem 0;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-1 {
+    margin-bottom: 0.4rem;
+    padding: 0.5rem 0;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon {
+    margin-right: 0.3rem;
+    padding: 0 0.8rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon img {
+    width: 10px;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper p {
+    font-size: 0.6rem;
+    line-height: 0.5rem;
+  }
+  .contactContent .contact-container .Contact-right {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .contactContent .contact-container .Contact-right h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+  .contactContent .contact-container .Contact-right textarea {
+    height: 3rem;
+  }
+  .contactContent .contact-container .Contact-right input,
+  .contactContent .contact-container .Contact-right textarea {
+    font-size: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .contactContent .contact-container .Contact-right button {
+    padding: 0 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contactContent {
+    padding: 0.8rem 0;
+    margin: 0 0.8rem;
+  }
+  .contactContent .contact-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contactContent .contact-container .Contact {
+    padding: 2rem 0;
+  }
+  .contactContent .contact-container .Contact .Contact-box {
+    padding: 0 1rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    margin-bottom: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text p {
+    font-size: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text .line {
+    height: 1px;
+    width: 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 2rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper {
+    padding: 0.5rem 0;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-1 {
+    margin-bottom: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon {
+    margin-right: 0.3rem;
+    padding: 0.3rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon img {
+    width: 10px;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper p {
+    font-size: 0.6rem;
+    line-height: 0.5rem;
+  }
+  .contactContent .contact-container .Contact-right {
+    padding: 2rem 0;
+  }
+  .contactContent .contact-container .Contact-right h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+  .contactContent .contact-container .Contact-right p {
+    font-size: 1rem;
+  }
+  .contactContent .contact-container .Contact-right textarea {
+    height: 2rem;
+  }
+  .contactContent .contact-container .Contact-right input,
+  .contactContent .contact-container .Contact-right textarea {
+    font-size: 0.5rem;
+    margin: 0.4rem 0;
+    padding: 0 1rem;
+  }
+  .contactContent .contact-container .Contact-right button {
+    padding: 0 0.8rem;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .contactContent .contact-container .Contact {
+    display: none;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .contactContent .contact-container .Contact .Contact-box {
+    padding: 0 0.3rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text {
+    padding: 0.1rem 0;
+    margin-bottom: 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text p {
+    font-size: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box .Contact-text .line {
+    height: 1px;
+    width: 0.8rem;
+  }
+  .contactContent .contact-container .Contact .Contact-box h1 {
+    font-size: 0.9rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper {
+    padding: 0 0.3rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-1 {
+    margin-bottom: 0.5rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon {
+    margin-right: 0.3rem;
+    padding: 0.3rem;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper .contact-icon img {
+    width: 10px;
+  }
+  .contactContent .contact-container .Contact .contact-wrapper p {
+    font-size: 0.5rem;
+    line-height: 0.4rem;
+  }
+  .contactContent .Contact-right {
+    margin: 1rem 0;
+  }
+  .contactContent .Contact-right h3 {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+  .contactContent .Contact-right p {
+    font-size: 0.8rem;
+  }
+  .contactContent .Contact-right textarea {
+    height: 3rem;
+  }
+  .contactContent .Contact-right input,
+  .contactContent .Contact-right textarea {
+    margin: 0;
+    padding: 0;
+  }
+  .contactContent .Contact-right button {
+    padding: 0 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

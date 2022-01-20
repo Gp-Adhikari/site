@@ -20,6 +20,7 @@ body {
 //banner
 
 .banner-container {
+  // display: none;
   background-color: #111325;
   padding: 8rem 0;
   .banner-text {
@@ -66,6 +67,7 @@ body {
 
 //header
 header {
+  // display: none;
   position: sticky;
   top: 0;
   z-index: 111;
@@ -672,6 +674,7 @@ header {
 
 // Footer
 footer {
+  // display: none;
   .topFooter {
     background-color: #111325;
     .footerContainer {
@@ -777,29 +780,33 @@ footer {
 }
 .contactContent {
   background-color: $background-color;
-  padding: 5rem 0;
+  padding: 4rem 0;
   margin-top: -2rem;
   border-radius: 50px 50px 0 0;
 }
 .contact-container {
   max-width: $max-width;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 2rem 0;
+  // margin: 0rem;
   .Contact {
+    // width: 100%;
     background: #111325;
-    width: 45%;
-    height: fit-content;
-    padding: 5rem 0;
-    border-radius: 3rem 0px;
+    padding: 3rem 0rem;
+    border-radius: 3rem 1px;
     .Contact-box {
-      padding: 0 3rem;
+      padding: 0rem 3rem;
+      margin-bottom: 4rem;
       .Contact-text {
+        margin-bottom: 4rem;
         display: flex;
         align-items: center;
-        margin-bottom: 2rem;
+        padding: 0rem 2rem;
         p {
-          margin-right: 2rem;
+          margin-right: 1.5rem;
         }
         .line {
           width: 3rem;
@@ -817,12 +824,12 @@ footer {
     }
   }
   .contact-wrapper {
-    margin: 2rem 0;
+    margin: 3rem 0;
     padding: 0 3rem;
     .contact-1 {
       display: flex;
       align-items: center;
-      margin-bottom: 1.5rem;
+      line-height: 4rem;
       &:last-child {
         margin-bottom: 0;
       }
@@ -831,7 +838,7 @@ footer {
         align-items: center;
         justify-content: center;
         margin-right: 2rem;
-        padding: 0.7rem;
+        padding: 0.6rem;
         background-color: #fff;
         border-radius: 50%;
       }
@@ -841,7 +848,8 @@ footer {
     }
   }
   .Contact-right {
-    width: 45%;
+    // // width: 45%;
+    // padding: 0 10rem;
     display: flex;
     flex-direction: column;
     h3 {
