@@ -70,6 +70,9 @@ header {
   background: $background-color;
   transition: 0.3s ease;
   padding: 1rem 0;
+  &.shrink {
+    padding: 0.3rem 2rem;
+  }
   .header-wrapper {
     max-width: $max-width;
     margin: 1rem auto;
@@ -77,28 +80,37 @@ header {
     align-items: center;
     justify-content: space-between;
     img.logo {
+      transition: 0.3s ease;
       width: 80px;
+      cursor: pointer;
+    }
+    img.img-shrink {
+      width: 60px;
     }
     img.burger {
       display: none;
     }
-    a {
-      text-decoration: none;
-      color: #fff;
-      margin-left: 2rem;
+    nav {
+      font-size: 1rem;
       transition: 0.3s ease;
-      border-bottom: 2px solid transparent;
-
-      &.active {
-        border-bottom: 2px solid $main-color;
+      a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 2rem;
+        transition: 0.3s ease;
+        border-bottom: 2px solid transparent;
+        &.active {
+          border-bottom: 2px solid $main-color;
+        }
+        &:hover {
+          border-bottom: 2px solid rgba($main-color, 0.5);
+        }
+        &:nth-child(1) {
+          margin-left: 0;
+        }
       }
-
-      &:hover {
-        border-bottom: 2px solid rgba($main-color, 0.5);
-      }
-
-      &:nth-child(1) {
-        margin-left: 0;
+      .nav-shrink {
+        font-size: 0.9rem;
       }
     }
   }
@@ -113,7 +125,6 @@ header {
   align-items: center;
   justify-content: space-between;
   .heroText {
-    width: 30%;
     .Text {
       font-size: 4rem;
       pre {
@@ -727,7 +738,7 @@ footer {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     }
     .socialMediaIcons {
       display: flex;
@@ -740,8 +751,13 @@ footer {
         align-items: center;
         justify-content: center;
         margin-left: 1rem;
+        transition: 0.3s ease;
+        cursor: pointer;
         &:first-child {
           margin-left: 0;
+        }
+        &:hover {
+          background-color: $main-color;
         }
       }
     }

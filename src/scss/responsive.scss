@@ -12,7 +12,7 @@
     }
   }
   .ourTeamContainer {
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.5rem;
     .ourTeamCard {
@@ -30,7 +30,7 @@
   }
   .whatWeUseContainer {
     background-color: $background-color;
-    padding: 0 2rem 3rem 0;
+    padding: 0 2rem 3rem 2rem;
   }
   .introductionContainer {
     margin: 0 2rem;
@@ -64,22 +64,22 @@
       }
     }
     .bottomFooter {
-      margin: 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      p.copyRightText {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: translate(0, 0);
-      }
-      .socialMediaIcons {
-        margin: 1rem 0;
-      }
+      margin: 0 2rem;
     }
   }
 }
 @media screen and (max-width: 1100px) {
+  .Title {
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+  header {
+    .header-wrapper {
+      img.logo {
+        width: 60px;
+      }
+    }
+  }
   .heroContainer {
     flex-direction: column-reverse;
     .heroText {
@@ -90,16 +90,27 @@
       flex-direction: column;
       .Text {
         font-size: 3rem;
-        p {
+        pre {
           text-align: center;
           line-height: 4rem;
         }
-        div {
-          justify-content: center;
-          p {
-            margin-right: 0;
-          }
-        }
+      }
+    }
+  }
+  footer {
+    .bottomFooter {
+      display: flex;
+      flex-direction: column;
+      p.copyRightText {
+        margin: 0.5rem 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        font-size: 0.9rem;
+      }
+      .socialMediaIcons {
+        margin: 0.5rem 0;
       }
     }
   }
@@ -218,8 +229,9 @@
       }
       .content-wrapper {
         .circle {
-          width: 50px;
-          height: 50px;
+          max-width: 70px;
+          width: 100%;
+          height: 70px;
         }
         .weekDay {
           .days {
@@ -264,7 +276,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 3rem;
+    margin: 0 2rem;
     img {
       width: 100%;
     }
@@ -336,7 +348,24 @@
 @media screen and (max-width: 650px) {
   .ourTeamContainer {
     grid-template-columns: 1fr 1fr;
-    .ourTeamCard {
+  }
+  .heroContainer {
+    .heroText {
+      .Text {
+        font-size: 2.5rem;
+        pre {
+          line-height: 3rem;
+        }
+      }
+      p.motto {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        margin-top: 1rem;
+      }
+      input {
+        padding: 0.6rem 1.5rem;
+        margin-top: 1rem;
+      }
     }
   }
   .statsContainer {
@@ -464,11 +493,27 @@
 }
 
 @media screen and (max-width: 415px) {
-  .banner-container {
-    .banner-text {
-      p {
-        &:first-child:after {
-          // width: 1rem;
+  .heroContainer {
+    .heroDiv {
+      .content-wrapper {
+        .circle {
+          h3 {
+            font-size: 0.9rem;
+          }
+        }
+        .weekDay {
+          .days {
+            margin-right: 0.7rem;
+            .day {
+              height: 65px;
+              &.hero-active {
+                height: 90px;
+              }
+            }
+          }
+          h3 {
+            font-size: 0.9rem;
+          }
         }
       }
     }

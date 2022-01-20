@@ -53,7 +53,15 @@ const Footer = () => {
             Copyright &copy; 2021 Zpro . All Rights Reserved.
           </p>
           <div className="socialMediaIcons">
-            <div className="circle">
+            <div
+              className="circle"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/Zprofessionals/",
+                  "_blank"
+                )
+              }
+            >
               <img src={facebookIcon} alt="facebookIcon" />
             </div>
             <div className="circle">

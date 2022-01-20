@@ -2,6 +2,7 @@ import React from "react";
 import lightBulb from "../img/light-bulb.svg";
 import lightLine from "../img/bulb-line.svg";
 import smallLogo from "../img/small-logo.svg";
+import { Link } from "react-router-dom";
 const Introduction = () => {
   return (
     <>
@@ -22,7 +23,9 @@ const Introduction = () => {
               with high efficiency. We try our best to make our clients happy
               and satisfy with our creations.
             </p>
-            <input type="button" value="View more" />
+            <Link to="/about">
+              <input type="button" value="View more" />
+            </Link>
           </div>
           <div className="light-Bulb">
             <img src={lightLine} alt="line" />

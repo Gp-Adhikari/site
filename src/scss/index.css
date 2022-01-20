@@ -79,6 +79,10 @@ header {
   padding: 1rem 0;
 }
 
+header.shrink {
+  padding: 0.3rem 2rem;
+}
+
 header .header-wrapper {
   max-width: 1400px;
   margin: 1rem auto;
@@ -94,14 +98,27 @@ header .header-wrapper {
 }
 
 header .header-wrapper img.logo {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   width: 80px;
+  cursor: pointer;
+}
+
+header .header-wrapper img.img-shrink {
+  width: 60px;
 }
 
 header .header-wrapper img.burger {
   display: none;
 }
 
-header .header-wrapper a {
+header .header-wrapper nav {
+  font-size: 1rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header .header-wrapper nav a {
   text-decoration: none;
   color: #fff;
   margin-left: 2rem;
@@ -110,16 +127,20 @@ header .header-wrapper a {
   border-bottom: 2px solid transparent;
 }
 
-header .header-wrapper a.active {
+header .header-wrapper nav a.active {
   border-bottom: 2px solid #f6a01f;
 }
 
-header .header-wrapper a:hover {
+header .header-wrapper nav a:hover {
   border-bottom: 2px solid rgba(246, 160, 31, 0.5);
 }
 
-header .header-wrapper a:nth-child(1) {
+header .header-wrapper nav a:nth-child(1) {
   margin-left: 0;
+}
+
+header .header-wrapper nav .nav-shrink {
+  font-size: 0.9rem;
 }
 
 .heroContainer {
@@ -134,10 +155,6 @@ header .header-wrapper a:nth-child(1) {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.heroContainer .heroText {
-  width: 30%;
 }
 
 .heroContainer .heroText .Text {
@@ -949,7 +966,7 @@ footer .bottomFooter p.copyRightText {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 footer .bottomFooter .socialMediaIcons {
@@ -973,10 +990,17 @@ footer .bottomFooter .socialMediaIcons .circle {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 1rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 footer .bottomFooter .socialMediaIcons .circle:first-child {
   margin-left: 0;
+}
+
+footer .bottomFooter .socialMediaIcons .circle:hover {
+  background-color: #f6a01f;
 }
 
 @media screen and (min-width: 1439px) {
