@@ -92,15 +92,16 @@ const HeroSection = () => {
       <div className="heroContainer">
         <div className="heroText">
           <div className="Text">
-            <p>We Can Help</p>
-            <div>
-              <p>Your</p>
-              <p className="HighlightedText">Business</p>
-            </div>
-            <div>
-              <p className="HighlightedText">Grow</p>
-              <p>Efficiently.</p>
-            </div>
+            <pre>
+              We Can Help <br />
+              Your{" "}
+              <code className="HighlightedText">
+                Business
+                <br />
+                Grow{" "}
+              </code>
+              Efficiently.
+            </pre>
           </div>
           <p className="motto">Go Worldwide and Online</p>
           <Link to="/contact">

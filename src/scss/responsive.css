@@ -12,6 +12,10 @@
     padding: 0 2rem;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+  .ourTeamContainer .ourTeamCard img {
+    width: 90%;
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;
@@ -34,7 +38,7 @@
     padding: 0 2rem 2rem 2rem;
   }
   .statsContainer {
-    display: none;
+    margin: 2rem;
   }
   .portfolio {
     padding: 0 2rem;
@@ -108,6 +112,9 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .heroContainer .heroText .Text div p {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 1335px) {
@@ -117,6 +124,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .statsContainer {
+    font-size: 0.8rem;
+  }
   .portfolio .portfolioContainer {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -293,6 +303,13 @@
 }
 
 @media screen and (max-width: 650px) {
+  .ourTeamContainer {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .statsContainer {
+    font-size: 0.6rem;
+  }
   footer .topFooter .footerContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -322,6 +339,16 @@
 }
 
 @media screen and (max-width: 500px) {
+  .ourTeamContainer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .ourTeamContainer .ourTeamCard .ourTeamCardDesc {
+    padding: 5rem 2rem 2rem 2rem;
+  }
+  .statsContainer {
+    display: none;
+  }
   .banner-container {
     padding: 2.5rem 0;
   }

@@ -37,9 +37,6 @@ body {
 }
 
 .Title {
-  padding: 4rem 0;
-  font-size: 2.2rem;
-  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,6 +46,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 4rem 0;
+  font-size: 2.2rem;
+  font-weight: bold;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -144,19 +144,9 @@ header .header-wrapper a:nth-child(1) {
   font-size: 4rem;
 }
 
-.heroContainer .heroText .Text p {
+.heroContainer .heroText .Text pre {
   font-weight: bold;
   line-height: 5rem;
-}
-
-.heroContainer .heroText .Text div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.heroContainer .heroText .Text div p {
-  margin-right: 1rem;
 }
 
 .heroContainer .heroText .Text .HighlightedText {
@@ -214,12 +204,12 @@ header .header-wrapper a:nth-child(1) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 2rem;
   width: 90px;
   height: 90px;
@@ -288,13 +278,13 @@ header .header-wrapper a:nth-child(1) {
 }
 
 .statsContainer .stats {
+  max-width: 100%;
+  width: 100%;
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding-right: 5rem;
 }
 
 .statsContainer .stats:last-child {
-  padding-right: 0;
   border-right: 0;
 }
 
@@ -309,6 +299,7 @@ header .header-wrapper a:nth-child(1) {
   display: -ms-flexbox;
   display: flex;
   margin: 6rem auto;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -673,7 +664,7 @@ header .header-wrapper a:nth-child(1) {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 5rem;
+  grid-gap: 3rem;
 }
 
 .ourTeamContainer .ourTeamCard {
@@ -691,8 +682,7 @@ header .header-wrapper a:nth-child(1) {
 
 .ourTeamContainer .ourTeamCard img {
   z-index: 11;
-  width: 270px;
-  height: 320px;
+  width: 90%;
 }
 
 .ourTeamContainer .ourTeamCard .ourTeamCardDesc {

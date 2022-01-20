@@ -43,12 +43,10 @@ body {
 
 // Title
 .Title {
+  @include center;
   padding: 4rem 0;
   font-size: 2.2rem;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   .line {
     margin-top: 0.4rem;
@@ -118,15 +116,9 @@ header {
     width: 30%;
     .Text {
       font-size: 4rem;
-      p {
+      pre {
         font-weight: bold;
         line-height: 5rem;
-      }
-      div {
-        display: flex;
-        p {
-          margin-right: 1rem;
-        }
       }
       .HighlightedText {
         color: $main-color;
@@ -164,9 +156,7 @@ header {
       flex-direction: column;
       align-items: center;
       .circle {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         margin-bottom: 2rem;
         width: 90px;
         height: 90px;
@@ -215,11 +205,11 @@ header {
   border-radius: 15px;
   padding: 1.5rem 0;
   .stats {
+    max-width: 100%;
+    width: 100%;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
-    padding-right: 5rem;
     &:last-child {
-      padding-right: 0;
       border-right: 0;
     }
     &:nth-child(3) {
@@ -234,7 +224,7 @@ header {
   margin: 6rem auto 1rem auto;
   display: flex;
   margin: 6rem auto;
-  // display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -507,15 +497,14 @@ header {
   padding: 5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 5rem;
+  grid-gap: 3rem;
   .ourTeamCard {
     display: flex;
     flex-direction: column;
     align-items: center;
     img {
       z-index: 11;
-      width: 270px;
-      height: 320px;
+      width: 90%;
     }
     .ourTeamCardDesc {
       background-color: #111325;

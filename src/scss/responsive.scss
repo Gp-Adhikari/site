@@ -14,6 +14,12 @@
   .ourTeamContainer {
     padding: 0 2rem;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    .ourTeamCard {
+      img {
+        width: 90%;
+      }
+    }
   }
   .whatWeDoContainer {
     padding: 3rem 2rem;
@@ -38,7 +44,7 @@
     }
   }
   .statsContainer {
-    display: none;
+    margin: 2rem;
   }
   .portfolio {
     padding: 0 2rem;
@@ -90,6 +96,9 @@
         }
         div {
           justify-content: center;
+          p {
+            margin-right: 0;
+          }
         }
       }
     }
@@ -102,6 +111,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .statsContainer {
+    font-size: 0.8rem;
+  }
   .portfolio {
     .portfolioContainer {
       grid-template-columns: 1fr 1fr;
@@ -322,7 +334,13 @@
 }
 
 @media screen and (max-width: 650px) {
-  .whatWeDoContainer {
+  .ourTeamContainer {
+    grid-template-columns: 1fr 1fr;
+    .ourTeamCard {
+    }
+  }
+  .statsContainer {
+    font-size: 0.6rem;
   }
   footer {
     .topFooter {
@@ -357,6 +375,17 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .ourTeamContainer {
+    grid-template-columns: 1fr;
+    .ourTeamCard {
+      .ourTeamCardDesc {
+        padding: 5rem 2rem 2rem 2rem;
+      }
+    }
+  }
+  .statsContainer {
+    display: none;
+  }
   .banner-container {
     padding: 2.5rem 0;
     .banner-text {
