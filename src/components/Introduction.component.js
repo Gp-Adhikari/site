@@ -4,6 +4,9 @@ import lightLine from "../img/bulb-line.svg";
 import smallLogo from "../img/small-logo.svg";
 import { Link } from "react-router-dom";
 const Introduction = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <div className="introductionContainer">
@@ -23,7 +26,7 @@ const Introduction = () => {
               with high efficiency. We try our best to make our clients happy
               and satisfy with our creations.
             </p>
-            <Link to="/about">
+            <Link to="/about" onClick={() => scrollToTop()}>
               <input type="button" value="View more" />
             </Link>
           </div>

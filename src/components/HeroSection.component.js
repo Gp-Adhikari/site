@@ -21,52 +21,23 @@ const HeroSection = () => {
   const today = new Date().getDay();
   const todaysDay = days[today];
 
-  //gsap timeline
-  const tl = gsap.timeline({});
-
   useEffect(() => {
-    tl.from(".Text p", 1.5, { opacity: 0, y: 10, stagger: { amount: 1 } });
-    tl.from(
-      ".heroText .motto",
-      0.5,
-      {
-        opacity: 0,
-        y: 10,
-        ease: Power1.inOut,
-        stagger: { amount: 1 },
-      },
-      "-=0.8"
-    );
-    tl.from(
-      ".heroText input",
-      0.5,
-      {
-        opacity: 0,
-        y: 10,
-        ease: Power1.inOut,
-      },
-      "-=0.5"
-    );
-
     //days bar animation
-    gsap.from(".days", 1.5, {
-      opacity: 0,
-      ease: Power1.inOut,
-      scale: 0,
-      stagger: { amount: 0.5 },
-    });
-
-    //statsContainer animation
-    new gsap.timeline({
-      scrollTrigger: {
-        trigger: ".statsContainer",
-        scrub: false,
-        start: "top 80%",
+    gsap.fromTo(
+      ".days",
+      {
+        opacity: 0,
+        scale: 0,
       },
-    }).from(".statsContainer", 0.5, {
-      opacity: 0,
-    });
-  }, [tl]);
+      {
+        duration: 1.5,
+        scale: 1,
+        opacity: 1,
+        ease: Power1.inOut,
+        stagger: { amount: 0.5 },
+      }
+    );
+  }, []);
 
   //useeffect for days
   useEffect(() => {
@@ -87,6 +58,10 @@ const HeroSection = () => {
     }
   }, [today, sunday, monday, tuesday, wednesday, thursday, friday, saturday]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="heroContainer">
@@ -104,7 +79,7 @@ const HeroSection = () => {
             </pre>
           </div>
           <p className="motto">Go Worldwide and Online</p>
-          <Link to="/contact">
+          <Link to="/contact" onClick={() => scrollToTop()}>
             <input type="button" value="Get In Touch" />
           </Link>
         </div>

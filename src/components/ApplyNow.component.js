@@ -6,6 +6,7 @@ const ApplyNow = () => {
   const getPdf = (pdf) => {
     setPdf(pdf);
   };
+
   return (
     <>
       <div className="applyNowSection">
@@ -33,51 +34,38 @@ const ApplyNow = () => {
           <h1>Apply for this Job</h1>
           <div className="applyForJob-Table">
             <form action="#">
-              <table>
+              {/* <table>
                 <thead></thead>
                 <tbody>
                   <tr>
                     <td>
                       <p>Full Name:</p>
+                      <input type="text" />
                     </td>
                     <td>
                       <p>E-Mail</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="text" />
-                    </td>
-                    <td>
                       <input type="email" />
                     </td>
                   </tr>
+
                   <tr>
                     <td>
                       <p>Phone Number</p>
-                    </td>
-                    <td>
-                      <p>Current Address</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
                       <input type="number" />
                     </td>
+
                     <td>
+                      <p>Current Address</p>
                       <input type="text" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Message</p>
                     </td>
                   </tr>
                   <tr>
                     <td colSpan="2">
+                      <p>Message</p>
                       <textarea type="textarea" id="" rows="10"></textarea>
                     </td>
                   </tr>
+
                   <tr>
                     <td>
                       <p>Please attach your CV here ( In .pdf format )</p>
@@ -98,7 +86,7 @@ const ApplyNow = () => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </form>
           </div>
         </div>

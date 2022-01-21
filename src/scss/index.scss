@@ -66,16 +66,16 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 111;
+  z-index: 50;
   background: $background-color;
   transition: 0.3s ease;
   padding: 1rem 0;
   &.shrink {
-    padding: 0.3rem 2rem;
+    padding: 0.8rem 2rem;
   }
   .header-wrapper {
     max-width: $max-width;
-    margin: 1rem auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -88,6 +88,9 @@ header {
       width: 60px;
     }
     img.burger {
+      display: none;
+    }
+    .mob-nav-container {
       display: none;
     }
     nav {
@@ -109,8 +112,8 @@ header {
           margin-left: 0;
         }
       }
-      .nav-shrink {
-        font-size: 0.9rem;
+      &.nav-shrink {
+        font-size: 0.95rem;
       }
     }
   }
@@ -378,7 +381,7 @@ header {
   }
 }
 .whatWeUseContainer {
-  padding: 0;
+  padding: 0 0 3rem 0;
 }
 
 //Introduction
@@ -449,6 +452,7 @@ header {
     justify-content: flex-end;
     margin-top: -4rem;
     .poweredByPart {
+      pointer-events: none;
       z-index: 5;
       background: url("../img/poweredby.svg") no-repeat;
       width: 374px;
@@ -587,7 +591,6 @@ header {
     max-width: $max-width;
     margin: auto;
     padding: 5rem 0;
-
     .applyNow-ReactJsDev {
       line-height: 3rem;
     }
@@ -614,7 +617,7 @@ header {
         table {
           tr {
             td {
-              padding: 0.5rem 0rem;
+              padding: 0.5rem 0;
               input {
                 padding: 0.3rem 0.7rem;
               }
@@ -780,106 +783,98 @@ footer {
     }
   }
 }
-.contactContent {
-  background-color: $background-color;
-  padding: 5rem 0;
+
+// Contact Us
+.contactUsContainer {
   margin-top: -2rem;
+  background-color: $background-color;
   border-radius: 50px 50px 0 0;
-}
-.contact-container {
-  max-width: $max-width;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  .Contact {
-    background: #111325;
-    width: 45%;
-    height: fit-content;
+  .contactUsContent {
+    max-width: $max-width;
+    margin: auto;
     padding: 5rem 0;
-    border-radius: 3rem 0px;
-    .Contact-box {
-      padding: 0 3rem;
-      .Contact-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    .contactUsLeftPart {
+      background-color: #111325;
+      padding: 4rem 3rem;
+      border-radius: 50px 0px;
+      .leftTit {
         display: flex;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         p {
-          margin-right: 2rem;
+          font-size: 1.4rem;
         }
         .line {
-          width: 3rem;
+          width: 40px;
           height: 2px;
-          background-color: #ffffff;
+          background-color: #fff;
+          margin-left: 1.5rem;
         }
       }
-      h1 {
-        font-size: 5rem;
-
-        code {
-          color: $main-color;
+      pre {
+        font-weight: bold;
+        font-size: 4.2rem;
+      }
+      .contactDetails {
+        margin-top: 3rem;
+        .contactDetail {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1.2rem;
+          .Icon {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            @include center();
+          }
+          p {
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+          }
         }
       }
     }
-  }
-  .contact-wrapper {
-    margin: 2rem 0;
-    padding: 0 3rem;
-    .contact-1 {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      &:last-child {
-        margin-bottom: 0;
+    .contactUsRightPart {
+      p.tit {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
       }
-      .contact-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 2rem;
-        padding: 0.7rem;
-        background-color: #fff;
-        border-radius: 50%;
-      }
-      p {
-        font-size: 1.2rem;
-      }
-    }
-  }
-  .Contact-right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    h3 {
-      margin-bottom: 2rem;
-      font-size: 1.6rem;
-    }
-    textarea {
-      resize: none;
-      overflow-y: auto;
-      height: 12rem;
-    }
-    input,
-    textarea {
-      border-radius: 5px;
-      padding: 0.4rem;
-      margin: 1.5rem 0;
-    }
-    button {
-      background: #f6a11f;
-      border: none;
-      font-weight: bold;
-      padding: 0.5rem 1.8rem;
-      align-self: flex-start;
-      border-radius: 10px 0px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      margin-top: 2rem;
-      &:hover {
-        box-shadow: $main-color-hover;
+      form {
+        .formInput {
+          margin-bottom: 1.8rem;
+          p {
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+          }
+          input,
+          textarea {
+            width: 100%;
+            padding: 0.4rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+          }
+          textarea {
+            resize: none;
+          }
+        }
+        input[type="button"] {
+          background-color: $main-color;
+          padding: 0.5rem 2.2rem;
+          border: none;
+          font-weight: bold;
+          border-radius: 10px 0px;
+        }
       }
     }
   }
 }
+
 //404 Page
 .container-404 {
   width: 100%;

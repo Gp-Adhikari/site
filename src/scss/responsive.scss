@@ -2,6 +2,16 @@
 @media screen and (max-width: 1450px) {
   header {
     padding: 0.5rem 2rem;
+
+    &.shrink {
+      padding: 0.5rem 2rem;
+    }
+
+    .header-wrapper {
+      img.img-shrink {
+        width: 55px !important;
+      }
+    }
   }
   .heroContainer {
     padding: 0 2rem;
@@ -9,6 +19,12 @@
   .banner-container {
     .banner-text {
       margin: 0 2rem;
+    }
+  }
+  .applyNowSection {
+    border-radius: 60px 60px 0 0;
+    .applyNowContainer {
+      padding: 3rem 2rem;
     }
   }
   .ourTeamContainer {
@@ -56,6 +72,12 @@
   .RecentProject-Section {
     margin: 0 1.5rem;
   }
+  .contactUsContainer {
+    padding: 0 2rem;
+    .contactUsContent {
+      padding: 2rem 0;
+    }
+  }
   footer {
     .topFooter {
       padding: 0 2rem;
@@ -76,7 +98,7 @@
   header {
     .header-wrapper {
       img.logo {
-        width: 60px;
+        width: 70px;
       }
     }
   }
@@ -97,11 +119,24 @@
       }
     }
   }
+  .contactUsContainer {
+    .contactUsContent {
+      grid-template-columns: 1fr;
+      .contactUsLeftPart {
+        display: none;
+      }
+      .contactUsRightPart {
+        max-width: 500px;
+      }
+    }
+  }
+
   footer {
     .bottomFooter {
       display: flex;
       flex-direction: column;
       p.copyRightText {
+        text-align: center;
         margin: 0.5rem 0;
         position: relative;
         top: 0;
@@ -217,7 +252,63 @@
     }
     .header-wrapper {
       img.burger {
+        z-index: 100;
         display: block;
+        width: 40px;
+      }
+
+      .left {
+        position: absolute;
+        pointer-events: all;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .mob-nav-container {
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+        // width: 100%;
+      }
+      .mob-nav {
+        position: absolute;
+        pointer-events: all;
+        top: 0;
+        right: -50%;
+        height: 100vh;
+        width: 50%;
+        background-color: #000;
+
+        .wrapper {
+          width: fit-content;
+          overflow-y: scroll;
+          margin: auto;
+          margin-top: 16 * 9px;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+          text-decoration: none;
+          color: #fff;
+
+          img {
+            margin-right: 1rem;
+          }
+
+          &.active {
+            color: $main-color;
+          }
+        }
       }
     }
   }
@@ -412,11 +503,12 @@
       }
     }
   }
+
   .statsContainer {
     display: none;
   }
   .banner-container {
-    padding: 2.5rem 0;
+    // padding: 2.5rem 0 4.5rem 0;
     .banner-text {
       p {
         font-size: 2rem;
@@ -520,6 +612,19 @@
   }
 }
 
+@media screen and (max-width: 330px) {
+  footer {
+    .bottomFooter {
+      .socialMediaIcons {
+        .circle {
+          width: 30px;
+          height: 30px;
+          margin-left: 0.4rem;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 280px) {
   .whatWeDoCardContainer {
     .whatWeDo-Card {

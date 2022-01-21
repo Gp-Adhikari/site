@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import recentProjectImg from ".././img/SynicalBot-projectimg.png";
 const RecentProjects = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <div className="RecentProject-Section">
@@ -14,7 +17,7 @@ const RecentProjects = () => {
             do. Synical bot has funny jokes that you can read all day if you
             wanted to, hope you enjoy my model and thank the creators.
           </p>
-          <Link to="/portfolio">
+          <Link to="/portfolio" onClick={() => scrollToTop()}>
             <input type="button" value="Explore Our Portfolio" />
           </Link>
         </div>

@@ -39,52 +39,65 @@ const ContactUs = () => {
   return (
     <>
       <Banner text1="Contact Us" />
-      <div className="contactContent">
-        <div className="contact-container">
-          <div className="Contact">
-            <div className="Contact-box">
-              <div className="Contact-text">
-                <p>Let’s Talk</p>
-                <div className="line"></div>
-              </div>
-              <h1>
-                Speak With <code>Expert</code> Engineers.
-              </h1>
+      <div className="contactUsContainer">
+        <div className="contactUsContent">
+          <div className="contactUsLeftPart">
+            <div className="leftTit">
+              <p>Let's Talk</p>
+              <div className="line"></div>
             </div>
-            <div className="contact-wrapper">
-              <div className="contact-1">
-                <div className="contact-icon">
-                  <img src={phoneIcon} alt="phone" />
+            <pre>
+              Speak With
+              <br />
+              Expert <br />
+              Engineers.
+            </pre>
+            <div className="contactDetails">
+              <div className="contactDetail">
+                <div className="Icon">
+                  <img src={phoneIcon} alt="location" />
                 </div>
                 <p>+977-9876543210</p>
               </div>
-              <div className="contact-1">
-                <div className="contact-icon">
-                  <img src={mailIcon} alt="phone" />
+              <div className="contactDetail">
+                <div className="Icon">
+                  <img src={mailIcon} alt="location" />
                 </div>
                 <p>zpro.company@gmail.com</p>
               </div>
-              <div className="contact-1">
-                <div className="contact-icon">
-                  <img src={locationIcon} alt="phone" />
+              <div className="contactDetail">
+                <div className="Icon">
+                  <img src={locationIcon} alt="location" />
                 </div>
                 <p>Bhaktapur, Nepal</p>
               </div>
             </div>
           </div>
-          <div className="Contact-right">
-            <h3>Get In Touch</h3>
-            <p>Name</p>
-            <input type="text" />
-            <p>Email</p>
-            <input type="email" />
-            <p>Phone Number</p>
-            <input type="number" />
-            <p>Subject</p>
-            <input type="text" />
-            <p>Message</p>
-            <textarea type="textarea" cols="40" rows="5"></textarea>
-            <button type="button">Submit</button>
+          <div className="contactUsRightPart">
+            <p className="tit">Get In Touch</p>
+            <form action="#">
+              <div className="formInput">
+                <p>Name</p>
+                <input type="text" />
+              </div>
+              <div className="formInput">
+                <p>Email</p>
+                <input type="email" />
+              </div>
+              <div className="formInput">
+                <p>Phone Number</p>
+                <input type="number" />
+              </div>
+              <div className="formInput">
+                <p>Subject</p>
+                <input type="text" />
+              </div>
+              <div className="formInput">
+                <p>Message</p>
+                <textarea cols="30" rows="10"></textarea>
+              </div>
+              <input type="button" value="Submit" />
+            </form>
           </div>
         </div>
       </div>
