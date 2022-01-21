@@ -70,7 +70,6 @@ const Header = () => {
 
     if (header === undefined && logo === undefined && navBar === undefined)
       return;
-
     const shrinkHeader = 300;
     document.addEventListener("scroll", () => {
       var scroll = getCurrentScroll();

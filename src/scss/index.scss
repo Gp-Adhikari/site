@@ -698,12 +698,20 @@ footer {
       }
       .secondRow,
       .thirdRow {
+        display: flex;
+        flex-direction: column;
         h2 {
           margin: 2rem 0;
         }
-        li {
+        a {
           line-height: 2.5rem;
           list-style: none;
+          cursor: pointer;
+          color: #fff;
+          text-decoration: none;
+          &.active {
+            color: $main-color;
+          }
         }
       }
       .fourthRow {

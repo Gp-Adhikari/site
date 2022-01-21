@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../img/logo.svg";
 import locationIcon from "../img/location-icon.svg";
 import mailIcon from "../img/mail-icon.svg";
@@ -10,6 +10,9 @@ import twitterIcon from "../img/twitter-icon.svg";
 import linkedinIcon from "../img/linkedin-icon.svg";
 import tiktokIcon from "../img/tiktok-icon.svg";
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <footer>
@@ -32,13 +35,21 @@ const Footer = () => {
             </div>
             <div className="secondRow">
               <h2>Quick Links</h2>
-              <li>Careers</li>
-              <li>Portfolios</li>
+              <NavLink to="/carrers" onClick={() => scrollToTop()}>
+                Careers
+              </NavLink>
+              <NavLink to="/portfolio" onClick={() => scrollToTop()}>
+                Portfolio
+              </NavLink>
             </div>
             <div className="thirdRow">
               <h2>Resources</h2>
-              <li>Privacy Policy</li>
-              <li>FAQ</li>
+              <NavLink to="/policy" onClick={() => scrollToTop()}>
+                Privacy Policy
+              </NavLink>
+              <NavLink to="/faq" onClick={() => scrollToTop()}>
+                FAQ
+              </NavLink>
             </div>
             <div className="fourthRow">
               <h2>Get in Touch</h2>
