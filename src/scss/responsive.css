@@ -286,6 +286,11 @@
   header .header-wrapper .mob-nav a.active {
     color: #f6a01f;
   }
+  .applyNowSection .applyNowContainer form .formInputWrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
   .heroContainer .heroDiv img {
     max-width: 500px;
     width: 100%;
@@ -527,7 +532,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    line-height: 2.5rem;
+  }
+  footer .topFooter .footerContainer .firstRow .footerLogo {
+    margin-bottom: 0.8rem;
   }
   footer .topFooter .footerContainer .fourthRow {
     display: none;
@@ -535,17 +542,29 @@
 }
 
 @media screen and (max-width: 415px) {
+  .heroContainer .heroText .Text {
+    font-size: 2rem;
+  }
+  .heroContainer .heroText .Text pre {
+    line-height: 2.5rem;
+  }
+  .heroContainer .heroDiv .content-wrapper .circle {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 0.8rem;
+  }
   .heroContainer .heroDiv .content-wrapper .circle h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .heroContainer .heroDiv .content-wrapper .weekDay .days {
     margin-right: 0.7rem;
   }
   .heroContainer .heroDiv .content-wrapper .weekDay .days .day {
+    width: 9px;
     height: 65px;
   }
   .heroContainer .heroDiv .content-wrapper .weekDay .days .day.hero-active {
-    height: 90px;
+    height: 75px;
   }
   .heroContainer .heroDiv .content-wrapper .weekDay h3 {
     font-size: 0.9rem;

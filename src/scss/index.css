@@ -681,7 +681,7 @@ header .header-wrapper nav.nav-shrink {
 .ourTeamContainer {
   max-width: 1400px;
   margin: auto;
-  padding: 5rem 0;
+  padding: 1rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -795,49 +795,63 @@ header .header-wrapper nav.nav-shrink {
   padding: 5rem 0;
 }
 
-.applyNowSection .applyNowContainer .applyNow-ReactJsDev {
+.applyNowSection .applyNowContainer .vacancyTitle {
   line-height: 3rem;
 }
 
-.applyNowSection .applyNowContainer .applyNow-Requirement {
+.applyNowSection .applyNowContainer .vacancyRequirement {
   line-height: 3rem;
 }
 
-.applyNowSection .applyNowContainer .applyNow-Requirement h1 {
+.applyNowSection .applyNowContainer .vacancyRequirement h1 {
   margin-top: 2rem;
 }
 
-.applyNowSection .applyNowContainer .applyNow-Requirement ul {
+.applyNowSection .applyNowContainer .vacancyRequirement ul {
   margin-left: 2rem;
 }
 
-.applyNowSection .applyNowContainer .applyNow-Salary {
+.applyNowSection .applyNowContainer .jobSalary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 4rem 0;
 }
 
-.applyNowSection .applyNowContainer .applyNow-Salary p:first-child {
+.applyNowSection .applyNowContainer .jobSalary p:first-child {
   font-weight: bold;
+  margin-right: 0.5rem;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td {
-  padding: 0.5rem 0;
+.applyNowSection .applyNowContainer form .formInputWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 2.5rem;
+          column-gap: 2.5rem;
+  margin-top: 1.5rem;
+  max-width: 700px;
+  width: 100%;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td input {
-  padding: 0.3rem 0.7rem;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput p {
+  margin-bottom: 0.5rem;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td textarea {
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput input,
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput textarea {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+}
+
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput textarea {
   resize: none;
   overflow-y: auto;
-  width: 100%;
-  padding: 0.3rem 0.7rem;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area {
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area {
   position: relative;
   width: 200px;
   height: 200px;
@@ -845,12 +859,12 @@ header .header-wrapper nav.nav-shrink {
   z-index: 1;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area .upload-image {
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area .upload-image {
   width: 200px;
   height: 200px;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .file-drag .drop-area p {
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area p {
   color: black;
   position: absolute;
   top: 50%;
@@ -864,22 +878,20 @@ header .header-wrapper nav.nav-shrink {
   z-index: -1;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .or {
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .or {
   width: 64%;
   padding: 1.5rem 0;
   text-align: center;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td .choose-file {
-  padding: 0.5rem 4rem;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .choose-file {
+  width: 200px;
 }
 
-.applyNowSection .applyNowContainer .applyForJob-Table form table tr td button {
-  padding: 0.5rem 5rem;
-  background-color: #f6a01f;
-  font-weight: bold;
-  border: none;
-  margin-top: 1.5rem;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInputMessage {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 footer .topFooter {

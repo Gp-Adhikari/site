@@ -18,7 +18,6 @@ body {
   scroll-behavior: smooth;
 }
 //banner
-
 .banner-container {
   background-color: #111325;
   padding: 8rem 0;
@@ -200,7 +199,6 @@ header {
           h3 {
             margin-top: 0.5rem;
           }
-
           &:last-child {
             margin-right: 0;
           }
@@ -509,7 +507,7 @@ header {
 .ourTeamContainer {
   max-width: $max-width;
   margin: auto;
-  padding: 5rem 0;
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 3rem;
@@ -591,10 +589,10 @@ header {
     max-width: $max-width;
     margin: auto;
     padding: 5rem 0;
-    .applyNow-ReactJsDev {
+    .vacancyTitle {
       line-height: 3rem;
     }
-    .applyNow-Requirement {
+    .vacancyRequirement {
       line-height: 3rem;
       h1 {
         margin-top: 2rem;
@@ -603,73 +601,134 @@ header {
         margin-left: 2rem;
       }
     }
-    .applyNow-Salary {
+    .jobSalary {
       display: flex;
       padding: 4rem 0;
       p {
         &:first-child {
           font-weight: bold;
+          margin-right: 0.5rem;
         }
       }
     }
-    .applyForJob-Table {
-      form {
-        table {
-          tr {
-            td {
-              padding: 0.5rem 0;
-              input {
-                padding: 0.3rem 0.7rem;
+    form {
+      .formInputWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.5rem;
+        margin-top: 1.5rem;
+        max-width: 700px;
+        width: 100%;
+        .formInput {
+          p {
+            margin-bottom: 0.5rem;
+          }
+          input,
+          textarea {
+            margin-top: 0.5rem;
+            width: 100%;
+            padding: 0.4rem 0.5rem;
+          }
+          textarea {
+            resize: none;
+            overflow-y: auto;
+          }
+          .file-drag {
+            .drop-area {
+              position: relative;
+              width: 200px;
+              height: 200px;
+              background-color: white;
+              z-index: 1;
+              .upload-image {
+                width: 200px;
+                height: 200px;
               }
-              textarea {
-                resize: none;
-                overflow-y: auto;
-                width: 100%;
-                padding: 0.3rem 0.7rem;
-              }
-              .file-drag {
-                .drop-area {
-                  position: relative;
-                  width: 200px;
-                  height: 200px;
-                  background-color: white;
-                  z-index: 1;
-                  .upload-image {
-                    width: 200px;
-                    height: 200px;
-                  }
-                  p {
-                    color: black;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: fit-content;
-                    font-size: 12px;
-                    transform: translate(-50%, -50%);
-                    z-index: -1;
-                  }
-                }
-              }
-              .or {
-                width: 64%;
-                padding: 1.5rem 0;
-                text-align: center;
-              }
-              .choose-file {
-                padding: 0.5rem 4rem;
-              }
-              button {
-                padding: 0.5rem 5rem;
-                background-color: $main-color;
-                font-weight: bold;
-                border: none;
-                margin-top: 1.5rem;
+              p {
+                color: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: fit-content;
+                font-size: 12px;
+                transform: translate(-50%, -50%);
+                z-index: -1;
               }
             }
           }
+          .or {
+            width: 64%;
+            padding: 1.5rem 0;
+            text-align: center;
+          }
+          .choose-file {
+            width: 200px;
+          }
+        }
+        .formInputMessage {
+          grid-column-start: 1;
+          grid-column-end: 3;
         }
       }
     }
+    // .applyForJob-Table {
+    //   form {
+    //     table {
+    //       tr {
+    //         td {
+    //           padding: 0.5rem 0;
+    //           input {
+    //             padding: 0.3rem 0.7rem;
+    //           }
+    //           textarea {
+    //             resize: none;
+    //             overflow-y: auto;
+    //             width: 100%;
+    //             padding: 0.3rem 0.7rem;
+    //           }
+    //           .file-drag {
+    //             .drop-area {
+    //               position: relative;
+    //               width: 200px;
+    //               height: 200px;
+    //               background-color: white;
+    //               z-index: 1;
+    //               .upload-image {
+    //                 width: 200px;
+    //                 height: 200px;
+    //               }
+    //               p {
+    //                 color: black;
+    //                 position: absolute;
+    //                 top: 50%;
+    //                 left: 50%;
+    //                 width: fit-content;
+    //                 font-size: 12px;
+    //                 transform: translate(-50%, -50%);
+    //                 z-index: -1;
+    //               }
+    //             }
+    //           }
+    //           .or {
+    //             width: 64%;
+    //             padding: 1.5rem 0;
+    //             text-align: center;
+    //           }
+    //           .choose-file {
+    //             padding: 0.5rem 4rem;
+    //           }
+    //           button {
+    //             padding: 0.5rem 5rem;
+    //             background-color: $main-color;
+    //             font-weight: bold;
+    //             border: none;
+    //             margin-top: 1.5rem;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 

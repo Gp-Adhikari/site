@@ -312,6 +312,16 @@
       }
     }
   }
+  .applyNowSection {
+    .applyNowContainer {
+      form {
+        .formInputWrapper {
+          grid-template-columns: 1fr;
+          grid-gap: 1rem;
+        }
+      }
+    }
+  }
   .heroContainer {
     .heroDiv {
       img {
@@ -574,7 +584,9 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          line-height: 2.5rem;
+          .footerLogo {
+            margin-bottom: 0.8rem;
+          }
         }
         .fourthRow {
           display: none;
@@ -586,20 +598,32 @@
 
 @media screen and (max-width: 415px) {
   .heroContainer {
+    .heroText {
+      .Text {
+        font-size: 2rem;
+        pre {
+          line-height: 2.5rem;
+        }
+      }
+    }
     .heroDiv {
       .content-wrapper {
         .circle {
+          width: 55px;
+          height: 55px;
+          margin-bottom: 0.8rem;
           h3 {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
         }
         .weekDay {
           .days {
             margin-right: 0.7rem;
             .day {
+              width: 9px;
               height: 65px;
               &.hero-active {
-                height: 90px;
+                height: 75px;
               }
             }
           }
