@@ -5,6 +5,10 @@ import Title from "./Title.component";
 const CarrersItem = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <div className="CarrersContainer">
@@ -16,7 +20,10 @@ const CarrersItem = () => {
               <input
                 type="button"
                 value="Apply Now"
-                onClick={() => navigate("/carrers/" + carrer.id)}
+                onClick={() => {
+                  scrollToTop();
+                  navigate("/carrers/" + carrer.id);
+                }}
               />
             </div>
           ))}

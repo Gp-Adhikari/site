@@ -505,6 +505,14 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .portfolio {
+    .navBar {
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+  }
   .ourTeamContainer {
     grid-template-columns: 1fr;
     .ourTeamCard {
@@ -637,6 +645,25 @@
 }
 
 @media screen and (max-width: 330px) {
+  .introductionContainer {
+    .introductionPart {
+      .introductionContent {
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+  .whatWeDoContainer {
+    .whatWeDoCardContainer {
+      .whatWeDo-Card {
+        h3 {
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
   footer {
     .bottomFooter {
       .socialMediaIcons {

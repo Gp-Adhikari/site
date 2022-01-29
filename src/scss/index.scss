@@ -31,7 +31,7 @@ body {
         content: "";
         position: absolute;
         background: rgba($main-color, 0.15);
-        max-width: 12rem;
+        max-width: 10rem;
         width: 100%;
         margin-left: -6rem;
         height: 100%;
@@ -536,21 +536,20 @@ header {
   .navBar {
     max-width: $max-width;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     ul {
-      width: 550px;
+      max-width: 550px;
       margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       li {
+        text-align: center;
+        justify-self: center;
         color: white;
         text-decoration: none;
         cursor: pointer;
         transition: 0.3s ease;
         border-bottom: 2px solid transparent;
+
         &.active {
           color: $main-color;
           border-bottom: 2px solid $main-color;
@@ -628,6 +627,7 @@ header {
             margin-top: 0.5rem;
             width: 100%;
             padding: 0.4rem 0.5rem;
+            background-color: #fff;
           }
           textarea {
             resize: none;
@@ -884,6 +884,9 @@ footer {
       pre {
         font-weight: bold;
         font-size: 4.2rem;
+      }
+      .HighlightedText {
+        color: $main-color;
       }
       .contactDetails {
         margin-top: 3rem;

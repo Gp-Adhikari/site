@@ -30,7 +30,7 @@ body {
   content: "";
   position: absolute;
   background: rgba(246, 160, 31, 0.15);
-  max-width: 12rem;
+  max-width: 10rem;
   width: 100%;
   margin-left: -6rem;
   height: 100%;
@@ -723,32 +723,21 @@ header .header-wrapper nav.nav-shrink {
 .portfolio .navBar {
   max-width: 1400px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .portfolio .navBar ul {
-  width: 550px;
+  max-width: 550px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
 }
 
 .portfolio .navBar ul li {
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -844,6 +833,7 @@ header .header-wrapper nav.nav-shrink {
   margin-top: 0.5rem;
   width: 100%;
   padding: 0.4rem 0.5rem;
+  background-color: #fff;
 }
 
 .applyNowSection .applyNowContainer form .formInputWrapper .formInput textarea {
@@ -1105,6 +1095,10 @@ footer .bottomFooter .socialMediaIcons .circle:hover {
 .contactUsContainer .contactUsContent .contactUsLeftPart pre {
   font-weight: bold;
   font-size: 4.2rem;
+}
+
+.contactUsContainer .contactUsContent .contactUsLeftPart .HighlightedText {
+  color: #f6a01f;
 }
 
 .contactUsContainer .contactUsContent .contactUsLeftPart .contactDetails {

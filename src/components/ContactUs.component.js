@@ -10,6 +10,7 @@ const ContactUs = () => {
   //confetti for this page
   useEffect(() => {
     var end = Date.now() + 1 * 1000;
+    document.title = "Contact Us - Zpro";
 
     // go Buckeyes!
     var colors = ["#f6a01f", "#ffffff"];
@@ -43,13 +44,15 @@ const ContactUs = () => {
         <div className="contactUsContent">
           <div className="contactUsLeftPart">
             <div className="leftTit">
-              <p>Let's Talk</p>
+              <p className="HighlightedText">Let's Talk</p>
               <div className="line"></div>
             </div>
             <pre>
               Speak With
               <br />
-              Expert <br />
+              <code className="HighlightedText">
+                Expert <br />
+              </code>
               Engineers.
             </pre>
             <div className="contactDetails">
