@@ -1,0 +1,38 @@
+export const CarrersData = [
+  {
+    id: 1,
+    title: "Web Designer",
+    c_title: "Web Designer",
+    vacancy: "2",
+    requirement: ["HTML", "CSS", "Javascript", "React", "NodeJS"],
+    salary: "10,000",
+    type: "Full Time",
+  },
+  {
+    id: 2,
+    title: "Web Developer",
+    c_title: "Web Developer",
+    vacancy: "3",
+    requirement: ["HTML", "CSS", "Javascript", "React", "NodeJS"],
+    salary: "25,000",
+    type: "Intern",
+  },
+  {
+    id: 3,
+    title: "React Developer",
+    c_title: "React Developer",
+    vacancy: "1",
+    requirement: ["HTML", "CSS", "Javascript", "React", "NodeJS"],
+    salary: "30,000",
+    type: "Full Time",
+  },
+  {
+    id: 4,
+    title: "Web Designer",
+    c_title: "Web Designer",
+    vacancy: "2",
+    requirement: ["HTML", "CSS", "Javascript", "React", "NodeJS"],
+    salary: "10,000",
+    type: "Full Time",
+  },
+];

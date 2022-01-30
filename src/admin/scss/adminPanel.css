@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.admin-hidden {
+  display: none;
+}
+
+.adminPanelContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: #090a13;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminPanelContainer .adminPanelContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adminPanelContainer .adminPanelContent p.title {
+  position: relative;
+  color: white;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.adminPanelContainer .adminPanelContent p.title::before {
+  content: "";
+  position: absolute;
+  background: rgba(246, 160, 31, 0.15);
+  max-width: 12rem;
+  width: 100%;
+  margin-left: -6rem;
+  height: 100%;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm {
+  padding: 2rem 6rem;
+  background-color: white;
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm p.Header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm .formInput p {
+  color: #000;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm .formInput input {
+  margin-top: 0.5rem;
+  width: 400px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm .formInput .redMessage {
+  margin-top: 0.3rem;
+  color: red;
+}
+
+.adminPanelContainer .adminPanelContent .loginForm input[type="button"] {
+  margin-top: 1rem;
+  padding: 0.4rem 1.2rem;
+  background-color: #f6a01f;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sideBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-width: 300px;
+  width: 100%;
+  background-color: #090a13;
+}
+
+.sideBar .logo {
+  background: #111325;
+  padding: 1rem 1.5rem;
+}
+
+.sideBar .logo .navCircle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.sideBar .logo .navCircle img {
+  width: 50px;
+  height: 50px;
+}
+
+.sideBar nav a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2rem 1.5rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.sideBar nav a .navTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sideBar nav a .navTitle p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 0.8rem;
+}
+
+.sideBar nav a .navLine {
+  width: 8px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.sideBar nav a:hover {
+  background-color: #111325;
+}
+
+.sideBar nav a.active {
+  background-color: #020203;
+}
+
+.adminTitle {
+  padding: 2rem 0;
+}
+
+.adminTitle h1 {
+  color: #000;
+}
+
+.adminTitle p {
+  color: #565656;
+}
+
+.dFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.adminHeader {
+  z-index: 100;
+  background-color: #fff;
+  color: #000;
+  padding: 1.5rem 2rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminHeader .lineContainer .line {
+  height: 6px;
+  background: rgba(9, 10, 19, 0.1);
+  border-radius: 49px;
+  margin: 0.5rem 0;
+}
+
+.adminHeader .lineContainer .line:first-child {
+  width: 80px;
+}
+
+.adminHeader .lineContainer .line:nth-child(2) {
+  width: 60px;
+}
+
+.adminHeader .lineContainer .line:last-child {
+  width: 40px;
+}
+
+.adminHeader img.burger {
+  z-index: 100;
+  display: none;
+}
+
+.adminHeader .userId {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.adminHeader .userId img.user-white {
+  display: none;
+}
+
+.adminHeader .userId img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.adminHeader .userId p {
+  margin: 0 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.adminHeader .userId .logout-tooltip {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+}
+
+.adminHeader .userId .logout-tooltip img {
+  margin-bottom: -0.4rem;
+}
+
+.adminHeader .userId .logout-tooltip .logout-wrapper {
+  background: #111325;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.adminHeader .userId .logout-tooltip .logout-wrapper p {
+  margin: 0;
+  color: #fff;
+}
+
+.adminHeader .userId .logout-tooltip .logout-wrapper:hover {
+  background: #161930;
+}
+
+.dashboardContainer {
+  background-color: #f8f8f8;
+  padding: 0 2rem;
+}
+
+.dashboardContainer .visits-wrapper {
+  background-color: #090a13;
+  padding: 2rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboardContainer .visits-wrapper .todays-visits {
+  margin-left: 2.5rem;
+}
+
+.dashboardContainer .visits-wrapper .todays-visits .todays-visits-tit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboardContainer .visits-wrapper .todays-visits .todays-visits-tit p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.dashboardContainer .visits-wrapper .todays-visits .todays-visits-tit img {
+  margin-left: 0.5rem;
+}
+
+.dashboardContainer .visits-wrapper .todays-visits p.highlighted {
+  color: #f6a01f;
+  margin-top: 0.4rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.dashboardContainer .visits-wrapper p {
+  color: #fff;
+}
+
+.dashboardContainer .visits-wrapper p:last-child {
+  margin-top: 0.4rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.adminPortfolioContainer {
+  padding: 0 2rem;
+  background-color: #f8f8f8;
+}
+
+.adminPortfolioContainer .portfolioForm {
+  background-color: #090a13;
+  padding: 2rem 1.5rem;
+}
+
+.adminPortfolioContainer .portfolioForm h3 {
+  color: #f6a01f;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput {
+  margin-bottom: 1.5rem;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput p {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput input {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput select {
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput .fileDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput .fileDiv .custom-file-upload {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  background-color: #fff;
+  color: #000;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput .fileDiv .custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.adminPortfolioContainer .portfolioForm form .formInput .fileDiv h4 {
+  color: #fff;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.adminPortfolioContainer .portfolioForm form input[type="button"] {
+  padding: 0.4rem 2rem;
+  background-color: #f69f1e;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.adminPortfolioContainer .portfolioCardContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.adminPortfolioContainer .portfolioCardContainer .portfolioCard {
+  color: #000;
+}
+
+.adminPortfolioContainer .portfolioCardContainer .portfolioCard img {
+  width: 100%;
+}
+
+.adminPortfolioContainer .portfolioCardContainer .portfolioCard p {
+  line-height: 1.5rem;
+}
+
+.adminPortfolioContainer .portfolioCardContainer .portfolioCard input[type="button"] {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1.5rem;
+  border: none;
+  border-radius: 37px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.adminPortfolioContainer .portfolioCardContainer .portfolioCard input[type="button"]:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+          box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+}
+
+.contactContainer {
+  background-color: #f8f8f8;
+  padding: 0 2rem;
+}
+
+.contacts-wrapper {
+  padding: 0 0 2rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  gap: 1.5rem;
+  color: #000;
+}
+
+.contacts-wrapper .contacts {
+  background-color: #fff;
+  padding: 2rem;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.5rem;
+}
+
+.contacts-wrapper .contacts h2 {
+  color: #246dff;
+  margin-bottom: 0.8rem;
+}
+
+.contacts-wrapper .contacts .contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contacts-wrapper .contacts .contact-info p:first-child {
+  font-weight: bold;
+  margin-right: 0.3rem;
+}
+
+.contacts-wrapper .contacts .contact-infomsg p:first-child {
+  font-weight: bold;
+}
+
+.contacts-wrapper .contacts input {
+  padding: 0.4rem 1.5rem;
+  border: none;
+  border-radius: 37px;
+  background-color: #ff0000;
+  color: #fff;
+  margin-top: 1rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.contacts-wrapper .contacts input:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+          box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+}
+
+.not-available {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.carrersContainer {
+  padding: 0 2rem;
+  background-color: #f8f8f8;
+}
+
+.carrersContainer .carrersForm {
+  background-color: #090a13;
+  padding: 2rem 1.5rem;
+}
+
+.carrersContainer .carrersForm h3 {
+  color: #f6a01f;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.carrersContainer .carrersForm form .formInput {
+  margin-bottom: 1.5rem;
+}
+
+.carrersContainer .carrersForm form .formInput p {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.carrersContainer .carrersForm form .formInput input,
+.carrersContainer .carrersForm form .formInput textarea {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+}
+
+.carrersContainer .carrersForm form .formInput select {
+  padding: 0.2rem 1rem;
+}
+
+.carrersContainer .carrersForm form input[type="button"] {
+  padding: 0.4rem 2rem;
+  background-color: #f69f1e;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*# sourceMappingURL=adminPanel.css.map */

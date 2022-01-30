@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../img/logo.svg";
 import burgerOpenIcon from "../img/menu-open.svg";
 import burgerCloseIcon from "../img/menu-close.svg";
@@ -13,6 +13,18 @@ import portfolioIcon from "../img/portfolio.svg";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const header = document.querySelector("header");
+    const checkLocation = location.pathname.split("/");
+
+    if (header !== undefined) {
+      if (checkLocation.includes("admin")) {
+        header.classList.add("admin-hidden");
+      }
+    }
+  }, [location]);
 
   const mobNavContainerRef = useRef(null);
   const mobNavLeftRef = useRef(null);

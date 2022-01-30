@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../img/logo.svg";
 import locationIcon from "../img/location-icon.svg";
 import mailIcon from "../img/mail-icon.svg";
@@ -10,6 +10,18 @@ import twitterIcon from "../img/twitter-icon.svg";
 import linkedinIcon from "../img/linkedin-icon.svg";
 import tiktokIcon from "../img/tiktok-icon.svg";
 const Footer = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    const checkLocation = location.pathname.split("/");
+
+    if (footer !== undefined) {
+      if (checkLocation.includes("admin")) {
+        footer.classList.add("admin-hidden");
+      }
+    }
+  }, [location]);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

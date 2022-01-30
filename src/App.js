@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import "./scss/loader.css";
 import "./scss/responsive.css";
+import "./admin/scss/adminPanel.css";
+import "./admin/scss/adminResponsive.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const Footer = lazy(() => import("./components/Footer.component"));
 const Header = lazy(() => import("./components/Header.component"));
@@ -13,6 +15,13 @@ const Portfolio = lazy(() =>
   import("./components/portfolioComponent/Portfolio.component")
 );
 const Services = lazy(() => import("./pages/Services.page"));
+const AdminLogin = lazy(() => import("./admin/Pages/AdminLogin.Page"));
+const AdminPanel = lazy(() => import("./admin/Pages/AdminPanel.Page"));
+
+const AdminSideBarContextProvider = lazy(() =>
+  import("./admin/contexts/AdminSideBar.context")
+);
+
 const Page404 = lazy(() => import("./pages/Page404.page"));
 const App = () => {
   return (
@@ -34,6 +43,16 @@ const App = () => {
             <Route path="/carrers" exact element={<Carrers />} />
             <Route path="/carrers/:id" element={<ApplyNow />} />
             <Route path="/contact" exact element={<ContactUs />} />
+            <Route path="/admin/" exact element={<AdminLogin />} />
+            <Route
+              path="/admin/*"
+              exact
+              element={
+                <AdminSideBarContextProvider>
+                  <AdminPanel />
+                </AdminSideBarContextProvider>
+              }
+            />
             <Route path="*" element={<Page404 />} />
           </Routes>
           <Footer />

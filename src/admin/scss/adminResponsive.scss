@@ -1,0 +1,106 @@
+@import "./adminPanel.scss";
+@media screen and (max-width: 900px) {
+  .adminHeader {
+    z-index: 100;
+    background-color: #111325;
+    color: #fff;
+    .lineContainer {
+      display: none;
+    }
+    img.burger {
+      display: block;
+      width: 40px;
+    }
+    .userId {
+      p.user {
+        display: none;
+      }
+      img.user-black {
+        display: none;
+      }
+      img.user-white {
+        display: block;
+      }
+      img.down-arrow {
+        display: none;
+      }
+      .logout-tooltip {
+        .logout-wrapper {
+          background-color: $main-color;
+          p {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  .sideBar {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    width: fit-content;
+    padding-top: 5.45rem;
+    top: 0;
+    overflow-y: scroll;
+    .logo {
+      display: none;
+    }
+    nav {
+      .navLine {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .contacts-wrapper {
+    .contacts {
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .contacts-wrapper {
+    grid-template-columns: auto auto;
+  }
+  .adminPortfolioContainer {
+    .portfolioCardContainer {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contacts-wrapper {
+    grid-template-columns: auto;
+  }
+  .adminPortfolioContainer {
+    .portfolioCardContainer {
+      grid-template-columns: auto;
+    }
+  }
+  .adminTitle {
+    h1 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .dashboardContainer {
+    .visits-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      .todays-visits {
+        margin: 1rem 0 0 0;
+      }
+    }
+  }
+}
