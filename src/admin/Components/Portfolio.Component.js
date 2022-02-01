@@ -42,7 +42,7 @@ const Portfolio = () => {
             <div className="formInput">
               <p>Image</p>
               <div className="fileDiv">
-                <label class="custom-file-upload">
+                <label className="custom-file-upload">
                   <input
                     type="file"
                     onChange={(e) => {

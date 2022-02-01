@@ -78,7 +78,6 @@ const AdminLogin = () => {
     } else {
       setIsOtpValid(true);
     }
-    if (!isOtpValid) return 0;
 
     if (email === "") {
       return setIsEmailEmpty(true);
@@ -103,8 +102,12 @@ const AdminLogin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setToken(data.accessToken);
-        navigate("/admin/dashboard");
+        if (data.status) {
+          setToken(data.accessToken);
+          navigate("/admin/dashboard");
+        } else {
+          return setIsOtpValid(false);
+        }
       });
   };
 
@@ -120,7 +123,14 @@ const AdminLogin = () => {
         <div className="adminPanelContainer">
           <div className="adminPanelContent">
             <p className="title">Admin Panel for Zpro</p>
-            <div className="loginForm" ref={emailRef}>
+            <form
+              className="loginForm"
+              ref={emailRef}
+              onSubmit={(e) => {
+                e.preventDefault();
+                Submit(email);
+              }}
+            >
               <img src={adminLogo} alt="adminLogo" />
               <p className="Header">Login</p>
               <div className="formInput">
@@ -145,10 +155,18 @@ const AdminLogin = () => {
                   onClick={() => Submit(email)}
                 />
               </div>
-            </div>
+            </form>
 
             {/* otp form */}
-            <div className="loginForm" style={{ display: "none" }} ref={otpRef}>
+            <form
+              className="loginForm"
+              style={{ display: "none" }}
+              ref={otpRef}
+              onSubmit={(e) => {
+                e.preventDefault();
+                SubmitOtp(email, otp);
+              }}
+            >
               <img src={adminLogo} alt="adminLogo" />
               <p className="Header">Verification</p>
               <div className="formInput">
@@ -171,7 +189,7 @@ const AdminLogin = () => {
                   onClick={() => SubmitOtp(email, otp)}
                 />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </>
