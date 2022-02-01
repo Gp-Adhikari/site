@@ -3,13 +3,16 @@ import { url } from "../../URL";
 import adminLogo from "../img/admin_logo.svg";
 
 import { TokenContext } from "../../Contexts/TokenContext";
+import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
   useEffect(() => {
     document.title = "Admin Login";
   }, []);
 
-  const { csrfToken, setToken } = useContext(TokenContext);
+  const navigate = useNavigate();
+
+  const { csrfToken, setToken, token, loading } = useContext(TokenContext);
 
   const emailRef = useRef(null);
   const otpRef = useRef(null);
@@ -19,6 +22,13 @@ const AdminLogin = () => {
   const [isOtpValid, setIsOtpValid] = useState("");
 
   const [otp, setotp] = useState("");
+
+  //check if token exists
+  useEffect(() => {
+    if (token !== null && token !== undefined && token !== "") {
+      navigate("/admin/dashboard");
+    }
+  }, [token]);
 
   useEffect(() => {
     if (emailRef.current === null || otpRef === null) return;
@@ -79,8 +89,6 @@ const AdminLogin = () => {
 
     setIsOtpValid(true);
 
-    console.log(email, otp);
-
     fetch(url + "/login", {
       method: "POST",
       headers: {
@@ -95,72 +103,80 @@ const AdminLogin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setToken(data.accessToken);
+        navigate("/admin/dashboard");
       });
   };
 
-  return (
-    <>
-      <div className="adminPanelContainer">
-        <div className="adminPanelContent">
-          <p className="title">Admin Panel for Zpro</p>
-          <div className="loginForm" ref={emailRef}>
-            <img src={adminLogo} alt="adminLogo" />
-            <p className="Header">Login</p>
-            <div className="formInput">
-              <p>E-mail</p>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              {!isEmailEmpty ? null : isEmailEmpty === "Invalid Email" ? (
-                <p className="redMessage">*Invalid Email</p>
-              ) : (
-                <p className="redMessage"> *Email is required</p>
-              )}
+  if (loading) {
+    return (
+      <div className="loader-container">
+        <div className="loader"></div>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <div className="adminPanelContainer">
+          <div className="adminPanelContent">
+            <p className="title">Admin Panel for Zpro</p>
+            <div className="loginForm" ref={emailRef}>
+              <img src={adminLogo} alt="adminLogo" />
+              <p className="Header">Login</p>
+              <div className="formInput">
+                <p>E-mail</p>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                {!isEmailEmpty ? null : isEmailEmpty === "Invalid Email" ? (
+                  <p className="redMessage">*Invalid Email</p>
+                ) : (
+                  <p className="redMessage"> *Email is required</p>
+                )}
+              </div>
+              <div className="align-left">
+                <input
+                  type="button"
+                  value="Login"
+                  onClick={() => Submit(email)}
+                />
+              </div>
             </div>
-            <div className="align-left">
-              <input
-                type="button"
-                value="Login"
-                onClick={() => Submit(email)}
-              />
-            </div>
-          </div>
 
-          {/* otp form */}
-          <div className="loginForm" ref={otpRef}>
-            <img src={adminLogo} alt="adminLogo" />
-            <p className="Header">Verification</p>
-            <div className="formInput">
-              <p>Verification Code: *{email}</p>
-              <input
-                type="text"
-                value={otp}
-                onChange={(e) => {
-                  setotp(e.target.value);
-                }}
-              />
-              {isOtpValid === "" ? null : isEmailEmpty === false ? (
-                <p className="redMessage">*Code is invalid.</p>
-              ) : null}
-            </div>
-            <div className="align-left">
-              <input
-                type="button"
-                value="Verify"
-                onClick={() => SubmitOtp(email, otp)}
-              />
+            {/* otp form */}
+            <div className="loginForm" style={{ display: "none" }} ref={otpRef}>
+              <img src={adminLogo} alt="adminLogo" />
+              <p className="Header">Verification</p>
+              <div className="formInput">
+                <p>Verification Code: *{email}</p>
+                <input
+                  type="text"
+                  value={otp}
+                  onChange={(e) => {
+                    setotp(e.target.value);
+                  }}
+                />
+                {isOtpValid === "" ? null : isEmailEmpty === false ? (
+                  <p className="redMessage">*Code is invalid.</p>
+                ) : null}
+              </div>
+              <div className="align-left">
+                <input
+                  type="button"
+                  value="Verify"
+                  onClick={() => SubmitOtp(email, otp)}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 };
 
 export default AdminLogin;

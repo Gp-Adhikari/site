@@ -82,6 +82,10 @@
   margin: 1rem 0;
 }
 
+.adminPanelContainer .adminPanelContent .loginForm .align-left {
+  width: 100%;
+}
+
 .adminPanelContainer .adminPanelContent .loginForm .formInput p {
   color: #000;
 }

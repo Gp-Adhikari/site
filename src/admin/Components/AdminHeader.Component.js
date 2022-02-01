@@ -8,8 +8,33 @@ import burgerCloseIcon from "../img/menu-close.svg";
 
 import { AdminSideBarContext } from "../contexts/AdminSideBar.context";
 
+import { useNavigate } from "react-router-dom";
+import { TokenContext } from "../../Contexts/TokenContext";
+import { url } from "../../URL";
+
 const AdminHeader = () => {
+  const { setToken, csrfToken } = useContext(TokenContext);
   const { isSideBarOpen, changeSideBarState } = useContext(AdminSideBarContext);
+
+  const navigate = useNavigate();
+
+  //logout
+  const logout = () => {
+    fetch(url + "/logout", {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          setToken(null);
+          navigate("/admin");
+        }
+      });
+  };
 
   const tooltip = () => {
     const x = document.querySelector(".logout-tooltip");
@@ -38,7 +63,7 @@ const AdminHeader = () => {
           <img className="user-white" src={userIconWhite} alt="user" />
           <p className="user">admin@website.com</p>
           <img className="down-arrow" src={downArrow} alt="arrow" />
-          <div className="logout-tooltip">
+          <div className="logout-tooltip" onClick={() => logout()}>
             <img src={triangle} alt="triangle" />
             <div className="logout-wrapper">
               <p>Logout</p>
