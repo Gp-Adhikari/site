@@ -21,6 +21,7 @@ const AdminPanel = lazy(() => import("./admin/Pages/AdminPanel.Page"));
 const AdminSideBarContextProvider = lazy(() =>
   import("./admin/contexts/AdminSideBar.context")
 );
+const TokenContextProvider = lazy(() => import("./Contexts/TokenContext"));
 
 const Page404 = lazy(() => import("./pages/Page404.page"));
 const App = () => {
@@ -43,14 +44,24 @@ const App = () => {
             <Route path="/carrers" exact element={<Carrers />} />
             <Route path="/carrers/:id" element={<ApplyNow />} />
             <Route path="/contact" exact element={<ContactUs />} />
-            <Route path="/admin/" exact element={<AdminLogin />} />
+            <Route
+              path="/admin/"
+              exact
+              element={
+                <TokenContextProvider>
+                  <AdminLogin />
+                </TokenContextProvider>
+              }
+            />
             <Route
               path="/admin/*"
               exact
               element={
-                <AdminSideBarContextProvider>
-                  <AdminPanel />
-                </AdminSideBarContextProvider>
+                <TokenContextProvider>
+                  <AdminSideBarContextProvider>
+                    <AdminPanel />
+                  </AdminSideBarContextProvider>
+                </TokenContextProvider>
               }
             />
             <Route path="*" element={<Page404 />} />

@@ -1,5 +1,5 @@
 @import "./adminPanel.scss";
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .adminHeader {
     z-index: 100;
     background-color: #111325;
@@ -100,6 +100,22 @@
       justify-content: center;
       .todays-visits {
         margin: 1rem 0 0 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .contacts-wrapper {
+    .contacts {
+      .contact-info {
+        p {
+          font-size: 0.7rem;
+        }
+      }
+      .contact-infomsg {
+        p {
+          font-size: 0.7rem;
+        }
       }
     }
   }

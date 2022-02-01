@@ -78,6 +78,7 @@
 .adminPanelContainer .adminPanelContent .loginForm p.Header {
   font-size: 2rem;
   font-weight: bold;
+  color: #000;
   margin: 1rem 0;
 }
 
@@ -96,6 +97,7 @@
 .adminPanelContainer .adminPanelContent .loginForm .formInput .redMessage {
   margin-top: 0.3rem;
   color: red;
+  font-size: 0.8rem;
 }
 
 .adminPanelContainer .adminPanelContent .loginForm input[type="button"] {
@@ -498,7 +500,7 @@
 
 .contacts-wrapper .contacts {
   background-color: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   line-height: 1.5rem;
@@ -591,7 +593,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .adminHeader {
     z-index: 100;
     background-color: #111325;
@@ -687,6 +689,15 @@
   }
   .dashboardContainer .visits-wrapper .todays-visits {
     margin: 1rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contacts-wrapper .contacts .contact-info p {
+    font-size: 0.7rem;
+  }
+  .contacts-wrapper .contacts .contact-infomsg p {
+    font-size: 0.7rem;
   }
 }
 /*# sourceMappingURL=adminResponsive.css.map */
