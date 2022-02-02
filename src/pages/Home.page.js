@@ -6,11 +6,23 @@ import RecentProjects from "../components/RecentProjects.component";
 import HeroSection from "../components/HeroSection.component";
 
 import confetti from "canvas-confetti";
+import { url } from "../URL";
 
 const Home = () => {
   //title
   useEffect(() => {
     document.title = "Home - Zpro";
+  }, []);
+
+  //counter/visits
+  useEffect(() => {
+    const abortController = new AbortController();
+    fetch(url + "/", {
+      method: "GET",
+      signal: abortController.signal,
+      credentials: "include",
+    });
+    return () => abortController.abort();
   }, []);
 
   //confetti for this page

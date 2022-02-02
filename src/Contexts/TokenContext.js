@@ -12,7 +12,7 @@ const TokenContextProvider = ({ children }) => {
   useEffect(() => {
     const abortController = new AbortController();
 
-    fetch(url + "/", {
+    fetch(url + "/csrf", {
       method: "GET",
       signal: abortController.signal,
       credentials: "include",
