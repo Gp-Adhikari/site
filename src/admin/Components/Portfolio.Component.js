@@ -1,16 +1,102 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import AdminTitle from "./AdminTitle.Component";
-import p1 from "../img/p1.png";
-import p2 from "../img/p2.png";
-import p3 from "../img/p3.png";
-import p4 from "../img/p4.png";
-import p5 from "../img/p5.png";
-import p6 from "../img/p6.png";
+
+import { TokenContext } from "../../Contexts/TokenContext";
+
+import { url } from "../../URL";
+
 const Portfolio = () => {
   useEffect(() => {
     document.title = "Portfolio | Admin Panel - Zpro";
   }, []);
+
+  const { csrfToken, token } = useContext(TokenContext);
+
+  const [portfolios, setPortfolios] = useState([]);
+
+  const [portfolioName, setPortfolioName] = useState("");
+  const [portfolioDesc, setPortfolioDesc] = useState("");
   const [portfolioImg, setPortfolioImg] = useState(null);
+  const [portfolioLink, setPortfolioLink] = useState("");
+  const [portfolioType, setPortfolioType] = useState(1);
+
+  //select options
+  const SelectBox = ({ children, onChange, value }) => (
+    <select onChange={onChange} value={value}>
+      {children}
+    </select>
+  );
+
+  //handle select option change
+
+  const handleChange = (e) => {
+    setPortfolioType(e.target.value);
+  };
+
+  //select options
+  const Option = ({ value, description }) => (
+    <option value={value}>{description}</option>
+  );
+
+  //on portfolio submit / add
+  const addPortfolio = (
+    portfolioName,
+    portfolioDesc,
+    portfolioLink,
+    portfolioType,
+    portfolioImg
+  ) => {
+    if (
+      portfolioName === "" ||
+      !portfolioName ||
+      portfolioDesc === "" ||
+      !portfolioDesc ||
+      portfolioLink === "" ||
+      !portfolioLink ||
+      portfolioImg === null ||
+      portfolioImg.name === undefined
+    ) {
+      return 0;
+    }
+
+    let formData = new FormData();
+
+    formData.append("name", String(portfolioName));
+    formData.append("desc", String(portfolioDesc));
+    formData.append("link", String(portfolioLink));
+    formData.append("type", parseInt(portfolioType));
+    formData.append("img", portfolioImg);
+
+    fetch(url + "/api/portfolio", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
+  //get portfolio items on load
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    fetch(url + "/portfolio", {
+      method: "GET",
+      signal: abortController.signal,
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setPortfolios(data.portfolios));
+
+    return () => abortController.abort();
+  }, [csrfToken]);
 
   return (
     <>
@@ -21,23 +107,38 @@ const Portfolio = () => {
           <form action="#">
             <div className="formInput">
               <p>Name</p>
-              <input type="text" />
+              <input
+                type="text"
+                value={portfolioName}
+                onChange={(e) => setPortfolioName(e.target.value)}
+              />
             </div>
             <div className="formInput">
               <p>Description</p>
-              <input type="text" />
+              <input
+                type="text"
+                value={portfolioDesc}
+                onChange={(e) => setPortfolioDesc(e.target.value)}
+              />
             </div>
             <div className="formInput">
               <p>Website Link</p>
-              <input type="text" />
+              <input
+                type="text"
+                value={portfolioLink}
+                onChange={(e) => setPortfolioLink(e.target.value)}
+              />
             </div>
             <div className="formInput">
               <p>Type</p>
-              <select name="type">
-                <option value="1">Web Design</option>
-                <option value="2">Mockup</option>
-                <option value="3">Logo Design</option>
-              </select>
+              <SelectBox
+                onChange={(e) => handleChange(e)}
+                value={portfolioType}
+              >
+                <Option value="1" description="Web Design" />
+                <Option value="2" description="Mockup" />
+                <Option value="3" description="Logo Design" />
+              </SelectBox>
             </div>
             <div className="formInput">
               <p>Image</p>
@@ -47,7 +148,6 @@ const Portfolio = () => {
                     type="file"
                     onChange={(e) => {
                       setPortfolioImg(e.target.files[0]);
-                      console.log(e.target.files[0]);
                     }}
                     accept="image/png, image/jpeg , image/jpg "
                   />
@@ -60,7 +160,19 @@ const Portfolio = () => {
                 </h4>
               </div>
             </div>
-            <input type="button" value="Add" />
+            <input
+              type="button"
+              value="Add"
+              onClick={() =>
+                addPortfolio(
+                  portfolioName,
+                  portfolioDesc,
+                  portfolioLink,
+                  portfolioType,
+                  portfolioImg
+                )
+              }
+            />
           </form>
         </div>
         <AdminTitle
@@ -68,42 +180,21 @@ const Portfolio = () => {
           desc="Check and remove portfolio"
         />
         <div className="portfolioCardContainer">
-          <div className="portfolioCard">
-            <img src={p1} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
-          <div className="portfolioCard">
-            <img src={p2} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
-          <div className="portfolioCard">
-            <img src={p3} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
-          <div className="portfolioCard">
-            <img src={p4} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
-          <div className="portfolioCard">
-            <img src={p5} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
-          <div className="portfolioCard">
-            <img src={p6} alt="p1" />
-            <p>Name: Site Name</p>
-            <p>Link: www.something.com</p>
-            <input type="button" value="Remove" />
-          </div>
+          {portfolios[0] === undefined ? (
+            <p className="not-available">No Portfolios Available.</p>
+          ) : (
+            portfolios.map((portfolio) => (
+              <div className="portfolioCard" key={portfolio._id}>
+                <img
+                  src={`${url}/photo/${portfolio.img.split(".jpeg")[0]}`}
+                  alt={portfolio.img}
+                />
+                <p>Name: {portfolio.name}</p>
+                <p>Link: {portfolio.link}</p>
+                <input type="button" value="Remove" />
+              </div>
+            ))
+          )}
         </div>
       </div>
     </>

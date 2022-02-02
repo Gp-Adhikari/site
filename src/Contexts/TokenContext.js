@@ -10,25 +10,29 @@ const TokenContextProvider = ({ children }) => {
 
   //get csrf token
   useEffect(() => {
+    const abortController = new AbortController();
+
     fetch(url + "/", {
       method: "GET",
+      signal: abortController.signal,
       credentials: "include",
     })
       .then((res) => res.json())
       .then((data) => {
         setCsrfToken(data.csrfToken);
-      })
-      .catch((err) => {
-        return 0;
       });
+    return () => abortController.abort();
   }, []);
 
   //get token if refresh token exists
-  useEffect(async () => {
-    if ((await csrfToken) === null) return 0;
+  useEffect(() => {
+    const abortController = new AbortController();
 
-    await fetch(url + "/token", {
+    if (csrfToken === null) return 0;
+
+    fetch(url + "/token", {
       method: "GET",
+      signal: abortController.signal,
       credentials: "include",
       headers: {
         "xsrf-token": csrfToken,
@@ -41,10 +45,10 @@ const TokenContextProvider = ({ children }) => {
           return setToken(data.accessToken);
         }
       });
+    setLoading(false);
 
-    //await has no effect here but is needed for loading to work
-    await setLoading(false);
-  }, [csrfToken]);
+    return () => abortController.abort();
+  }, [csrfToken, token]);
 
   return (
     <>
