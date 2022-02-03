@@ -10,7 +10,7 @@ const Portfolio = () => {
     document.title = "Portfolio | Admin Panel - Zpro";
   }, []);
 
-  const { csrfToken, token } = useContext(TokenContext);
+  const { csrfToken, token, setLoading } = useContext(TokenContext);
 
   const [portfolios, setPortfolios] = useState([]);
 
@@ -67,6 +67,14 @@ const Portfolio = () => {
     formData.append("type", parseInt(portfolioType));
     formData.append("img", portfolioImg);
 
+    //empty the fields
+    setPortfolioName("");
+    setPortfolioDesc("");
+    setPortfolioLink("");
+    setPortfolioImg(null);
+
+    setLoading(true);
+
     fetch(url + "/api/portfolio", {
       method: "POST",
       credentials: "include",
@@ -77,7 +85,20 @@ const Portfolio = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        fetch(url + "/portfolio", {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            "xsrf-token": csrfToken,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setLoading(false);
+            setPortfolios(data.portfolios);
+          });
+      });
   };
 
   //get portfolio items on load
@@ -98,13 +119,50 @@ const Portfolio = () => {
     return () => abortController.abort();
   }, [csrfToken]);
 
+  // remove portfolio item
+  const removePortfolio = async (portfolio) => {
+    const imgName = await portfolio.img.split(".jpeg")[0];
+
+    if (portfolios.includes(portfolio)) {
+      setPortfolios(portfolios.filter((item) => item !== portfolio));
+    } else {
+      return;
+    }
+
+    await fetch(`${url}/portfolio/${String(imgName)}`, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <div className="adminPortfolioContainer">
         <AdminTitle title="Portfolio" desc="Our portfolio" />
         <div className="portfolioForm">
           <h3>Add New Portfolio</h3>
-          <form action="#">
+          <form
+            action="#"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(1);
+              addPortfolio(
+                portfolioName,
+                portfolioDesc,
+                portfolioLink,
+                portfolioType,
+                portfolioImg
+              );
+            }}
+          >
             <div className="formInput">
               <p>Name</p>
               <input
@@ -191,7 +249,11 @@ const Portfolio = () => {
                 />
                 <p>Name: {portfolio.name}</p>
                 <p>Link: {portfolio.link}</p>
-                <input type="button" value="Remove" />
+                <input
+                  type="button"
+                  value="Remove"
+                  onClick={() => removePortfolio(portfolio)}
+                />
               </div>
             ))
           )}

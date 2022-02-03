@@ -52,7 +52,16 @@ const TokenContextProvider = ({ children }) => {
 
   return (
     <>
-      <TokenContext.Provider value={{ token, setToken, csrfToken, loading }}>
+      <TokenContext.Provider
+        value={{
+          token,
+          setToken,
+          csrfToken,
+          loading,
+          setLoading,
+          setCsrfToken,
+        }}
+      >
         {children}
       </TokenContext.Provider>
     </>

@@ -1,4 +1,4 @@
-export const data = [
+export const datab = [
   {
     date: "AD",
     "hot dog": 98,

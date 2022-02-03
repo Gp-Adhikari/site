@@ -326,6 +326,7 @@
 }
 
 .dashboardContainer {
+  color: black;
   background-color: #f8f8f8;
   padding: 0 2rem;
 }
@@ -442,11 +443,18 @@
 
 .adminPortfolioContainer .portfolioForm form input[type="button"] {
   padding: 0.4rem 2rem;
-  background-color: #f69f1e;
+  background-color: #f6a01f;
   border: none;
   border-radius: 2rem;
   font-weight: bold;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   cursor: pointer;
+}
+
+.adminPortfolioContainer .portfolioForm form input[type="button"]:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(246, 160, 31, 0.8);
+          box-shadow: 0px 0px 15px rgba(246, 160, 31, 0.8);
 }
 
 .adminPortfolioContainer .portfolioCardContainer {

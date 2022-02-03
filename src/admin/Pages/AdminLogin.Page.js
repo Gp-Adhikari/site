@@ -12,7 +12,8 @@ const AdminLogin = () => {
 
   const navigate = useNavigate();
 
-  const { csrfToken, setToken, token, loading } = useContext(TokenContext);
+  const { csrfToken, setToken, token, loading, setLoading } =
+    useContext(TokenContext);
 
   const emailRef = useRef(null);
   const otpRef = useRef(null);
@@ -86,6 +87,8 @@ const AdminLogin = () => {
       return setIsEmailEmpty("Invalid Email");
     }
 
+    setLoading(true);
+
     setIsOtpValid(true);
 
     fetch(url + "/login", {
@@ -106,6 +109,7 @@ const AdminLogin = () => {
           setToken(data.accessToken);
           navigate("/admin/dashboard");
         } else {
+          setLoading(false);
           return setIsOtpValid(false);
         }
       });
