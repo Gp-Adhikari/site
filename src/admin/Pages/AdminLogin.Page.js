@@ -34,9 +34,9 @@ const AdminLogin = () => {
     if (emailRef.current === null || otpRef === null) return;
     if (isEmailEmpty === false) {
       emailRef.current.style.display = "none";
-      otpRef.current.style.display = "block";
+      otpRef.current.style.display = "flex";
     } else {
-      emailRef.current.style.display = "block";
+      emailRef.current.style.display = "flex";
       otpRef.current.style.display = "none";
     }
   }, [emailRef, otpRef, isEmailEmpty, isOtpValid]);
