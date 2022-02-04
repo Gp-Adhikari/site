@@ -7,6 +7,7 @@ const TokenContextProvider = ({ children }) => {
   const [csrfToken, setCsrfToken] = useState(null);
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [admin, setAdmin] = useState("");
 
   //get csrf token
   useEffect(() => {
@@ -41,6 +42,7 @@ const TokenContextProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
+          setAdmin(data.admin);
           setLoading(false);
           return setToken(data.accessToken);
         }
@@ -60,6 +62,7 @@ const TokenContextProvider = ({ children }) => {
           loading,
           setLoading,
           setCsrfToken,
+          admin,
         }}
       >
         {children}

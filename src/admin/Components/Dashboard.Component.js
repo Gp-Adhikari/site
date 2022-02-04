@@ -18,24 +18,43 @@ const Dashboard = () => {
 
   useEffect(() => {
     const abortController = new AbortController();
+    const abortController2 = new AbortController();
 
-    fetch(url + "/pageVisits", {
+    fetch(url + "/token", {
       method: "GET",
-      credentials: "include",
       signal: abortController.signal,
+      credentials: "include",
       headers: {
         "xsrf-token": csrfToken,
-        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        setLoading(false);
-        setData(data);
+        if (data.status) {
+          const accessToken = data.accessToken;
+
+          fetch(url + "/pageVisits", {
+            method: "GET",
+            credentials: "include",
+            signal: abortController2.signal,
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              setLoading(false);
+              setData(data);
+            });
+        }
       });
 
-    return () => abortController.abort();
-  }, []);
+    return () => {
+      abortController.abort();
+      abortController2.abort();
+    };
+  }, [setLoading, token, csrfToken]);
   return (
     <>
       <div className="dashboardContainer">
@@ -43,7 +62,7 @@ const Dashboard = () => {
         <div className="visits-wrapper">
           <div className="total-visits">
             <p>Total Visits</p>
-            <p>20,000</p>
+            <p>{data === null ? 0 : data.todayVisits.toLocaleString()}</p>
           </div>
           <div className="todays-visits">
             <div className="todays-visits-tit">
@@ -56,7 +75,7 @@ const Dashboard = () => {
               )}
             </div>
             <p className="highlighted">
-              {data !== null ? data.todayVisits : 0}
+              {data !== null ? data.todayVisits.toLocaleString() : 0}
             </p>
           </div>
         </div>

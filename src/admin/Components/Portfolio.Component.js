@@ -10,7 +10,7 @@ const Portfolio = () => {
     document.title = "Portfolio | Admin Panel - Zpro";
   }, []);
 
-  const { csrfToken, token, setLoading } = useContext(TokenContext);
+  const { csrfToken, setLoading } = useContext(TokenContext);
 
   const [portfolios, setPortfolios] = useState([]);
 
@@ -75,37 +75,55 @@ const Portfolio = () => {
 
     setLoading(true);
 
-    fetch(url + "/api/portfolio", {
-      method: "POST",
+    fetch(url + "/token", {
+      method: "GET",
       credentials: "include",
       headers: {
         "xsrf-token": csrfToken,
-        Authorization: `Bearer ${token}`,
       },
-      body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        fetch(url + "/portfolio", {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            "xsrf-token": csrfToken,
-          },
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            setLoading(false);
-            setPortfolios(data.portfolios);
-          });
+        if (data.status) {
+          const accessToken = data.accessToken;
+
+          fetch(url + "/api/portfolio", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+            body: formData,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (!data.status) return 0;
+
+              fetch(url + "/admin/portfolio", {
+                method: "GET",
+                credentials: "include",
+                headers: {
+                  "xsrf-token": csrfToken,
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  setLoading(false);
+                  setPortfolios(data.portfolios);
+                });
+            });
+        }
       });
   };
 
   //get portfolio items on load
   useEffect(() => {
     const abortController = new AbortController();
+    const abortController2 = new AbortController();
 
-    fetch(url + "/portfolio", {
+    fetch(url + "/token", {
       method: "GET",
       signal: abortController.signal,
       credentials: "include",
@@ -114,14 +132,32 @@ const Portfolio = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setPortfolios(data.portfolios));
+      .then((data) => {
+        if (data.status) {
+          setLoading(false);
+          fetch(url + "/admin/portfolio", {
+            method: "GET",
+            signal: abortController2.signal,
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${data.accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => setPortfolios(data.portfolios));
+        }
+      });
 
-    return () => abortController.abort();
-  }, [csrfToken]);
+    return () => {
+      abortController.abort();
+      abortController2.abort();
+    };
+  }, [csrfToken, setLoading]);
 
   // remove portfolio item
-  const removePortfolio = async (portfolio) => {
-    const imgName = await portfolio.img.split(".jpeg")[0];
+  const removePortfolio = (portfolio) => {
+    const imgName = portfolio.img.split(".jpeg")[0];
 
     if (portfolios.includes(portfolio)) {
       setPortfolios(portfolios.filter((item) => item !== portfolio));
@@ -129,19 +165,33 @@ const Portfolio = () => {
       return;
     }
 
-    await fetch(`${url}/portfolio/${String(imgName)}`, {
-      method: "DELETE",
+    setLoading(true);
+
+    fetch(url + "/token", {
+      method: "GET",
       credentials: "include",
       headers: {
         "xsrf-token": csrfToken,
-        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+        if (data.status) {
+          const accessToken = data.accessToken;
+          fetch(`${url}/portfolio/${String(imgName)}`, {
+            method: "DELETE",
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              setLoading(false);
+            });
+        }
+      });
   };
   return (
     <>

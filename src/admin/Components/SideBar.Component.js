@@ -75,7 +75,7 @@ const SideBar = () => {
           >
             <div className="navTitle">
               <img src={carrersIcon} alt="carrers" />
-              <p>Carrers</p>
+              <p>Careers</p>
             </div>
             <div className="navLine"></div>
           </NavLink>

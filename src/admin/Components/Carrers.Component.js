@@ -10,7 +10,7 @@ const Carrers = () => {
     document.title = "Carrers | Admin Panel - Zpro";
   }, []);
 
-  const { csrfToken, token, setLoading, setToken } = useContext(TokenContext);
+  const { csrfToken, setLoading } = useContext(TokenContext);
 
   const [carrers, setCarrers] = useState([]);
 
@@ -38,6 +38,47 @@ const Carrers = () => {
     <option value={value}>{description}</option>
   );
 
+  //get carrers on load
+  useEffect(() => {
+    const abortController = new AbortController();
+    const abortController2 = new AbortController();
+
+    fetch(url + "/token", {
+      method: "GET",
+      signal: abortController.signal,
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          fetch(url + "/vacancy", {
+            method: "GET",
+            signal: abortController2.signal,
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${data.accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+
+            .then((data) => {
+              if (!data.status) return 0;
+              setCarrers(data.vacancies);
+              setLoading(false);
+            });
+        }
+      });
+
+    return () => {
+      abortController.abort();
+      abortController2.abort();
+    };
+  }, [csrfToken, setLoading]);
+
   //on carrers submit / add
   const addCarrers = (
     jobTitle,
@@ -62,16 +103,13 @@ const Carrers = () => {
       return 0;
     }
 
-    console.log(
-      JSON.stringify({
-        title: jobTitle,
-        corporateTitle: corporateTItle,
-        noOfVacancy: numberOfVacancies,
-        requirements: requirements,
-        salary: salary,
-        type: String(jobType),
-      })
-    );
+    setLoading(true);
+
+    setJobTitle("");
+    setCorporateTItle("");
+    setNumberOfVacancies("");
+    setRequirements("");
+    setSalary("");
 
     fetch(url + "/token", {
       method: "GET",
@@ -83,13 +121,14 @@ const Carrers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
-          setToken(data.accessToken);
+          const accessToken = data.accessToken;
           fetch(url + "/vacancy/announcement", {
             method: "POST",
             credentials: "include",
             headers: {
+              "Content-Type": "application/json",
               "xsrf-token": csrfToken,
-              Authorization: `Bearer ${data.accessToken}`,
+              Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify({
               title: jobTitle,
@@ -101,23 +140,68 @@ const Carrers = () => {
             }),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+              if (!data.status) return 0;
+
+              fetch(url + "/vacancy", {
+                method: "GET",
+                credentials: "include",
+                headers: {
+                  "xsrf-token": csrfToken,
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              })
+                .then((res) => res.json())
+
+                .then((data) => {
+                  if (!data.status) return 0;
+                  setCarrers(data.vacancies);
+                  setLoading(false);
+                });
+            });
         }
       });
-
-    // let formData = new FormData();
-
-    // formData.append("title", jobTitle);
-    // formData.append("corporateTitle", corporateTItle);
-    // formData.append("noOfVacancy", numberOfVacancies);
-    // formData.append("requirements", requirements);
-    // formData.append("salary", salary);
-    // formData.append("type", jobType);
   };
+
+  //on carrers delete
+  const deleteCarrers = (carreer) => {
+    if (carrers.includes(carreer)) {
+      setCarrers(carrers.filter((item) => item !== carreer));
+    } else {
+      return;
+    }
+    setLoading(true);
+    fetch(url + "/token", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          const accessToken = data.accessToken;
+          fetch(url + "/vacancy/" + String(carreer._id), {
+            method: "DELETE",
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              setLoading(false);
+            });
+        }
+      });
+  };
+
   return (
     <>
       <div className="carrersContainer">
-        <AdminTitle title="Carrers" desc="Carrers / Vacancy" />
+        <AdminTitle title="Careers" desc="Careers / Vacancy" />
         <div className="carrersForm">
           <h3>Add New Vacancy</h3>
           <form action="#">
@@ -146,7 +230,7 @@ const Carrers = () => {
               />
             </div>
             <div className="formInput">
-              <p>Requirements (Separate lines using \\)</p>
+              <p>Requirements (Separate lines using \)</p>
               <textarea
                 name="textarea"
                 value={requirements}
@@ -189,25 +273,25 @@ const Carrers = () => {
             />
           </form>
         </div>
-        <AdminTitle title="Review Careers" desc="Carrers / Vacancy" />
+        <AdminTitle title="Review Careers" desc="Careers / Vacancy" />
         <div className="contacts-wrapper">
           {CarrersData[0] !== undefined ? (
-            CarrersData.map((data) => (
-              <div className="contacts" key={data.id}>
+            carrers.map((data) => (
+              <div className="contacts" key={data._id}>
                 <h2>Job Title: {data.title}</h2>
                 <div className="contact-info">
                   <p>Corporate:</p>
-                  <p>{data.c_title}</p>
+                  <p>{data.corporateTitle}</p>
                 </div>
                 <div className="contact-info">
                   <p>Vacancy:</p>
-                  <p>{data.vacancy}</p>
+                  <p>{data.noOfVacancy}</p>
                 </div>
                 <div className="contact-infomsg">
                   <p>Requirement:</p>
-                  {data.requirement.map((req, idx) => (
-                    <p key={idx}>- {req}</p>
-                  ))}
+                  {data.requirements.map((req, idx) =>
+                    req === "" ? null : <p key={idx}>- {req}</p>
+                  )}
                 </div>
                 <div className="contact-info">
                   <p>Salary:</p>
@@ -215,9 +299,13 @@ const Carrers = () => {
                 </div>
                 <div className="contact-info">
                   <p>Job Type:</p>
-                  <p>{data.type}</p>
+                  <p>{data.type === 1 ? "Full Time" : "Intern"}</p>
                 </div>
-                <input type="button" value="Remove" />
+                <input
+                  type="button"
+                  value="Remove"
+                  onClick={() => deleteCarrers(data)}
+                />
               </div>
             ))
           ) : (
