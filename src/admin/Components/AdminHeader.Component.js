@@ -13,7 +13,7 @@ import { TokenContext } from "../../Contexts/TokenContext";
 import { url } from "../../URL";
 
 const AdminHeader = () => {
-  const { setToken, csrfToken } = useContext(TokenContext);
+  const { setToken, csrfToken, admin } = useContext(TokenContext);
   const { isSideBarOpen, changeSideBarState } = useContext(AdminSideBarContext);
 
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const AdminHeader = () => {
         <div className="userId" onClick={() => tooltip()}>
           <img className="user-black" src={userIcon} alt="user" />
           <img className="user-white" src={userIconWhite} alt="user" />
-          <p className="user">admin@website.com</p>
+          <p className="user">{admin}</p>
           <img className="down-arrow" src={downArrow} alt="arrow" />
           <div className="logout-tooltip" onClick={() => logout()}>
             <img src={triangle} alt="triangle" />

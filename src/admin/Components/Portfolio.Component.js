@@ -10,7 +10,7 @@ const Portfolio = () => {
     document.title = "Portfolio | Admin Panel - Zpro";
   }, []);
 
-  const { csrfToken, token } = useContext(TokenContext);
+  const { csrfToken, setLoading } = useContext(TokenContext);
 
   const [portfolios, setPortfolios] = useState([]);
 
@@ -67,24 +67,63 @@ const Portfolio = () => {
     formData.append("type", parseInt(portfolioType));
     formData.append("img", portfolioImg);
 
-    fetch(url + "/api/portfolio", {
-      method: "POST",
+    //empty the fields
+    setPortfolioName("");
+    setPortfolioDesc("");
+    setPortfolioLink("");
+    setPortfolioImg(null);
+
+    setLoading(true);
+
+    fetch(url + "/token", {
+      method: "GET",
       credentials: "include",
       headers: {
         "xsrf-token": csrfToken,
-        Authorization: `Bearer ${token}`,
       },
-      body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.status) {
+          const accessToken = data.accessToken;
+
+          fetch(url + "/api/portfolio", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+            body: formData,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (!data.status) return 0;
+
+              fetch(url + "/admin/portfolio", {
+                method: "GET",
+                credentials: "include",
+                headers: {
+                  "xsrf-token": csrfToken,
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  setLoading(false);
+                  setPortfolios(data.portfolios);
+                });
+            });
+        }
+      });
   };
 
   //get portfolio items on load
   useEffect(() => {
     const abortController = new AbortController();
+    const abortController2 = new AbortController();
 
-    fetch(url + "/portfolio", {
+    fetch(url + "/token", {
       method: "GET",
       signal: abortController.signal,
       credentials: "include",
@@ -93,18 +132,87 @@ const Portfolio = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setPortfolios(data.portfolios));
+      .then((data) => {
+        if (data.status) {
+          setLoading(false);
+          fetch(url + "/admin/portfolio", {
+            method: "GET",
+            signal: abortController2.signal,
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${data.accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => setPortfolios(data.portfolios));
+        }
+      });
 
-    return () => abortController.abort();
-  }, [csrfToken]);
+    return () => {
+      abortController.abort();
+      abortController2.abort();
+    };
+  }, [csrfToken, setLoading]);
 
+  // remove portfolio item
+  const removePortfolio = (portfolio) => {
+    const imgName = portfolio.img.split(".jpeg")[0];
+
+    if (portfolios.includes(portfolio)) {
+      setPortfolios(portfolios.filter((item) => item !== portfolio));
+    } else {
+      return;
+    }
+
+    setLoading(true);
+
+    fetch(url + "/token", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "xsrf-token": csrfToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          const accessToken = data.accessToken;
+          fetch(`${url}/portfolio/${String(imgName)}`, {
+            method: "DELETE",
+            credentials: "include",
+            headers: {
+              "xsrf-token": csrfToken,
+              Authorization: `Bearer ${accessToken}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              setLoading(false);
+            });
+        }
+      });
+  };
   return (
     <>
       <div className="adminPortfolioContainer">
         <AdminTitle title="Portfolio" desc="Our portfolio" />
         <div className="portfolioForm">
           <h3>Add New Portfolio</h3>
-          <form action="#">
+          <form
+            action="#"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(1);
+              addPortfolio(
+                portfolioName,
+                portfolioDesc,
+                portfolioLink,
+                portfolioType,
+                portfolioImg
+              );
+            }}
+          >
             <div className="formInput">
               <p>Name</p>
               <input
@@ -191,7 +299,11 @@ const Portfolio = () => {
                 />
                 <p>Name: {portfolio.name}</p>
                 <p>Link: {portfolio.link}</p>
-                <input type="button" value="Remove" />
+                <input
+                  type="button"
+                  value="Remove"
+                  onClick={() => removePortfolio(portfolio)}
+                />
               </div>
             ))
           )}
