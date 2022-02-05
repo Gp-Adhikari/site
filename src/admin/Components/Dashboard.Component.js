@@ -62,7 +62,7 @@ const Dashboard = () => {
         <div className="visits-wrapper">
           <div className="total-visits">
             <p>Total Visits</p>
-            <p>{data === null ? 0 : data.todayVisits.toLocaleString()}</p>
+            <p>{data === null ? 0 : data.totalVisits.toLocaleString()}</p>
           </div>
           <div className="todays-visits">
             <div className="todays-visits-tit">

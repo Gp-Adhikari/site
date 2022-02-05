@@ -8,7 +8,6 @@ const Footer = lazy(() => import("./components/Footer.component"));
 const Header = lazy(() => import("./components/Header.component"));
 const Home = lazy(() => import("./pages/Home.page"));
 const Carrers = lazy(() => import("./pages/Carrers.page"));
-const ApplyNow = lazy(() => import("./components/ApplyNow.component"));
 const ContactUs = lazy(() => import("./components/ContactUs.component"));
 const About = lazy(() => import("./pages/About.page"));
 const Portfolio = lazy(() =>
@@ -42,7 +41,7 @@ const App = () => {
             <Route path="/portfolio" exact element={<Portfolio />} />
             <Route path="/services" exact element={<Services />} />
             <Route path="/carrers" exact element={<Carrers />} />
-            <Route path="/carrers/:id" element={<ApplyNow />} />
+            <Route path="/carrers/:id" element={<Carrers />} />
             <Route path="/contact" exact element={<ContactUs />} />
             <Route
               path="/admin/"

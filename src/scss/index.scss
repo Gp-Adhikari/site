@@ -746,6 +746,7 @@ footer {
       .footerLogo {
         width: 80px;
       }
+
       .firstRow {
         line-height: 2.5rem;
         .firstRowItem {
@@ -766,8 +767,15 @@ footer {
           line-height: 2.5rem;
           list-style: none;
           cursor: pointer;
+          width: fit-content;
           color: #fff;
           text-decoration: none;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: $main-color;
+          }
+
           &.active {
             color: $main-color;
           }

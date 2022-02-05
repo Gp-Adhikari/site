@@ -939,8 +939,18 @@ footer .topFooter .footerContainer .thirdRow a {
   line-height: 2.5rem;
   list-style: none;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #fff;
   text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+footer .topFooter .footerContainer .secondRow a:hover,
+footer .topFooter .footerContainer .thirdRow a:hover {
+  color: #f6a01f;
 }
 
 footer .topFooter .footerContainer .secondRow a.active,
@@ -1195,4 +1205,3 @@ footer .bottomFooter .socialMediaIcons .circle:hover {
   -webkit-box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
           box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
 }
-/*# sourceMappingURL=index.css.map */

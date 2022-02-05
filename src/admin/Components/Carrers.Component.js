@@ -7,7 +7,7 @@ import { url } from "../../URL";
 
 const Carrers = () => {
   useEffect(() => {
-    document.title = "Carrers | Admin Panel - Zpro";
+    document.title = "Careers | Admin Panel - Zpro";
   }, []);
 
   const { csrfToken, setLoading } = useContext(TokenContext);
@@ -54,7 +54,7 @@ const Carrers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
-          fetch(url + "/vacancy", {
+          fetch(url + "/admin/vacancy", {
             method: "GET",
             signal: abortController2.signal,
             credentials: "include",
@@ -143,7 +143,7 @@ const Carrers = () => {
             .then((data) => {
               if (!data.status) return 0;
 
-              fetch(url + "/vacancy", {
+              fetch(url + "/admin/vacancy", {
                 method: "GET",
                 credentials: "include",
                 headers: {
@@ -275,7 +275,7 @@ const Carrers = () => {
         </div>
         <AdminTitle title="Review Careers" desc="Careers / Vacancy" />
         <div className="contacts-wrapper">
-          {CarrersData[0] !== undefined ? (
+          {carrers[0] !== undefined ? (
             carrers.map((data) => (
               <div className="contacts" key={data._id}>
                 <h2>Job Title: {data.title}</h2>
@@ -309,7 +309,7 @@ const Carrers = () => {
               </div>
             ))
           ) : (
-            <p className="not-available">No Carrers Available.</p>
+            <p className="not-available">No Careers Available.</p>
           )}
         </div>
       </div>

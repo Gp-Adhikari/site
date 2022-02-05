@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import p1 from "../../img/p2.png";
-import p2 from "../../img/p3.png";
-import p3 from "../../img/p4.png";
-import p4 from "../../img/p5.png";
-import p5 from "../../img/p6.png";
+import { url } from "../../URL";
 import Banner from "../Banner.component";
 import Title from "../Title.component";
 import PortfolioImage from "./portfolioimage.component";
@@ -13,6 +9,64 @@ const Portfolio = () => {
   useEffect(() => {
     document.title = "Portfolio - Zpro";
   }, []);
+  const [portfolios, setPortfolios] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  //get portfolio items on load
+  useEffect(() => {
+    setLoading(true);
+    const abortController = new AbortController();
+
+    fetch(url + "/portfolio", {
+      method: "GET",
+      signal: abortController.signal,
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.status) return 0;
+        setPortfolios(data.portfolios);
+        setLoading(false);
+      });
+
+    return () => abortController.abort();
+  }, []);
+
+  //all route handlers
+  const allRoute = portfolios.map((portfolio) => (
+    <PortfolioImage
+      key={portfolio._id}
+      img={`${url}/photo/${portfolio.img.split(".jpeg")[0]}`}
+    />
+  ));
+  //web design route handlers
+  const webDesignRoute = portfolios.map((portfolio) =>
+    parseInt(portfolio.type) === 1 ? (
+      <PortfolioImage
+        key={portfolio._id}
+        img={`${url}/photo/${portfolio.img.split(".jpeg")[0]}`}
+      />
+    ) : null
+  );
+  //logo design route handlers
+  const logoDesignRoute = portfolios.map((portfolio) =>
+    parseInt(portfolio.type) === 3 ? (
+      <PortfolioImage
+        key={portfolio._id}
+        img={`${url}/photo/${portfolio.img.split(".jpeg")[0]}`}
+      />
+    ) : null
+  );
+  //mockup route handlers
+  const mockupRoute = portfolios.map((portfolio) =>
+    parseInt(portfolio.type) === 2 ? (
+      <PortfolioImage
+        key={portfolio._id}
+        img={`${url}/photo/${portfolio.img.split(".jpeg")[0]}`}
+      />
+    ) : null
+  );
+
   return (
     <>
       <Banner text1="Our Recent" text2="Project" />
@@ -54,23 +108,41 @@ const Portfolio = () => {
             </li>
           </ul>
         </div>
-        <div className="portfolioContainer">
-          {route === "" ? (
-            <PortfolioImage img={p1} />
-          ) : route === "web" ? (
-            <PortfolioImage img={p1} />
-          ) : route === "logo" ? (
-            <PortfolioImage img={p1} />
-          ) : route === "mockup" ? (
-            <PortfolioImage img={p1} />
-          ) : (
-            <p>no data found</p>
-          )}
-          <PortfolioImage img={p2} />
-          <PortfolioImage img={p3} />
-          <PortfolioImage img={p4} />
-          <PortfolioImage img={p5} />
-        </div>
+        {loading ? (
+          <div className="loader-container-specify">
+            <div className="loader"></div>
+          </div>
+        ) : (
+          <div className="portfolioContainer">
+            {route === "" && portfolios[0] !== undefined ? (
+              allRoute[0] !== null ? (
+                allRoute
+              ) : (
+                <p className="not-available">No Data Found.</p>
+              )
+            ) : route === "web" && portfolios[0] !== undefined ? (
+              webDesignRoute[0] !== null ? (
+                webDesignRoute
+              ) : (
+                <p className="not-available">No Data Found.</p>
+              )
+            ) : route === "logo" && portfolios[0] !== undefined ? (
+              logoDesignRoute[0] !== null ? (
+                logoDesignRoute
+              ) : (
+                <p className="not-available">No Data Found.</p>
+              )
+            ) : route === "mockup" && portfolios[0] !== undefined ? (
+              mockupRoute[0] !== null ? (
+                mockupRoute
+              ) : (
+                <p className="not-available">No Data Found.</p>
+              )
+            ) : (
+              <p className="not-available">No Data Found.</p>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
