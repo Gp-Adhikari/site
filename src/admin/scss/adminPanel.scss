@@ -370,7 +370,7 @@ $main-color: #f6a01f;
 .contacts-wrapper {
   padding: 0 0 2rem 0;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
   color: #000;
   .contacts {

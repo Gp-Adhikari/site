@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
 import AdminTitle from "./AdminTitle.Component";
-import { CarrersData } from "../Data/Carrers.Data";
 
 import { TokenContext } from "../../Contexts/TokenContext";
 import { url } from "../../URL";
