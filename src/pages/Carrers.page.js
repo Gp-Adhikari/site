@@ -5,7 +5,7 @@ import { url } from "../URL";
 
 const Carrers = () => {
   useEffect(() => {
-    document.title = "Carrers - Zpro";
+    document.title = "Careers - Zpro";
   }, []);
 
   const [vacancies, setVacancies] = useState([]);
