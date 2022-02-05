@@ -199,20 +199,7 @@ const Portfolio = () => {
         <AdminTitle title="Portfolio" desc="Our portfolio" />
         <div className="portfolioForm">
           <h3>Add New Portfolio</h3>
-          <form
-            action="#"
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log(1);
-              addPortfolio(
-                portfolioName,
-                portfolioDesc,
-                portfolioLink,
-                portfolioType,
-                portfolioImg
-              );
-            }}
-          >
+          <form action="#">
             <div className="formInput">
               <p>Name</p>
               <input

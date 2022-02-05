@@ -54,7 +54,7 @@ const Carrers = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
-          fetch(url + "/vacancy", {
+          fetch(url + "/admin/vacancy", {
             method: "GET",
             signal: abortController2.signal,
             credentials: "include",
@@ -143,7 +143,7 @@ const Carrers = () => {
             .then((data) => {
               if (!data.status) return 0;
 
-              fetch(url + "/vacancy", {
+              fetch(url + "/admin/vacancy", {
                 method: "GET",
                 credentials: "include",
                 headers: {

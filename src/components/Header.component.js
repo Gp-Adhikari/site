@@ -127,7 +127,7 @@ const Header = () => {
               Portfolio
             </NavLink>
             <NavLink to="/carrers" onClick={() => scrollToTop()}>
-              Carrers
+              Careers
             </NavLink>
             <NavLink to="/contact" onClick={() => scrollToTop()}>
               Contact Us
@@ -196,7 +196,7 @@ const Header = () => {
                   }}
                 >
                   <img src={carrersIcon} alt="carrers" />
-                  <p>Carrers</p>
+                  <p>Careers</p>
                 </NavLink>
                 <NavLink
                   to="/contact"

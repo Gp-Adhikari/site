@@ -9,11 +9,11 @@ import confetti from "canvas-confetti";
 const ContactUs = () => {
   //confetti for this page
   useEffect(() => {
-    var end = Date.now() + 1 * 1000;
     document.title = "Contact Us - Zpro";
+    let end = Date.now() + 1 * 1000;
 
     // go Buckeyes!
-    var colors = ["#f6a01f", "#ffffff"];
+    let colors = ["#f6a01f", "#ffffff"];
 
     (function frame() {
       confetti({
