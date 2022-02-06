@@ -126,7 +126,7 @@ const Header = () => {
             <NavLink to="/portfolio" onClick={() => scrollToTop()}>
               Portfolio
             </NavLink>
-            <NavLink to="/carrers" onClick={() => scrollToTop()}>
+            <NavLink to="/careers" onClick={() => scrollToTop()}>
               Careers
             </NavLink>
             <NavLink to="/contact" onClick={() => scrollToTop()}>
@@ -189,7 +189,7 @@ const Header = () => {
                   <p>Portfolio</p>
                 </NavLink>
                 <NavLink
-                  to="/carrers"
+                  to="/careers"
                   onClick={() => {
                     scrollToTop();
                     setIsNavOpen(!isNavOpen);

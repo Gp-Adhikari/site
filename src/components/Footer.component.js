@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
             <div className="secondRow">
               <h2>Quick Links</h2>
-              <NavLink to="/carrers" onClick={() => scrollToTop()}>
+              <NavLink to="/careers" onClick={() => scrollToTop()}>
                 Careers
               </NavLink>
               <NavLink to="/portfolio" onClick={() => scrollToTop()}>

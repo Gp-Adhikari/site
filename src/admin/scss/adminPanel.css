@@ -499,6 +499,7 @@
   background-color: #f8f8f8;
   max-width: 100%;
   width: 100%;
+  height: 100vh;
   padding: 0 2rem;
 }
 
@@ -612,4 +613,3 @@
   font-weight: bold;
   cursor: pointer;
 }
-/*# sourceMappingURL=adminPanel.css.map */

@@ -3,8 +3,8 @@ import locationIcon from "../img/location-black.svg";
 import mailIcon from "../img/mail-black.svg";
 import phoneIcon from "../img/phone-black.svg";
 import Banner from "./Banner.component";
+import Congrats from "./Congrats.component";
 
-import confetti from "canvas-confetti";
 import { url } from "../URL";
 
 import { TokenContext } from "../Contexts/TokenContext";
@@ -25,9 +25,11 @@ const ContactUs = () => {
   const [isSubjectEmpty, setIsSubjectEmpty] = useState("");
   const [isMessageEmpty, setIsMessageEmpty] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const validateEmail = (email) => {
     const key =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // eslint-disable-line
     return String(email).toLowerCase().match(key);
   };
 
@@ -62,8 +64,16 @@ const ContactUs = () => {
     if (message.length > 1000) return setIsMessageEmpty("characterLimitMax");
     setIsMessageEmpty(false);
 
+    setLoading(true);
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+    setSubject("");
+    setMessage("");
+
     fetch(url + "/contact", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         "xsrf-token": csrfToken,
@@ -77,40 +87,28 @@ const ContactUs = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.status) {
+          setLoading("success");
+          setTimeout(() => {
+            setLoading(false);
+          }, 3000);
+        } else {
+          setLoading("error");
+          setTimeout(() => {
+            setLoading(false);
+          }, 3000);
+        }
+      });
   };
   //confetti for this page
   useEffect(() => {
     document.title = "Contact Us - Zpro";
-    let end = Date.now() + 1 * 1000;
-
-    // go Buckeyes!
-    let colors = ["#f6a01f", "#ffffff"];
-
-    (function frame() {
-      confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 50,
-        origin: { x: 0, y: 1 },
-        colors: colors,
-      });
-      confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 50,
-        origin: { x: 1, y: 1 },
-        colors: colors,
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
   }, []);
 
   return (
     <>
+      <Congrats loading={loading} />
       <Banner text1="Contact Us" />
       <div className="contactUsContainer">
         <div className="contactUsContent">

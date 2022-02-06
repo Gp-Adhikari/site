@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Title from "./Title.component";
+import Congrats from "./Congrats.component";
+
+import { TokenContext } from "../Contexts/TokenContext";
+import { url } from "../URL";
 
 const CarrersItem = ({ data }) => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const { csrfToken } = useContext(TokenContext);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -27,9 +33,11 @@ const CarrersItem = ({ data }) => {
   const [isMessageEmpty, setIsMessageEmpty] = useState("");
   const [isPdfEmpty, setIsPdfEmpty] = useState("");
 
+  const [loading, setLoading] = useState(false);
+
   const validateEmail = (email) => {
     const key =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // eslinit-disable-line
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // eslint-disable-line
     return String(email).toLowerCase().match(key);
   };
   const validateNumber = (txt) => {
@@ -37,7 +45,7 @@ const CarrersItem = ({ data }) => {
     setPhone(n);
   };
 
-  const submitForm = (name, email, phone, address, message) => {
+  const submitForm = (name, email, phone, address, message, pdf) => {
     if (name === "") return setIsNameEmpty(true);
     if (name.length > 50) return setIsNameEmpty("characterLimitMax");
     if (name.length < 3) return setIsNameEmpty("characterLimitMin");
@@ -65,6 +73,46 @@ const CarrersItem = ({ data }) => {
 
     if (pdf === "") return setIsPdfEmpty(true);
     setIsPdfEmpty(false);
+
+    // setName("");
+    // setEmail("");
+    // setPhone("");
+    // setAddress("");
+    // setMessage("");
+    // setPdf("");
+
+    let formData = new FormData();
+    formData.append("vacancyAnnouncedID", data[id]._id);
+    formData.append("applicantName", name);
+    formData.append("email", email);
+    formData.append("ph", phone);
+    formData.append("address", address);
+    formData.append("desc", message);
+    formData.append("file", pdf);
+
+    fetch(url + "/vacancy/applicants", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        // "Content-Type": "application/json",
+        "xsrf-token": csrfToken,
+      },
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          setLoading("success");
+          setTimeout(() => {
+            setLoading(false);
+          }, 3000);
+        } else {
+          setLoading("error");
+          setTimeout(() => {
+            setLoading(false);
+          }, 3000);
+        }
+      });
   };
 
   if (
@@ -95,6 +143,7 @@ const CarrersItem = ({ data }) => {
 
     return (
       <>
+        <Congrats loading={loading} />
         <div className="applyNowSection" style={{ marginTop: "-3rem" }}>
           <div className="applyNowContainer">
             <div className="vacancyTitle">
@@ -109,9 +158,9 @@ const CarrersItem = ({ data }) => {
             <div className="vacancyRequirement">
               <h1>Requirements:</h1>
               <ul type="disc">
-                {career.requirements.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {career.requirements.map((item, index) =>
+                  item === "" ? null : <li key={index}>{item}</li>
+                )}
               </ul>
             </div>
             <div className="jobSalary">
@@ -279,7 +328,7 @@ const CarrersItem = ({ data }) => {
                 type="button"
                 value="Submit"
                 onClick={() => {
-                  submitForm(name, email, phone, address, message);
+                  submitForm(name, email, phone, address, message, pdf);
                 }}
               />
             </form>
@@ -302,7 +351,7 @@ const CarrersItem = ({ data }) => {
                   value="Apply Now"
                   onClick={() => {
                     scrollToTop();
-                    navigate("/carrers/" + index);
+                    navigate("/careers/" + index);
                   }}
                 />
               </div>

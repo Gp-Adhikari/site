@@ -1,10 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { url } from "../URL";
 
 export const TokenContext = createContext(null);
 const TokenContextProvider = ({ children }) => {
+  const location = useLocation();
+  const currentLocation = location.pathname;
+
   const [csrfToken, setCsrfToken] = useState(null);
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,6 +33,12 @@ const TokenContextProvider = ({ children }) => {
 
   //get token if refresh token exists
   useEffect(() => {
+    if (
+      currentLocation === "/contact" ||
+      currentLocation.split("/").includes("careers")
+    ) {
+      return 0;
+    }
     const abortController = new AbortController();
 
     if (csrfToken === null) return 0;
@@ -49,13 +58,14 @@ const TokenContextProvider = ({ children }) => {
           setLoading(false);
           return setToken(data.accessToken);
         } else {
+          setToken("");
           navigate("/admin");
         }
       });
     setLoading(false);
 
     return () => abortController.abort();
-  }, [csrfToken, token, navigate]);
+  }, [csrfToken, token, navigate, currentLocation]);
 
   return (
     <>
