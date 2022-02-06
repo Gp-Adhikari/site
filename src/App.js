@@ -42,7 +42,15 @@ const App = () => {
             <Route path="/services" exact element={<Services />} />
             <Route path="/carrers" exact element={<Carrers />} />
             <Route path="/carrers/:id" element={<Carrers />} />
-            <Route path="/contact" exact element={<ContactUs />} />
+            <Route
+              path="/contact"
+              exact
+              element={
+                <TokenContextProvider>
+                  <ContactUs />
+                </TokenContextProvider>
+              }
+            />
             <Route
               path="/admin/"
               exact

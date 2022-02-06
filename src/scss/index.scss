@@ -17,6 +17,15 @@ $max-width: 1400px;
 body {
   scroll-behavior: smooth;
 }
+
+//invalid message
+.redMessage {
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
 //banner
 .banner-container {
   background-color: #111325;
@@ -633,36 +642,25 @@ header {
             resize: none;
             overflow-y: auto;
           }
-          .file-drag {
-            .drop-area {
-              position: relative;
-              width: 200px;
-              height: 200px;
-              background-color: white;
-              z-index: 1;
-              .upload-image {
-                width: 200px;
-                height: 200px;
-              }
-              p {
-                color: black;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: fit-content;
-                font-size: 12px;
-                transform: translate(-50%, -50%);
-                z-index: -1;
+          .fileDiv {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            .custom-file-upload {
+              cursor: pointer;
+              width: fit-content;
+              padding: 0.4rem 1rem;
+              background-color: #fff;
+              color: #000;
+              input[type="file"] {
+                display: none;
               }
             }
-          }
-          .or {
-            width: 64%;
-            padding: 1.5rem 0;
-            text-align: center;
-          }
-          .choose-file {
-            width: 200px;
+            h4 {
+              color: #fff;
+              margin-left: 0.5rem;
+              font-size: 1rem;
+            }
           }
         }
         .formInputMessage {
@@ -670,65 +668,18 @@ header {
           grid-column-end: 3;
         }
       }
+      input[type="button"] {
+        margin-top: 2rem;
+        background-color: $main-color;
+        padding: 0.8rem 3rem;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+          box-shadow: $main-color-hover;
+        }
+      }
     }
-    // .applyForJob-Table {
-    //   form {
-    //     table {
-    //       tr {
-    //         td {
-    //           padding: 0.5rem 0;
-    //           input {
-    //             padding: 0.3rem 0.7rem;
-    //           }
-    //           textarea {
-    //             resize: none;
-    //             overflow-y: auto;
-    //             width: 100%;
-    //             padding: 0.3rem 0.7rem;
-    //           }
-    //           .file-drag {
-    //             .drop-area {
-    //               position: relative;
-    //               width: 200px;
-    //               height: 200px;
-    //               background-color: white;
-    //               z-index: 1;
-    //               .upload-image {
-    //                 width: 200px;
-    //                 height: 200px;
-    //               }
-    //               p {
-    //                 color: black;
-    //                 position: absolute;
-    //                 top: 50%;
-    //                 left: 50%;
-    //                 width: fit-content;
-    //                 font-size: 12px;
-    //                 transform: translate(-50%, -50%);
-    //                 z-index: -1;
-    //               }
-    //             }
-    //           }
-    //           .or {
-    //             width: 64%;
-    //             padding: 1.5rem 0;
-    //             text-align: center;
-    //           }
-    //           .choose-file {
-    //             padding: 0.5rem 4rem;
-    //           }
-    //           button {
-    //             padding: 0.5rem 5rem;
-    //             background-color: $main-color;
-    //             font-weight: bold;
-    //             border: none;
-    //             margin-top: 1.5rem;
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
 
@@ -929,6 +880,12 @@ footer {
             margin-bottom: 1rem;
             font-weight: bold;
             font-size: 1.1rem;
+
+            &.redMessage {
+              font-size: 14px;
+              margin-top: 1rem;
+              font-weight: normal;
+            }
           }
           input,
           textarea {

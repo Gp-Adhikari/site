@@ -1,13 +1,13 @@
 export const contacts = [
-  // {
-  //   id: "1",
-  //   name: "abc",
-  //   email: "abc@gmail.com",
-  //   ph: "9825633338",
-  //   subject: "computer",
-  //   message:
-  //     "hisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfgh",
-  // },
+  {
+    id: "1",
+    name: "abc",
+    email: "abc@gmail.com",
+    ph: "9825633338",
+    subject: "computer",
+    message:
+      "hisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfghhisfhdfghdghfsdghdghdfghdfghdfghdfgh",
+  },
   {
     id: "2",
     name: "abcd",

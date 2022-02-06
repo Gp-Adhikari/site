@@ -11,6 +11,13 @@ body {
   scroll-behavior: smooth;
 }
 
+.redMessage {
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
 .banner-container {
   background-color: #111325;
   padding: 8rem 0;
@@ -841,47 +848,55 @@ header .header-wrapper nav.nav-shrink {
   overflow-y: auto;
 }
 
-.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  z-index: 1;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .fileDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
 }
 
-.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area .upload-image {
-  width: 200px;
-  height: 200px;
-}
-
-.applyNowSection .applyNowContainer form .formInputWrapper .formInput .file-drag .drop-area p {
-  color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .fileDiv .custom-file-upload {
+  cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 12px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: -1;
+  padding: 0.4rem 1rem;
+  background-color: #fff;
+  color: #000;
 }
 
-.applyNowSection .applyNowContainer form .formInputWrapper .formInput .or {
-  width: 64%;
-  padding: 1.5rem 0;
-  text-align: center;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .fileDiv .custom-file-upload input[type="file"] {
+  display: none;
 }
 
-.applyNowSection .applyNowContainer form .formInputWrapper .formInput .choose-file {
-  width: 200px;
+.applyNowSection .applyNowContainer form .formInputWrapper .formInput .fileDiv h4 {
+  color: #fff;
+  margin-left: 0.5rem;
+  font-size: 1rem;
 }
 
 .applyNowSection .applyNowContainer form .formInputWrapper .formInputMessage {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
+}
+
+.applyNowSection .applyNowContainer form input[type="button"] {
+  margin-top: 2rem;
+  background-color: #f6a01f;
+  padding: 0.8rem 3rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.applyNowSection .applyNowContainer form input[type="button"]:hover {
+  -webkit-box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
+          box-shadow: 0px 0px 20px rgba(246, 160, 31, 0.8);
 }
 
 footer .topFooter {
@@ -1162,6 +1177,12 @@ footer .bottomFooter .socialMediaIcons .circle:hover {
   font-size: 1.1rem;
 }
 
+.contactUsContainer .contactUsContent .contactUsRightPart form .formInput p.redMessage {
+  font-size: 14px;
+  margin-top: 1rem;
+  font-weight: normal;
+}
+
 .contactUsContainer .contactUsContent .contactUsRightPart form .formInput input,
 .contactUsContainer .contactUsContent .contactUsRightPart form .formInput textarea {
   width: 100%;
@@ -1205,3 +1226,4 @@ footer .bottomFooter .socialMediaIcons .circle:hover {
   -webkit-box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
           box-shadow: 0px 0px 20px rgba(38, 111, 255, 0.8);
 }
+/*# sourceMappingURL=index.css.map */

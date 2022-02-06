@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { url } from "../URL";
 
@@ -8,6 +9,8 @@ const TokenContextProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
   const [admin, setAdmin] = useState("");
+
+  const navigate = useNavigate();
 
   //get csrf token
   useEffect(() => {
@@ -45,12 +48,14 @@ const TokenContextProvider = ({ children }) => {
           setAdmin(data.admin);
           setLoading(false);
           return setToken(data.accessToken);
+        } else {
+          navigate("/admin");
         }
       });
     setLoading(false);
 
     return () => abortController.abort();
-  }, [csrfToken, token]);
+  }, [csrfToken, token, navigate]);
 
   return (
     <>
