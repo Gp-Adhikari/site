@@ -62,7 +62,7 @@ const Dashboard = () => {
         <div className="visits-wrapper">
           <div className="total-visits">
             <p>Total Visits</p>
-            <p>{data === null ? 0 : data.totalVisits.toLocaleString()}</p>
+            <p>{data === null ? 0 : data.totalVisits}</p>
           </div>
           <div className="todays-visits">
             <div className="todays-visits-tit">
@@ -75,12 +75,18 @@ const Dashboard = () => {
               )}
             </div>
             <p className="highlighted">
-              {data !== null ? data.todayVisits.toLocaleString() : 0}
+              {data !== null ? data.todayVisits : 0}
             </p>
           </div>
         </div>
         <AdminTitle title="Overview" desc="Data Visualization, Statistics" />
-        <div style={{ height: 500 }}>
+        <div
+          style={
+            Math.floor(window.innerWidth) > 760
+              ? { height: 500 }
+              : { height: 200 }
+          }
+        >
           <BarChart data={data === null ? [] : data.pageVisits} />
         </div>
       </div>
