@@ -74,12 +74,12 @@ const CarrersItem = ({ data }) => {
     if (pdf === "") return setIsPdfEmpty(true);
     setIsPdfEmpty(false);
 
-    // setName("");
-    // setEmail("");
-    // setPhone("");
-    // setAddress("");
-    // setMessage("");
-    // setPdf("");
+    setName("");
+    setEmail("");
+    setPhone("");
+    setAddress("");
+    setMessage("");
+    setPdf("");
 
     let formData = new FormData();
     formData.append("vacancyAnnouncedID", data[id]._id);
