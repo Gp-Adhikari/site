@@ -40,7 +40,15 @@ const App = () => {
             <Route path="/about" exact element={<About />} />
             <Route path="/portfolio" exact element={<Portfolio />} />
             <Route path="/services" exact element={<Services />} />
-            <Route path="/careers" exact element={<Carrers />} />
+            <Route
+              path="/careers"
+              exact
+              element={
+                <TokenContextProvider>
+                  <Carrers />
+                </TokenContextProvider>
+              }
+            />
             <Route
               path="/careers/:id"
               element={

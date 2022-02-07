@@ -495,11 +495,19 @@
           box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
 }
 
+.applicantsContainer {
+  background-color: #f8f8f8;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
 .contactContainer {
   background-color: #f8f8f8;
   max-width: 100%;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 2rem;
 }
 
@@ -541,6 +549,23 @@
 .contacts-wrapper .contacts .contact-info p:first-child {
   font-weight: bold;
   margin-right: 0.3rem;
+}
+
+.contacts-wrapper .contacts .contact-info input {
+  padding: 0.4rem 1.5rem;
+  background-color: #fff;
+  border: 2px solid #00af07;
+  color: #00af07;
+  font-weight: bold;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.contacts-wrapper .contacts .contact-info input:hover {
+  background-color: #00af07;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .contacts-wrapper .contacts .contact-infomsg p:first-child {
@@ -613,3 +638,4 @@
   font-weight: bold;
   cursor: pointer;
 }
+/*# sourceMappingURL=adminPanel.css.map */

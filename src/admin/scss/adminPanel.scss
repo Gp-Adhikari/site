@@ -13,6 +13,7 @@
 // variables
 $backgroundColor: #090a13;
 $main-color: #f6a01f;
+$border-color: #00af07;
 
 // adminlogin
 .adminPanelContainer {
@@ -361,13 +362,20 @@ $main-color: #f6a01f;
     }
   }
 }
+.applicantsContainer {
+  background-color: #f8f8f8;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
 
 //contactAdmin
 .contactContainer {
   background-color: #f8f8f8;
   max-width: 100%;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 2rem;
 }
 .contacts-wrapper {
@@ -379,7 +387,6 @@ $main-color: #f6a01f;
   gap: 1.5rem;
   color: #000;
   .contacts {
-    // grid-column: 1;
     word-break: break-word;
     width: 100%;
     height: 310px;
@@ -398,6 +405,19 @@ $main-color: #f6a01f;
         &:first-child {
           font-weight: bold;
           margin-right: 0.3rem;
+        }
+      }
+      input {
+        padding: 0.4rem 1.5rem;
+        background-color: #fff;
+        border: 2px solid $border-color;
+        color: $border-color;
+        font-weight: bold;
+        transition: 0.3s ease;
+        &:hover {
+          background-color: $border-color;
+          color: #fff;
+          box-shadow: none;
         }
       }
     }

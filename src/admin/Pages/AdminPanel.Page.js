@@ -8,16 +8,17 @@ import Carrers from "../Components/Carrers.Component";
 import Contact from "../Components/Contact.Component";
 
 import { TokenContext } from "../../Contexts/TokenContext";
+import Applicants from "../Components/Applicants.Component";
 
 const AdminPanel = () => {
-  const { token, csrfToken, loading } = useContext(TokenContext);
+  const { token, loading } = useContext(TokenContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (token === null || token === undefined || token === "")
       return navigate("/admin");
-  }, [token]);
+  }, [token, navigate]);
 
   if (loading) {
     return (
@@ -37,6 +38,7 @@ const AdminPanel = () => {
               <Route path="/portfolio" exact="true" element={<Portfolio />} />
               <Route path="/carrers" exact="true" element={<Carrers />} />
               <Route path="/contact" exact="true" element={<Contact />} />
+              <Route path="/applicants" exact="true" element={<Applicants />} />
             </Routes>
           </div>
         </div>

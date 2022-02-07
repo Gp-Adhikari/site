@@ -51,7 +51,7 @@ const Congrats = ({ loading }) => {
                 </>
               ) : loading === "error" ? (
                 <>
-                  <img src={error} alt="balloons" />
+                  <img src={error} alt="error" />
                   <h2>Error!</h2>
                 </>
               ) : null}
