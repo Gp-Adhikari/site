@@ -65,6 +65,7 @@ const HeroSection = () => {
   return (
     <>
       <div className="heroContainer">
+        <div className="blurBlob"></div>
         <div className="heroText">
           <div className="Text">
             <pre>

@@ -75,6 +75,18 @@ body {
   color: #fff;
 }
 
+.blurBlob {
+  position: absolute;
+  max-width: 500px;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  right: 0;
+  background: #101541;
+  -webkit-filter: blur(500px);
+          filter: blur(500px);
+}
+
 header {
   position: -webkit-sticky;
   position: sticky;
