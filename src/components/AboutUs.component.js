@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const AboutUs = () => {
   return (
     <>
@@ -40,8 +41,11 @@ const AboutUs = () => {
           </p>
           <p>
             We give you best in return! Now{" "}
-            <code className="contact-color">Contact Us</code> and have a great,
-            awesome looking and secure site at a resonable price.
+            <Link to="/contact">
+              <code className="contact-color">Contact Us</code>
+            </Link>{" "}
+            and have a great, awesome looking and secure site at a resonable
+            price.
           </p>
         </div>
       </div>

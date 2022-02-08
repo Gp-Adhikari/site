@@ -76,7 +76,6 @@ body {
   width: 100%;
   max-height: 500px;
   height: 100%;
-  // background: red;
   right: 0;
   background: #101541;
   filter: blur(500px);
@@ -303,11 +302,15 @@ header {
     p {
       margin-top: 1.5rem;
     }
+    a {
+      text-decoration: none;
+    }
     code {
       font-weight: bold;
     }
     .contact-color {
       color: $main-color;
+      cursor: pointer;
     }
   }
 }
@@ -545,6 +548,7 @@ header {
       border-radius: 20px;
       padding: 4rem 1rem 1rem 1rem;
       margin-top: -3rem;
+      width: 100%;
     }
   }
 }

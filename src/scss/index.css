@@ -402,12 +402,17 @@ header .header-wrapper nav.nav-shrink {
   margin-top: 1.5rem;
 }
 
+.aboutUs-Zpro .Zpro-intro a {
+  text-decoration: none;
+}
+
 .aboutUs-Zpro .Zpro-intro code {
   font-weight: bold;
 }
 
 .aboutUs-Zpro .Zpro-intro .contact-color {
   color: #f6a01f;
+  cursor: pointer;
 }
 
 .CarrersContainer {
@@ -731,6 +736,7 @@ header .header-wrapper nav.nav-shrink {
   border-radius: 20px;
   padding: 4rem 1rem 1rem 1rem;
   margin-top: -3rem;
+  width: 100%;
 }
 
 .portfolio {
